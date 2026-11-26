@@ -28,7 +28,7 @@
 :root{color-scheme:light}
 *{box-sizing:border-box}
 html{scroll-padding-top:80px}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75;word-break:keep-all;overflow-wrap:anywhere}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.85;word-break:keep-all;overflow-wrap:anywhere}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
 a{color:var(--accent)}
 .wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -37,7 +37,7 @@ p{margin:0}
 ul{margin:0}
 .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700}
 .muted{color:var(--muted)}
-.stack{display:grid;gap:14px}
+.stack{display:grid;gap:20px}
 
 /* placeholders & editor memos */
 .todo{display:inline-block;padding:0 8px;border-radius:6px;background:var(--todo);color:var(--todo-ink);font-weight:500;font-size:.92em}
@@ -72,11 +72,11 @@ nav li:hover>.sub,nav li:focus-within>.sub{display:block}
 }
 
 /* hero */
-.hero{margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:calc(env(safe-area-inset-top,0px) + 72px);padding-bottom:84px;color:#fff;
+.hero{margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:calc(env(safe-area-inset-top,0px) + clamp(80px,11vw,140px));padding-bottom:clamp(88px,12vw,150px);color:#fff;
   background:radial-gradient(120% 80% at 80% 110%,var(--dawn-3) 0%,transparent 55%),linear-gradient(180deg,var(--dawn-1) 0%,var(--dawn-2) 75%);position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;right:8%;bottom:0;width:2px;height:62%;background:linear-gradient(transparent,rgba(255,255,255,.5))}
 .hero::before{content:"";position:absolute;right:calc(8% - 34px);bottom:calc(62% - 120px);width:70px;height:2px;background:rgba(255,255,255,.4)}
-.hero .wrap{position:relative;z-index:1;display:grid;gap:18px}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:22px}
 .hero small{font-size:14px;letter-spacing:.06em;opacity:.85}
 .hero h1{font-size:clamp(24px,7.6vw,64px);font-weight:700}
 .hero .lead{font-size:clamp(16px,2.2vw,19px);opacity:.92;max-width:40ch}
@@ -88,23 +88,25 @@ nav li:hover>.sub,nav li:focus-within>.sub{display:block}
 .btn.line{border:1px solid var(--line);color:var(--ink);background:var(--surface)}
 
 /* page head for inner views */
-.pagehead{background:linear-gradient(180deg,var(--dawn-1),var(--dawn-2));color:#fff;margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:calc(env(safe-area-inset-top,0px) + 48px);padding-bottom:48px}
+.pagehead{background:linear-gradient(180deg,var(--dawn-1),var(--dawn-2));color:#fff;margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:calc(env(safe-area-inset-top,0px) + clamp(56px,8vw,96px));padding-bottom:clamp(56px,8vw,96px)}
 .pagehead .eyebrow{color:#fff;opacity:.8}
 .pagehead h1{font-size:clamp(30px,5vw,44px)}
 .pagehead p{opacity:.9;margin-top:10px;max-width:60ch}
 
 /* sections */
-section{padding-block:64px}
+section{padding-block:clamp(72px,10vw,128px)}
+@media (min-width:900px){body{font-size:17px}}
+.spaced{margin-top:clamp(72px,9vw,120px)}
 section.alt{background:var(--band)}
-.head{display:grid;gap:8px;margin-bottom:28px;max-width:720px}
+.head{display:grid;gap:12px;margin-bottom:clamp(32px,4vw,48px);max-width:720px}
 .head h2{font-size:clamp(26px,3.6vw,34px)}
 .head p{color:var(--muted)}
 .lines span{display:inline-block}
-.two{display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:start}
+.two{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(48px,7vw,96px);align-items:start}
 .two>*{min-width:0}
 @media (max-width:900px){.two{grid-template-columns:1fr}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
-.grid{display:grid;gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(22px,3vw,32px)}
+.grid{display:grid;gap:clamp(16px,2.4vw,24px)}
 .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .g4{grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -116,40 +118,43 @@ section.alt{background:var(--band)}
 .card a.more{display:inline-block;margin-top:12px;font-weight:500;text-decoration:none}
 
 /* identity band */
-.identity{text-align:center;display:grid;gap:12px;justify-items:center;max-width:760px;margin:0 auto}
+.identity{text-align:center;display:grid;gap:18px;justify-items:center;max-width:760px;margin:0 auto}
 .identity h2{font-size:clamp(28px,4.6vw,44px)}
 .identity p{color:var(--muted);max-width:56ch}
 
 /* motto */
-.motto{display:grid;gap:12px;max-width:760px}
+.motto{display:grid;gap:18px;max-width:760px}
 .motto .year{font-size:13px;letter-spacing:.2em;color:var(--gold);font-weight:700}
 .motto h2{font-size:clamp(28px,4.4vw,42px)}
-.motto blockquote{margin:0;padding-left:16px;border-left:2px solid var(--gold);font-family:var(--display);font-size:18px}
+.motto blockquote{margin:0;padding-left:20px;line-height:1.9;border-left:2px solid var(--gold);font-family:var(--display);font-size:18px}
 .motto cite{display:block;font-style:normal;font-family:var(--body);font-size:14px;color:var(--muted);margin-top:4px}
 
 /* tables */
 .tbl{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;container-type:inline-size}
 .tbl table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
-.tbl th,.tbl td{padding:13px 18px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);font-size:15px}
+.tbl th,.tbl td{padding:18px 24px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);font-size:15px}
 .tbl tr:last-child td{border-bottom:0}
 .tbl th{font-size:13px;color:var(--muted);font-weight:500;background:var(--band);white-space:nowrap}
 .tbl td:first-child{font-weight:700;white-space:nowrap}
-.tbl.kv td:first-child{width:9em;color:var(--muted);font-weight:500;white-space:normal}
+.tbl.kv td:first-child{width:10em;color:var(--muted);font-weight:500;white-space:nowrap}
 .tbl.kv table{min-width:0}
 /* 휴대폰: 표를 옆으로 넘기지 않고 항목별 카드로 세로로 펼침 */
 @container (max-width:560px){
   .tbl:not(.kv) thead{display:none}
-  .tbl:not(.kv) tr{display:block;padding:14px 16px;border-bottom:1px solid var(--line)}
+  .tbl:not(.kv) tr{display:block;padding:18px 18px;border-bottom:1px solid var(--line)}
   .tbl:not(.kv) tr:last-child{border-bottom:0}
   .tbl:not(.kv) td{display:flex;gap:10px;border:0;padding:2px 0;white-space:normal;font-size:15px}
   .tbl:not(.kv) td:first-child{display:block;font-family:var(--display);font-size:18px;margin-bottom:4px}
   .tbl:not(.kv) td[data-label]:not(:first-child)::before{content:attr(data-label);flex:none;width:3.6em;color:var(--muted);font-size:13px;padding-top:2px}
-  .tbl.kv td{padding:12px 14px}
-  .tbl.kv td:first-child{width:6.5em}
+}
+@container (max-width:420px){
+  .tbl.kv td{padding:14px 16px}
+  .tbl.kv td:first-child{width:6.5em;white-space:normal}
 }
 
 /* greeting */
-.letter p+p{margin-top:14px}
+.letter p+p{margin-top:22px}
+.letter{max-width:38em}
 .letter .sign{margin-top:22px;font-family:var(--display);font-size:18px}
 .mission-list{list-style:none;padding:0;display:grid;gap:10px;counter-reset:m}
 .mission-list li{display:flex;gap:12px;align-items:baseline;font-family:var(--display);font-size:19px}
@@ -160,7 +165,7 @@ section.alt{background:var(--band)}
 .values div{border-top:2px solid var(--accent);padding-top:10px}
 .values b{font-family:var(--display);font-size:22px;display:block}
 .values span{color:var(--muted);font-size:15px}
-.facts{list-style:none;padding:0;display:grid;gap:8px}
+.facts{list-style:none;padding:0;display:grid;gap:14px}
 .facts li{padding-left:16px;position:relative}
 .facts li::before{content:"";position:absolute;left:0;top:.75em;width:6px;height:6px;border-radius:50%;background:var(--gold)}
 
@@ -175,8 +180,8 @@ section.alt{background:var(--band)}
 .person p{font-size:14px;color:var(--muted);margin-top:6px}
 
 /* faq */
-.faq{display:grid;gap:8px}
-.faq details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+.faq{display:grid;gap:12px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
 .faq summary{cursor:pointer;font-weight:700}
 .faq details p{margin-top:8px;color:var(--muted)}
 
@@ -192,7 +197,7 @@ section.alt{background:var(--band)}
 
 /* news list */
 .news{list-style:none;padding:0}
-.news li{display:grid;grid-template-columns:8.5em 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.news li{display:grid;grid-template-columns:8.5em 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
 .news li>div{min-width:0}
 .news time{color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
 .news b{display:block}
@@ -208,14 +213,14 @@ section.alt{background:var(--band)}
 .album span{font-size:13px;color:var(--muted)}
 
 /* first-visit band */
-.welcome{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.welcome{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(28px,4vw,44px);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
 .welcome>*{min-width:0}
 .welcome h2{font-size:26px;margin-bottom:8px}
 @media (max-width:700px){.welcome{grid-template-columns:1fr}}
 
 /* timeline */
 .steps{list-style:none;padding:0;display:grid;gap:0;border-left:2px solid var(--line);margin-left:6px}
-.steps li{position:relative;padding:0 0 18px 22px}
+.steps li{position:relative;padding:0 0 28px 24px}
 .steps li::before{content:"";position:absolute;left:-7px;top:.55em;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--accent)}
 .steps b{display:block;font-family:var(--display);font-size:18px}
 
@@ -227,23 +232,23 @@ section.alt{background:var(--band)}
 .doc .kicker{font-size:13px;letter-spacing:.14em;color:var(--gold);font-weight:700}
 .doc h2{font-size:clamp(26px,3.8vw,36px);margin:6px 0 6px}
 .doc .sub-t{font-family:var(--display);font-size:19px;color:var(--muted)}
-.doc h3{font-size:22px;margin:40px 0 12px}
-.doc p+p{margin-top:12px}
+.doc h3{font-size:23px;margin:64px 0 16px}
+.doc p+p{margin-top:20px}
 .doc .lede{font-family:var(--display);font-size:20px;line-height:1.6;margin-top:18px}
-.grace{margin:22px 0;padding:14px 18px;border-radius:12px;background:var(--surface);border:1px solid var(--line);color:var(--muted);font-size:15px}
+.grace{margin:32px 0;padding:14px 18px;border-radius:12px;background:var(--surface);border:1px solid var(--line);color:var(--muted);font-size:15px}
 .alt .grace{background:var(--bg)}
-.place{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;gap:10px}
+.place{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(22px,3vw,32px);display:grid;gap:14px}
 .place .num{font-size:13px;color:var(--gold);font-weight:700;letter-spacing:.06em}
 .place h4{font-size:20px}
 .place .line{font-family:var(--display);font-size:17px}
 .place ul{padding-left:18px;color:var(--muted);font-size:15px}
 .place li+li{margin-top:4px}
 .place .basis{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
-.places{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+.places{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.4vw,24px);margin-top:36px}
 .places>*{min-width:0}
 @media (max-width:760px){.places{grid-template-columns:1fr}}
-.group-h{font-size:18px;margin:34px 0 4px}
-.roles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+.group-h{font-size:20px;margin:72px 0 6px}
+.roles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:28px}
 @media (max-width:760px){.roles{grid-template-columns:1fr}}
 .roles .card b{font-family:var(--display);font-size:19px;display:block;margin-bottom:6px}
 .roles .card span{font-size:13px;color:var(--accent);font-weight:700}
@@ -358,7 +363,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
 
   <section class="alt">
     <div class="wrap">
-      <div class="identity" style="margin-bottom:36px">
+      <div class="identity" style="margin-bottom:clamp(48px,6vw,72px)">
         <span class="eyebrow">Our Identity</span>
         <h2>우리는 모두 다음세대 선교사입니다</h2>
         <p>다음 세대가 살아가려면, 먼저 우리 자신이 살아야 합니다. 부모가, 어른이, 청년이 복음으로 살아 있을 때 그 모습을 보고 다음 세대가 따라 삽니다. 그래서 우리 교회의 모든 길은 복음의 확신에서 시작됩니다.</p>
@@ -471,7 +476,12 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
         </div>
       </div>
 
-      <div class="two" style="margin-top:48px">
+    </div>
+  </section>
+
+  <section id="timeline">
+    <div class="wrap">
+      <div class="two">
         <div class="stack">
           <h3 style="font-size:20px">걸어온 길</h3>
           <div class="tbl"><table>
@@ -497,7 +507,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
     </div>
   </section>
 
-  <section id="staff">
+  <section class="alt" id="staff">
     <div class="wrap">
       <div class="head"><span class="eyebrow">Staff</span><h2>섬기는 분들</h2><p class="lines"><span>교회는 목사가 모든 것을 주고</span> <span>성도는 받기만 하는 곳이 아니라,</span><br><span>하나님께서 각 사람에게 주신 은사로</span> <span>함께 세워 가는 한 몸입니다.</span></p></div>
       <div class="staff">
@@ -507,7 +517,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
     </div>
   </section>
 
-  <section class="alt" id="location">
+  <section id="location">
     <div class="wrap two">
       <div>
         <div class="head" style="margin-bottom:18px"><span class="eyebrow">Location</span><h2>오시는 길</h2></div>
@@ -690,7 +700,13 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
         </tbody>
       </table></div>
 
-      <div class="two" style="margin-top:48px">
+    </div>
+  </section>
+
+  <section class="alt" id="first-visit">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Sunday</span><h2>주일예배 안내</h2></div>
+      <div class="two">
         <div class="stack">
           <h3 style="font-size:22px">주일예배는 이렇게 드립니다</h3>
           <ul class="facts">
@@ -723,7 +739,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
     </div>
   </section>
 
-  <section class="alt" id="sermons">
+  <section id="sermons">
     <div class="wrap">
       <div class="head"><span class="eyebrow">Sermons</span><h2>설교 말씀</h2><p>주일 설교를 다시 들을 수 있습니다. 한 본문에서 한 가지 핵심을, 일상의 말로 전합니다. 주일 설교는 우리 교회 말씀의 밥상에서 ‘주일의 잔칫상’입니다.</p></div>
       <div class="sermons">
@@ -769,7 +785,13 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
         </div>
       </div>
 
-      <div class="two" style="margin-top:48px">
+    </div>
+  </section>
+
+  <section class="alt" id="family-worship">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Family Worship</span><h2>가정에서 함께 예배합니다</h2></div>
+      <div class="two">
         <div class="stack">
           <h3 style="font-size:22px">가정예배, 이렇게 할 수 있습니다</h3>
           <p class="muted">짧아도 좋고 서툴러도 좋습니다. 꼭 담을 것은 두 가지, 함께 기도하는 것과 말씀을 펴서 함께 나누는 것입니다. 방법은 자유롭게 고르세요.</p>
@@ -797,19 +819,19 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
     </div>
   </section>
 
-  <section class="alt" id="schools">
+  <section id="schools">
     <div class="wrap">
-      <div class="head"><span class="eyebrow">Alternative School</span><h2>다음세대를 세우는 자리</h2><p>다음세대교회에게 선교의 첫 자리는 우리 곁의 다음 세대입니다. 우리는 이들을 복음으로 세우기 위해, 다음 세대를 위한 대안학교를 세워갑니다.</p></div>
+      <div class="head"><span class="eyebrow">Alternative School</span><h2>다음세대를 세우는 자리</h2><p>다음세대교회에게 선교의 첫 자리는 우리 곁의 다음 세대입니다.<br>우리는 이들을 복음으로 세우기 위해,<br>다음 세대를 위한 대안학교를 세워갑니다.</p></div>
       <div class="grid g2">
-        <div class="card"><span class="tag">주중</span><h3>홈스쿨형 대안학교</h3><p>가정을 교육의 중심에 세우고, 홀로 감당하기 어려운 가정과 선교사 자녀들이 함께 기대어 배우는 자리로 이 학교를 세워갑니다.</p></div>
-        <div class="card"><span class="tag">주말</span><h3>무도스포츠 SU스쿨</h3><p>주말에 다음 세대를 만나 무도를 가르치고 복음으로 무장시켜, 전 세계에 선한 영향력을 끼치는 다음 세대로 세웁니다.</p><a class="more" href="#suschool">SU스쿨 안내 →</a></div>
-        <div class="card"><span class="tag">품는 사역</span><h3>학교 밖 청소년 · 위기 청소년</h3><p>세상 속에서 방황하는 아이들을 만나 곁에서 복음을 전하고, 그들이 다시 설 수 있도록 삶의 기초를 함께 세웁니다.</p></div>
+        <div class="card"><span class="tag">주중</span><h3>홈스쿨형 대안학교</h3><p>가정을 교육의 중심에 세우고,<br>홀로 감당하기 어려운 가정과 선교사 자녀들이 함께 기대어 배우는 자리로 이 학교를 세워갑니다.</p></div>
+        <div class="card"><span class="tag">주말</span><h3>무도스포츠 SU스쿨</h3><p>주말에 다음 세대를 만나 무도를 가르치고 복음으로 무장시켜,<br>전 세계에 선한 영향력을 끼치는 다음 세대로 세웁니다.</p><a class="more" href="#suschool">SU스쿨 안내 →</a></div>
+        <div class="card"><span class="tag">품는 사역</span><h3>학교 밖 청소년 · 위기 청소년</h3><p>세상 속에서 방황하는 아이들을 만나 곁에서 복음을 전하고,<br>그들이 다시 설 수 있도록 삶의 기초를 함께 세웁니다.</p></div>
         <div class="card"><span class="tag">세우는 사역</span><h3>믿음의 청소년</h3><p>제자훈련과 리더십 캠프, 예배자 훈련, 성경과 신앙 인재 양성 과정으로 다음 세대를 이끌 하나님의 사람을 세웁니다.</p><a class="more" href="#youth">지틴즈 · 청년부 →</a></div>
       </div>
     </div>
   </section>
 
-  <section id="suschool">
+  <section class="alt" id="suschool">
     <div class="wrap">
       <div class="card" style="padding:32px">
         <div class="two">
@@ -835,7 +857,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
     </div>
   </section>
 
-  <section class="alt" id="youth">
+  <section id="youth">
     <div class="wrap">
       <div class="two">
         <div>
@@ -851,7 +873,12 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
         </tbody></table></div>
       </div>
 
-      <div class="two" style="margin-top:56px">
+    </div>
+  </section>
+
+  <section class="alt" id="young-adults">
+    <div class="wrap">
+      <div class="two">
         <div>
           <div class="head"><span class="eyebrow">Young Adults</span><h2>청년부</h2><p>청년은 자라며 준비하는 자입니다. 복음 위에 자기 신앙을 단단히 세우고, 장차 다음 세대를 이끌 일꾼으로 준비합니다. 주일예배를 함께 드리고, 주중에 모여 일과 관계, 결혼 같은 일상의 문제를 복음으로 함께 생각합니다.</p></div>
         </div>

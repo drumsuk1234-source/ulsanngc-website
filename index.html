@@ -289,6 +289,10 @@ main section .wrap.two.keep{max-width:calc(1120px + 2 * max(16px, env(safe-area-
 .bk-name{font-family:var(--display);font-size:17px;line-height:1.8;color:var(--ink)!important}
 .bk-name b{color:var(--accent)}
 .bk-when{font-size:14px!important;font-weight:500;color:var(--ink)!important;border-top:1px solid var(--line);padding-top:14px}
+.fw{gap:clamp(40px,5vw,56px)}
+.howto{margin:0;padding-left:22px;display:grid;gap:12px}
+.howto li::marker{color:var(--gold);font-weight:700}
+.series30{margin:0;padding-left:20px;display:grid;gap:6px}
 /* faq */
 .faq{display:grid;gap:12px}
 .faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
@@ -1046,30 +1050,50 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
 
   <section class="alt" id="family-worship">
     <div class="wrap">
-      <div class="head"><span class="eyebrow">Family Worship</span><h2>가정에서 함께 예배합니다</h2></div>
-      <div class="two">
-        <div class="stack">
-          <h3 style="font-size:22px">가정예배, 이렇게 할 수 있습니다</h3>
-          <p class="muted">짧아도 좋고 서툴러도 좋습니다. 꼭 담을 것은 두 가지, 함께 기도하는 것과 말씀을 펴서 함께 나누는 것입니다. 방법은 자유롭게 고르세요.</p>
-          <ul class="facts">
+      <div class="head"><span class="eyebrow">Family Worship</span><h2>가정에서 함께 예배합니다</h2>
+        <p class="lines">가정은 신앙이 말이 아니라 삶으로 전수되는 자리입니다.<br><span>부모가 자녀에게 신앙을 물려주는 가장 강력한 방법은</span> <span>가르치는 말이 아니라,</span><br>함께 하나님을 예배하는 모습입니다.</p></div>
+      <div class="stack fw">
+        <p>거창할 필요는 없습니다. 짧아도 좋고 서툴러도 좋습니다.<br>중요한 것은 온 가족이 함께 하나님 앞에 나아가는 그 자리를 정기적으로 갖는 것입니다.</p>
+
+        <div class="card">
+          <span class="tag">함께 세우는 기준</span>
+          <ul class="facts" style="margin-top:14px">
+            <li>가정마다 정기적으로 함께 모이는 시간을 반드시 가집니다.</li>
+            <li>그 시간에는 두 가지를 꼭 담습니다 — <b>함께 기도하는 것</b>과 <b>말씀을 펴서 함께 나누는 것.</b></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 style="font-size:22px;margin-bottom:8px">이렇게 할 수 있습니다</h3>
+          <p class="muted" style="margin-bottom:18px">방법은 자유롭게 고르세요.</p>
+          <ol class="howto">
             <li>그 주의 설교 말씀을 다시 꺼내 가족이 한마디씩 나눕니다.</li>
             <li>말씀을 읽고 간단한 퀴즈로 아이들과 즐겁게 복습합니다.</li>
             <li>가족이 성경통독을 함께 맞춰 갑니다.</li>
-            <li>교리교육 교재(소요리문답 등)를 한 문답씩 묻고 답합니다.</li>
+            <li>경건 서적을 함께 한 단락씩 읽고 나눕니다.</li>
+            <li>교리교육 교재(소요리문답 등)를 함께 한 문답씩 묻고 답하며, 우리가 믿는 바의 뼈대를 배웁니다.</li>
             <li>어린 자녀가 있다면 짧은 챕터로 된 어린이 성경책을 함께 봅니다.</li>
+            <li>가정예배 교재를 정해 순서를 따라갑니다.</li>
             <li>서로의 기도제목을 나누고 함께 기도합니다.</li>
             <li>가족이 함께 부르고 싶은 찬양을 부르고 기도로 마칩니다.</li>
-          </ul>
+          </ol>
+          <p class="gap-p muted">형식은 가정마다 다를 수 있습니다.<br>중요한 것은 함께 기도하고, 함께 말씀을 나누는 그 자리 자체입니다.</p>
         </div>
-        <div class="stack">
-          <h3 style="font-size:22px">교회가 돕는 것</h3>
+
+        <div class="motto">
+          <blockquote>오직 나와 내 집은 여호와를 섬기겠노라<cite>여호수아 24:15</cite></blockquote>
+          <p class="muted">여호수아가 생의 마지막에 온 이스라엘 앞에서 한 이 고백은, 한 사람의 결단이 가정 전체의 방향을 정한다는 것을 보여줍니다.<br>가정의 예배는 부모의 이 결단에서 시작됩니다.</p>
+        </div>
+
+        <div>
+          <h3 style="font-size:22px;margin-bottom:18px">교회가 돕는 것</h3>
           <div class="tbl kv"><table><tbody>
             <tr><td>함께 드리는 예배</td><td>영유아부터 초등학생까지 주일 오후 4시 주일예배를 부모와 함께 드립니다</td></tr>
-            <tr><td>가정예배 자료</td><td>순서지와 이야기 자료, 「다음세대 신앙 위인 이야기」(부모가 읽어 주는 교회사 이야기)</td></tr>
-            <tr><td>부모를 위한 기도문</td><td>「서로를 축복하는 30일」 영유아 가정 편</td></tr>
+            <tr><td>서로를 축복하는<br>30일 시리즈</td><td><ol class="series30"><li>아내가 먼저 믿은 가정</li><li>남편이 먼저 믿은 가정</li><li>함께 자라는 가정</li><li>10대 자녀와 함께하는 가정</li><li>우리 아기를 위한 축복</li></ol></td></tr>
             <tr><td>말씀 암송</td><td>주일 설교 본문에서 뽑은 구절을 암송 노트에 적고 외웁니다</td></tr>
             <tr><td>유아세례</td><td>만 3세까지, 부모 교육 후 시행. 문의는 담임목사에게</td></tr>
           </tbody></table></div>
+          <p class="memo gap-p">유아세례 연령은 고신 교회정치(2023년 개정) 기준. 첫 시행 전이면 “준비 중”으로.</p>
         </div>
       </div>
     </div>

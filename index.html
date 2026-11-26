@@ -37,7 +37,7 @@ p{margin:0}
 ul{margin:0}
 .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700}
 .muted{color:var(--muted)}
-.stack{display:grid;gap:20px}
+.stack{display:grid;gap:24px}
 
 /* placeholders & editor memos */
 .todo{display:inline-block;padding:0 8px;border-radius:6px;background:var(--todo);color:var(--todo-ink);font-weight:500;font-size:.92em}
@@ -91,12 +91,13 @@ nav li:hover>.sub,nav li:focus-within>.sub{display:block}
 .pagehead{background:linear-gradient(180deg,var(--dawn-1),var(--dawn-2));color:#fff;margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:calc(env(safe-area-inset-top,0px) + clamp(56px,8vw,96px));padding-bottom:clamp(56px,8vw,96px)}
 .pagehead .eyebrow{color:#fff;opacity:.8}
 .pagehead h1{font-size:clamp(30px,5vw,44px)}
-.pagehead p{opacity:.9;margin-top:10px;max-width:60ch}
+.pagehead p{opacity:.9;margin-top:18px;max-width:60ch}
 
 /* sections */
 section{padding-block:clamp(72px,10vw,128px)}
 @media (min-width:900px){body{font-size:17px}}
 .spaced{margin-top:clamp(72px,9vw,120px)}
+.gap-p{margin-top:30px}
 section.alt{background:var(--band)}
 .head{display:grid;gap:12px;margin-bottom:clamp(32px,4vw,48px);max-width:720px}
 .head h2{font-size:clamp(26px,3.6vw,34px)}
@@ -153,7 +154,7 @@ section.alt{background:var(--band)}
 }
 
 /* greeting */
-.letter p+p{margin-top:22px}
+.letter p+p{margin-top:34px}
 .letter{max-width:38em}
 .letter .sign{margin-top:22px;font-family:var(--display);font-size:18px}
 .mission-list{list-style:none;padding:0;display:grid;gap:10px;counter-reset:m}
@@ -178,6 +179,22 @@ section.alt{background:var(--band)}
 .person b{font-size:18px;font-family:var(--display)}
 .person .role{font-size:13px;color:var(--accent);font-weight:700}
 .person p{font-size:14px;color:var(--muted);margin-top:6px}
+
+/* staff profiles */
+.profile{display:grid;gap:26px;align-content:start}
+.profile-top{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:center}
+.profile-top>div{min-width:0}
+.photo{display:block;width:120px;height:120px;max-width:100%;border-radius:50%;object-fit:cover;box-shadow:0 0 0 4px var(--surface),0 0 0 5px var(--line)}
+.profile .role{font-size:13px;color:var(--accent);font-weight:700;letter-spacing:.04em}
+.profile h3{font-size:28px;margin:2px 0 8px}
+.titles{font-size:14px;color:var(--muted);line-height:1.75}
+.bio{margin:0;display:grid;gap:20px;border-top:1px solid var(--line);padding-top:24px}
+.bio>div{display:grid;grid-template-columns:3.6em 1fr;gap:14px}
+.bio dt{font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.12em;padding-top:2px}
+.bio dd{margin:0;min-width:0}
+.bio ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:15px;line-height:1.6}
+.bio small{display:block;font-size:13px;color:var(--muted)}
+@media (max-width:480px){.profile-top{grid-template-columns:96px 1fr;gap:18px}.photo{width:96px;height:96px}.bio>div{grid-template-columns:1fr;gap:6px}}
 
 /* faq */
 .faq{display:grid;gap:12px}
@@ -215,7 +232,7 @@ section.alt{background:var(--band)}
 /* first-visit band */
 .welcome{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(28px,4vw,44px);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
 .welcome>*{min-width:0}
-.welcome h2{font-size:26px;margin-bottom:8px}
+.welcome h2{font-size:26px;margin-bottom:16px}
 @media (max-width:700px){.welcome{grid-template-columns:1fr}}
 
 /* timeline */
@@ -232,9 +249,9 @@ section.alt{background:var(--band)}
 .doc .kicker{font-size:13px;letter-spacing:.14em;color:var(--gold);font-weight:700}
 .doc h2{font-size:clamp(26px,3.8vw,36px);margin:6px 0 6px}
 .doc .sub-t{font-family:var(--display);font-size:19px;color:var(--muted)}
-.doc h3{font-size:23px;margin:64px 0 16px}
-.doc p+p{margin-top:20px}
-.doc .lede{font-family:var(--display);font-size:20px;line-height:1.6;margin-top:18px}
+.doc h3{font-size:23px;margin:72px 0 20px}
+.doc p+p{margin-top:32px}
+.doc .lede{font-family:var(--display);font-size:20px;line-height:1.6;margin-top:28px}
 .grace{margin:32px 0;padding:14px 18px;border-radius:12px;background:var(--surface);border:1px solid var(--line);color:var(--muted);font-size:15px}
 .alt .grace{background:var(--bg)}
 .place{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(22px,3vw,32px);display:grid;gap:14px}
@@ -384,7 +401,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
           <li><time>2026. 11. 8.</time><div><b>내 계획에 없는 계획</b><p>야고보서 4:13–17</p></div></li>
           <li><time>2026. 6.</time><div><b>나를 판 나, 나를 사신 예수님</b><p>열왕기상 21:17–29</p></div></li>
         </ul>
-        <p style="margin-top:14px"><a class="btn line" href="https://www.youtube.com/@울산다음세대교회" target="_blank" rel="noopener">유튜브에서 모두 보기 →</a></p>
+        <p class="gap-p"><a class="btn line" href="https://www.youtube.com/@울산다음세대교회" target="_blank" rel="noopener">유튜브에서 모두 보기 →</a></p>
       </div>
       <div>
         <div class="head" style="margin-bottom:14px"><span class="eyebrow">News</span><h2>교회 소식</h2></div>
@@ -393,7 +410,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
           <li><time>2026. 12.</time><div><b>「말씀 앞에서 드리는 30일 기도」 안내</b><p>30일 기도문 소책자 나눔</p></div></li>
           <li><time>2027. 1. 22.–23.</time><div><b>GCN 청년복음캠프 “WHO'S YOUR KING?”</b><p>밀양 소명수련원, 1박 2일</p></div></li>
         </ul>
-        <p style="margin-top:14px"><a class="btn line" href="#notices">소식 더 보기 →</a></p>
+        <p class="gap-p"><a class="btn line" href="#notices">소식 더 보기 →</a></p>
       </div>
     </div>
   </section>
@@ -511,8 +528,23 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
     <div class="wrap">
       <div class="head"><span class="eyebrow">Staff</span><h2>섬기는 분들</h2><p class="lines"><span>교회는 목사가 모든 것을 주고</span> <span>성도는 받기만 하는 곳이 아니라,</span><br><span>하나님께서 각 사람에게 주신 은사로</span> <span>함께 세워 가는 한 몸입니다.</span></p></div>
       <div class="staff">
-        <div class="card person"><div class="avatar">고</div><div><span class="role">담임목사</span><br><b>고영석</b><p>고신대학교 국제문화선교학<br>고려신학대학원 목회학 석사(M.Div.)</p><p>일원동교회(2007–)<br>다음세대교회(2012–)<br>우정교회(2016–)<br>울산다음세대교회 개척(2023)</p></div></div>
-        <div class="card person"><div class="avatar">서</div><div><span class="role">전도사 · SU스쿨 교감</span><br><b>서정은</b><p>SU스쿨 운영, 다음세대 교육</p></div></div>
+        <article class="card profile">
+          <div class="profile-top"><img class="photo" src="images/ko.jpg" alt="고영석 담임목사" width="120" height="120" loading="lazy"><div><span class="role">담임목사</span><h3>고영석</h3><p class="titles">울산다음세대교회 담임목사<br>무도스포츠 SU스쿨 교목<br>저스트미니스트리 메신저</p></div></div>
+          <dl class="bio">
+            <div><dt>학력</dt><dd><ul><li>고신대학교 국제문화선교학</li><li>고려신학대학원 목회학 석사(M.Div.)</li></ul></dd></div>
+            <div><dt>자격</dt><dd><ul><li>청소년진로상담사</li></ul></dd></div>
+            <div><dt>경력</dt><dd><ul><li>필리핀 아름다운교회(한인) 전도사 <small>중고등부</small></li><li>일원동교회 전도사 · 강도사 (2007–) <small>초등, 청년, 행정, 예배</small></li><li>다음세대교회 강도사 · 목사 (2012–) <small>청소년, 청년, 행정</small></li><li>우정교회 목사 (2016–) <small>유치, 영유아부</small></li><li>IMM(국제선교동원) 대표간사 <small>선교동원사역</small></li><li>청소년 ‘주티캠프’ 사역</li><li>스프링스 선교단체 총무</li><li>CBMC 울산열방지회 회장 역임</li><li>CBMC 울산글로벌지회 지도목사</li></ul></dd></div>
+          </dl>
+        </article>
+        <article class="card profile">
+          <div class="profile-top"><img class="photo" src="images/seo.jpg" alt="서정은 전도사" width="120" height="120" loading="lazy"><div><span class="role">전도사</span><h3>서정은</h3><p class="titles">울산다음세대교회 전도사<br>무도스포츠 SU스쿨 교감</p></div></div>
+          <dl class="bio">
+            <div><dt>학력</dt><dd><ul><li>백석대학교 상담대학원 가족상담 · 가정사역학 석사</li><li>고신대학교 일반대학원 기독교교육학 석사 재학 중 (2025–)</li></ul></dd></div>
+            <div><dt>자격</dt><dd><ul><li>통합폭력 · 성폭력 · 마약 예방지도사</li><li>청소년위생지도사 · 청소년도박중독예방지도사</li><li>스포츠타격술 1급 지도사</li></ul></dd></div>
+            <div><dt>강의</dt><dd><ul><li>음란물, 미디어, 마약 및 유해약물, 성경적 성교육 <small>초 · 중 · 고등학교</small></li><li>성경적 성교육 · 연애관 · 결혼관 · 재정관 <small>교회 청소년 · 청년 · 부모 · 교사</small></li></ul></dd></div>
+            <div><dt>사역</dt><dd><ul><li>언양교회 초등부 전도사</li><li>남산제일교회 교육전도사</li></ul></dd></div>
+          </dl>
+        </article>
       </div>
     </div>
   </section>
@@ -528,7 +560,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
           <tr><td>문의</td><td>010-2605-0309</td></tr>
         </tbody></table></div>
         <p class="muted" style="margin-top:16px">주일 오후에는 건물 2층 컬티에서 예배합니다. 처음 오시면 입구에서 안내해 드립니다. 2027년에는 새 예배처소를 준비하고 있어, 장소가 바뀌면 이곳에 먼저 알리겠습니다.</p>
-        <p style="margin-top:16px"><a class="btn line" href="https://map.naver.com/p/search/%EC%9A%B8%EC%82%B0%20%EB%82%A8%EA%B5%AC%20%ED%99%94%ED%95%A9%EB%A1%9C194%EB%B2%88%EA%B8%B8%2012-1" target="_blank" rel="noopener">네이버 지도에서 보기 →</a></p>
+        <p class="gap-p"><a class="btn line" href="https://map.naver.com/p/search/%EC%9A%B8%EC%82%B0%20%EB%82%A8%EA%B5%AC%20%ED%99%94%ED%95%A9%EB%A1%9C194%EB%B2%88%EA%B8%B8%2012-1" target="_blank" rel="noopener">네이버 지도에서 보기 →</a></p>
       </div>
       <div class="stack">
         <div class="map"><span>컬티 2층</span></div>
@@ -554,7 +586,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <h2>우리 교회는 다음세대교회입니다</h2>
       <p class="sub-t">우리는 누구이며 어디로 가는가</p>
       <p class="lede">다음 세대를 살린다는 것은 아이들을 위한 프로그램이 많은 교회가 된다는 뜻이 아닙니다. 다음 세대가 살아가려면, 먼저 우리 자신이 살아야 합니다.</p>
-      <p style="margin-top:14px">부모가, 어른이, 청년이 복음으로 살아 있을 때 — 그 모습을 보고 다음 세대가 따라 삽니다. 죽은 나무는 열매를 맺지 못합니다. 그래서 우리 교회의 모든 길은 한 가지에서 시작됩니다 — 복음의 확신입니다.</p>
+      <p class="gap-p">부모가, 어른이, 청년이 복음으로 살아 있을 때 — 그 모습을 보고 다음 세대가 따라 삽니다. 죽은 나무는 열매를 맺지 못합니다. 그래서 우리 교회의 모든 길은 한 가지에서 시작됩니다 — 복음의 확신입니다.</p>
 
       <h3>먼저, 복음을 확신하는 자리로</h3>
       <p>신앙생활을 오래 한 것과 복음을 확신하는 것은 다릅니다. 그래서 우리는 누구도 예외 없이 — 오래 다닌 사람도, 처음 나온 사람도, 어른도 아이도 — 복음을 분명히 이해하고 확신하는 자리로 나아가기를 함께 추구합니다.</p>
@@ -578,7 +610,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
         <li><b>배움</b>으로 — 성경의 기준으로 자라갑니다.</li>
         <li><b>선교</b>로 — 세상 속에서 복음을 살아냅니다.</li>
       </ul>
-      <p style="margin-top:14px">예배에서 받은 은혜가 배움으로 깊어지고, 그 배움이 선교로 흘러갑니다.</p>
+      <p class="gap-p">예배에서 받은 은혜가 배움으로 깊어지고, 그 배움이 선교로 흘러갑니다.</p>
 
       <h3>스스로 돌아봅니다</h3>
       <ul class="questions">
@@ -587,7 +619,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
         <li>배움의 자리에서 — 자라가고 있는가, 한자리에 멈춰 있는가?</li>
         <li>선교의 자리에서 — 내 자리에서 복음으로 살아내고 있는가?</li>
       </ul>
-      <p style="margin-top:16px">이 물음 앞에서 부족함이 보여도 괜찮습니다. 복음은 우리의 멈춘 자리를 다시 새롭게 합니다.</p>
+      <p class="gap-p">이 물음 앞에서 부족함이 보여도 괜찮습니다. 복음은 우리의 멈춘 자리를 다시 새롭게 합니다.</p>
     </div></div>
   </section>
 
@@ -596,7 +628,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <span class="kicker">제 1 장 · 예배</span>
       <h2>삶 전체를 하나님께 드립니다</h2>
       <p class="lede">공예배가 샘이고, 삶의 예배는 그 샘에서 흘러나오는 물입니다.</p>
-      <p style="margin-top:14px">하나는 주일에 함께 드리는 공예배, 다른 하나는 삶 전체로 드리는 예배입니다(롬 12:1). 예배는 주일 한 시간에 갇히지 않습니다.</p>
+      <p class="gap-p">하나는 주일에 함께 드리는 공예배, 다른 하나는 삶 전체로 드리는 예배입니다(롬 12:1). 예배는 주일 한 시간에 갇히지 않습니다.</p>
       <p class="grace">아래 기준들은 누군가를 정죄하기 위한 잣대가 아닙니다. 지금 못 하고 있어도 괜찮습니다. 오늘 한 칸을 오르면, 그것으로 충분합니다.</p>
     </div>
     <div class="places">
@@ -620,7 +652,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <span class="kicker">제 2 장 · 배움</span>
       <h2>성경의 기준으로 자라갑니다</h2>
       <p class="lede">자리는 넷이지만 교과서는 하나 — 성경입니다.</p>
-      <p style="margin-top:14px">배움은 단지 지식을 쌓는 일이 아닙니다. 하나님과 그분의 말씀을 알아가고, 그 말씀의 기준으로 세상과 삶을 분별하며, 그리스도를 닮아 자라가는 것입니다. 이 배움은 부모에게서 자녀에게로, 한 세대에서 다음 세대로 이어집니다.</p>
+      <p class="gap-p">배움은 단지 지식을 쌓는 일이 아닙니다. 하나님과 그분의 말씀을 알아가고, 그 말씀의 기준으로 세상과 삶을 분별하며, 그리스도를 닮아 자라가는 것입니다. 이 배움은 부모에게서 자녀에게로, 한 세대에서 다음 세대로 이어집니다.</p>
     </div>
     <div class="places">
       <div class="place"><span class="num">① 교회에서</span><h4>말씀의 밥상으로</h4><p class="line">매일 · 주일 · 과정, 세 끼니로 함께 말씀을 먹습니다.</p>
@@ -643,7 +675,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <span class="kicker">제 3 장 · 선교</span>
       <h2>선교하는 공동체를 이룹니다</h2>
       <p class="lede">선교는 억지로 짊어지는 의무가 아닙니다. 선교는 넘쳐흐르는 것입니다.</p>
-      <p style="margin-top:14px">죽어 있던 내 영혼이 예배와 말씀을 통해 살아나고 자라는 것을 체험하고 나면, 내가 아는 사람들도 이 은혜를 함께 누리면 좋겠다는 소망이 생깁니다. 작은 나에서 시작해, 큰 우리로 흘러갑니다.</p>
+      <p class="gap-p">죽어 있던 내 영혼이 예배와 말씀을 통해 살아나고 자라는 것을 체험하고 나면, 내가 아는 사람들도 이 은혜를 함께 누리면 좋겠다는 소망이 생깁니다. 작은 나에서 시작해, 큰 우리로 흘러갑니다.</p>
       <h3 class="group-h">첫째, 우리는 선교사로 살아갑니다</h3>
     </div>
     <div class="places">
@@ -672,7 +704,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
     <div class="wrap"><div class="doc">
       <span class="kicker">닫는 글</span>
       <h2>우리는 이렇게 함께 걸어갑니다</h2>
-      <p style="margin-top:14px">예배에서 하나님을 만나 살아난 영혼이, 배움을 통해 자라나고, 그 자라남이 넘쳐 선교로 흘러갑니다. 그리고 세상에서 복음을 살아낸 삶은 다시 예배의 자리로 돌아옵니다. 받고, 자라고, 흘려보내고, 다시 받는 이 순환이 우리가 교회로 서 있는 방식입니다.</p>
+      <p class="gap-p">예배에서 하나님을 만나 살아난 영혼이, 배움을 통해 자라나고, 그 자라남이 넘쳐 선교로 흘러갑니다. 그리고 세상에서 복음을 살아낸 삶은 다시 예배의 자리로 돌아옵니다. 받고, 자라고, 흘려보내고, 다시 받는 이 순환이 우리가 교회로 서 있는 방식입니다.</p>
       <p>우리가 부족해도 괜찮은 이유가 여기 있습니다. 우리를 자라게 하시는 분은 우리 자신이 아니라, 새롭게 하시는 하나님이시기 때문입니다.</p>
       <p class="confess">우리는 모두<br>다음세대 선교사입니다.</p>
       <p>이 길에 함께 서기로 한다면, 당신은 이미 우리의 동역자입니다. 함께 이 복음 위에, 이 사명으로, 하나님의 교회를 세워 갑시다.</p>
@@ -765,7 +797,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
         <div>
           <div class="head"><span class="eyebrow">Home School</span><h2>홈스쿨: 가정이 배움의 기준이 되는 자리</h2></div>
           <p style="font-family:var(--display);font-size:20px;line-height:1.6">자녀에게 학교(school)는 곧 가정(home)입니다.</p>
-          <div class="letter" style="margin-top:14px">
+          <div class="letter gap-p">
             <p>가정은 다음 세대가 복음을 가장 먼저 배우는 첫 학교입니다. 그래서 우리 교회는 홈스쿨을 지향합니다. 이것은 모든 자녀를 반드시 집에서만 가르친다는 뜻이 아닙니다. 학교를 다니든 학원을 다니든, 배움의 기준이 되는 자리는 언제나 가정이라는 뜻입니다.</p>
             <p>자녀가 학교에 가는 것은 배움을 그곳에 위임하는 것이 아니라, 그곳으로 파송하는 것입니다. 학교는 세상을 배우는 자리이고, 자녀는 그곳에서 가정과 교회에서 배운 복음의 기준으로 살아내는 작은 선교사가 됩니다. 그러기 위해 부모가 먼저 복음으로 씨름하며 배우고, 그 배움이 일상에서 자녀에게 흘러가야 합니다.</p>
           </div>

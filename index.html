@@ -293,6 +293,19 @@ main section .wrap.two.keep{max-width:calc(1120px + 2 * max(16px, env(safe-area-
 .howto{margin:0;padding-left:22px;display:grid;gap:12px}
 .howto li::marker{color:var(--gold);font-weight:700}
 .series30{margin:0;padding-left:20px;display:grid;gap:6px}
+/* 서로를 축복하는 30일 */
+.book-top{display:grid;grid-template-columns:150px 1fr;gap:28px;align-items:start;margin-bottom:8px}
+.book-top>div{min-width:0;display:grid;gap:10px}
+.book-top h2{font-size:clamp(26px,3.6vw,34px)}
+.book-cover{width:150px;height:auto;max-width:100%;border-radius:6px;box-shadow:0 10px 24px rgba(60,30,20,.16)}
+@media (max-width:560px){.book-top{grid-template-columns:96px 1fr;gap:18px}.book-cover{width:96px}}
+.b-h{font-size:20px;margin:48px 0 16px}
+.pages{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+.pages a{flex:0 0 min(300px,78%);scroll-snap-align:start}
+.pages img{display:block;width:100%;height:auto;max-width:100%;border-radius:8px;border:1px solid var(--line);box-shadow:0 6px 18px rgba(20,30,50,.08);background:#fff}
+.buy{margin-top:32px;padding:18px 22px;border-radius:14px;border:1px solid var(--gold);background:var(--surface);line-height:1.8}
+.buy span{display:inline-block;font-weight:700;color:var(--gold)}
+.series30 a{color:inherit}
 /* faq */
 .faq{display:grid;gap:12px}
 .faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
@@ -1089,7 +1102,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
           <h3 style="font-size:22px;margin-bottom:18px">교회가 돕는 것</h3>
           <div class="tbl kv"><table><tbody>
             <tr><td>함께 드리는 예배</td><td>영유아부터 초등학생까지 주일 오후 4시 주일예배를 부모와 함께 드립니다</td></tr>
-            <tr><td>서로를 축복하는<br>30일 시리즈</td><td><ol class="series30"><li>아내가 먼저 믿은 가정</li><li>남편이 먼저 믿은 가정</li><li>함께 자라는 가정</li><li>10대 자녀와 함께하는 가정</li><li>우리 아기를 위한 축복</li></ol></td></tr>
+            <tr><td>서로를 축복하는<br>30일 시리즈</td><td><ol class="series30"><li><a href="#bless-1">아내가 먼저 믿은 가정</a></li><li><a href="#bless-2">남편이 먼저 믿은 가정</a></li><li><a href="#bless-3">함께 자라는 가정</a></li><li><a href="#bless-4">10대 자녀와 함께하는 가정</a></li><li><a href="#bless-5">우리 아기를 위한 축복</a></li></ol><a class="pray-link" href="#blessing">맛보기 · 책 안내 보기 →</a></td></tr>
             <tr><td>말씀 암송</td><td>주일 설교 본문에서 뽑은 구절을 암송 노트에 적고 외웁니다</td></tr>
             <tr><td>유아세례</td><td>만 3세까지, 부모 교육 후 시행. 문의는 담임목사에게</td></tr>
           </tbody></table></div>
@@ -1188,6 +1201,88 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
         </div>
         <a class="btn line" href="#homeschool">홈스쿨 보기 →</a>
       </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= 4-1. 서로를 축복하는 30일 ================= -->
+<div data-view="blessing" id="blessing" hidden>
+  <div class="pagehead"><div class="wrap">
+    <span class="eyebrow">가정예배 자료 · 다음세대교회</span>
+    <h1>서로를 축복하는 30일</h1>
+    <p>가정이 매일 마주 앉아 손을 잡고,<br>30일 동안 말씀 위에서 서로를 축복하며 기도하도록 돕는 기도문 시리즈입니다.<br>전체 30일 기도문은 책으로 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다.</p>
+    <div class="chips" role="navigation" aria-label="책 목록"><a href="#bless-1">01 아내가 먼저 믿은 가정</a><a href="#bless-2">02 남편이 먼저 믿은 가정</a><a href="#bless-3">03 함께 자라는 가정</a><a href="#bless-4">04 10대 자녀와 함께하는 가정</a><a href="#bless-5">05 우리 아기를 위한 축복</a></div>
+    <p style="margin-top:22px"><a class="pray-back" style="color:#fff" href="#family-worship">← 가정에서 함께 예배합니다</a></p>
+  </div></div>
+
+  <section id="bless-1">
+    <div class="wrap">
+      <div class="book-top">
+        <img class="book-cover" src="images/blessing/b1-cover.jpg" alt="아내가 먼저 믿은 가정 표지" width="360" height="520" loading="lazy">
+        <div><span class="eyebrow">부부 축복 기도문 · 01</span><h2>아내가 먼저 믿은 가정</h2><p class="muted">아내가 먼저 예수님을 믿고, 남편은 아직 하나님을 알아가는 부부를 위한 30일 축복 기도문입니다.<br>부부가 매일 마주 앉아 서로를 위해 축복하며 읽습니다.<br>하나님이 누구신지에서 시작해 예수 그리스도의 십자가와 부활, 믿음의 고백까지 복음의 큰 줄기를 따라갑니다.</p></div>
+      </div>
+      <h3 class="b-h">30일의 흐름</h3>
+      <div class="tbl"><table><thead><tr><th>기간</th><th>주제</th><th>내용</th></tr></thead><tbody><tr><td>1–5일</td><td>하나님은 누구신가</td><td>우리를 지으시고 아시고 사랑하시는 하나님</td></tr><tr><td>6–10일</td><td>사람과 깨어짐</td><td>하나님의 형상, 죄, 하나님과의 단절</td></tr><tr><td>11–15일</td><td>예수님은 누구신가</td><td>사람이 되어 오신 하나님, 그분의 삶과 말씀</td></tr><tr><td>16–20일</td><td>십자가</td><td>우리 대신 죽으신 예수님, 용서</td></tr><tr><td>21–25일</td><td>부활과 새 생명</td><td>다시 사신 예수님, 새로운 시작</td></tr><tr><td>26–30일</td><td>믿음과 고백</td><td>은혜를 받아들이고 함께 걷는 가정</td></tr></tbody></table></div>
+      <h3 class="b-h">맛보기 · 1–2일차</h3>
+      <p class="muted" style="font-size:14px;margin-bottom:14px">책의 실제 쪽입니다. 옆으로 넘겨 보시고, 누르면 크게 볼 수 있습니다.</p>
+      <div class="pages"><a href="images/blessing/b1-p08.jpg" target="_blank" rel="noopener"><img src="images/blessing/b1-p08.jpg" alt="아내가 먼저 믿은 가정 1일차 1쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b1-p09.jpg" target="_blank" rel="noopener"><img src="images/blessing/b1-p09.jpg" alt="아내가 먼저 믿은 가정 1일차 2쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b1-p10.jpg" target="_blank" rel="noopener"><img src="images/blessing/b1-p10.jpg" alt="아내가 먼저 믿은 가정 2일차 3쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b1-p11.jpg" target="_blank" rel="noopener"><img src="images/blessing/b1-p11.jpg" alt="아내가 먼저 믿은 가정 2일차 4쪽" width="760" height="1100" loading="lazy"></a></div>
+      <p class="buy">전체 30일 기도문은 책으로 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다. <span>문의 010-2605-0309</span></p>
+    </div>
+  </section>
+  <section class="alt" id="bless-2">
+    <div class="wrap">
+      <div class="book-top">
+        <img class="book-cover" src="images/blessing/b2-cover.jpg" alt="남편이 먼저 믿은 가정 표지" width="360" height="520" loading="lazy">
+        <div><span class="eyebrow">부부 축복 기도문 · 02</span><h2>남편이 먼저 믿은 가정</h2><p class="muted">남편이 먼저 예수님을 믿고, 아내는 아직 하나님을 알아가는 부부를 위한 30일 축복 기도문입니다.<br>부부가 매일 마주 앉아 서로를 위해 축복하며 읽습니다.<br>남편은 믿음의 고백으로, 아내는 하나님을 찾는 정직한 언어로 서로를 축복하며 복음의 큰 줄기를 따라갑니다.</p></div>
+      </div>
+      <h3 class="b-h">30일의 흐름</h3>
+      <div class="tbl"><table><thead><tr><th>기간</th><th>주제</th><th>내용</th></tr></thead><tbody><tr><td>1–5일</td><td>하나님은 누구신가</td><td>우리를 지으시고 아시고 사랑하시는 하나님</td></tr><tr><td>6–10일</td><td>사람과 깨어짐</td><td>하나님의 형상, 죄, 하나님과의 단절</td></tr><tr><td>11–15일</td><td>예수님은 누구신가</td><td>사람이 되어 오신 하나님, 그분의 삶과 말씀</td></tr><tr><td>16–20일</td><td>십자가</td><td>우리 대신 죽으신 예수님, 용서</td></tr><tr><td>21–25일</td><td>부활과 새 생명</td><td>다시 사신 예수님, 새로운 시작</td></tr><tr><td>26–30일</td><td>믿음과 고백</td><td>은혜를 받아들이고 함께 걷는 가정</td></tr></tbody></table></div>
+      <h3 class="b-h">맛보기 · 1–2일차</h3>
+      <p class="muted" style="font-size:14px;margin-bottom:14px">책의 실제 쪽입니다. 옆으로 넘겨 보시고, 누르면 크게 볼 수 있습니다.</p>
+      <div class="pages"><a href="images/blessing/b2-p08.jpg" target="_blank" rel="noopener"><img src="images/blessing/b2-p08.jpg" alt="남편이 먼저 믿은 가정 1일차 1쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b2-p09.jpg" target="_blank" rel="noopener"><img src="images/blessing/b2-p09.jpg" alt="남편이 먼저 믿은 가정 1일차 2쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b2-p10.jpg" target="_blank" rel="noopener"><img src="images/blessing/b2-p10.jpg" alt="남편이 먼저 믿은 가정 2일차 3쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b2-p11.jpg" target="_blank" rel="noopener"><img src="images/blessing/b2-p11.jpg" alt="남편이 먼저 믿은 가정 2일차 4쪽" width="760" height="1100" loading="lazy"></a></div>
+      <p class="buy">전체 30일 기도문은 책으로 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다. <span>문의 010-2605-0309</span></p>
+    </div>
+  </section>
+  <section id="bless-3">
+    <div class="wrap">
+      <div class="book-top">
+        <img class="book-cover" src="images/blessing/b3-cover.jpg" alt="함께 자라는 가정 표지" width="360" height="520" loading="lazy">
+        <div><span class="eyebrow">부부 축복 기도문 · 03</span><h2>함께 자라는 가정</h2><p class="muted">함께 예수님을 믿는 신혼부부가 30일 동안 말씀 위에서 서로를 축복하며,<br>믿음과 부부의 사랑이 함께 자라도록 돕는 기도문입니다.<br>“오직 우리 주 곧 구주 예수 그리스도의 은혜와 그를 아는 지식에서 자라 가라”는 말씀(벧후 3:18)을 따라 함께 자라는 길입니다.</p></div>
+      </div>
+      <h3 class="b-h">30일의 흐름</h3>
+      <div class="tbl"><table><thead><tr><th>기간</th><th>주제</th><th>내용</th></tr></thead><tbody><tr><td>1–5일</td><td>은혜 위에 세운 집</td><td>우리 가정의 기초는 그리스도의 은혜입니다</td></tr><tr><td>6–10일</td><td>언약으로 맺은 한 몸</td><td>결혼은 하나님 앞에서 맺은 언약입니다</td></tr><tr><td>11–15일</td><td>사랑과 존경</td><td>그리스도를 닮은 남편과 아내의 부르심</td></tr><tr><td>16–20일</td><td>말과 갈등과 용서</td><td>다툼을 은혜로 다루는 법</td></tr><tr><td>21–25일</td><td>함께 드리는 예배와 기도</td><td>말씀과 기도가 있는 가정</td></tr><tr><td>26–30일</td><td>함께 걷는 소명과 다음세대</td><td>우리 가정을 통해 하실 하나님의 일</td></tr></tbody></table></div>
+      <h3 class="b-h">맛보기 · 1–2일차</h3>
+      <p class="muted" style="font-size:14px;margin-bottom:14px">책의 실제 쪽입니다. 옆으로 넘겨 보시고, 누르면 크게 볼 수 있습니다.</p>
+      <div class="pages"><a href="images/blessing/b3-p08.jpg" target="_blank" rel="noopener"><img src="images/blessing/b3-p08.jpg" alt="함께 자라는 가정 1일차 1쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b3-p09.jpg" target="_blank" rel="noopener"><img src="images/blessing/b3-p09.jpg" alt="함께 자라는 가정 1일차 2쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b3-p10.jpg" target="_blank" rel="noopener"><img src="images/blessing/b3-p10.jpg" alt="함께 자라는 가정 2일차 3쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b3-p11.jpg" target="_blank" rel="noopener"><img src="images/blessing/b3-p11.jpg" alt="함께 자라는 가정 2일차 4쪽" width="760" height="1100" loading="lazy"></a></div>
+      <p class="buy">전체 30일 기도문은 책으로 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다. <span>문의 010-2605-0309</span></p>
+    </div>
+  </section>
+  <section class="alt" id="bless-4">
+    <div class="wrap">
+      <div class="book-top">
+        <img class="book-cover" src="images/blessing/b4-cover.jpg" alt="10대 자녀와 함께하는 가정 표지" width="360" height="520" loading="lazy">
+        <div><span class="eyebrow">가족 축복 기도문 · 04</span><h2>10대 자녀와 함께하는 가정</h2><p class="muted">10대 자녀를 둔 가정이 30일 동안 매일 함께 모여 서로를 축복하며 기도하도록 돕는 책입니다.<br>부모는 자녀를 위해, 자녀는 부모와 형제를 위해 기도하고,<br>기도를 마치면 서로의 눈을 보며 축복의 말을 건넵니다.</p></div>
+      </div>
+      <h3 class="b-h">30일의 흐름</h3>
+      <div class="tbl"><table><thead><tr><th>기간</th><th>주제</th><th>내용</th></tr></thead><tbody><tr><td>1–5일</td><td>하나님이 부르신 너</td><td>비교, 외모, 자존감</td></tr><tr><td>6–10일</td><td>말씀 위에 서는 삶</td><td>스스로 믿는 믿음, 신앙의 질문</td></tr><tr><td>11–15일</td><td>마음과 몸을 지키는 지혜</td><td>마음, 미디어, 몸과 순결</td></tr><tr><td>16–20일</td><td>친구와 관계</td><td>친구, 형제, 외로움, 갈등</td></tr><tr><td>21–25일</td><td>넘어져도 돌아오는 집</td><td>실패, 부모와 자녀의 화해</td></tr><tr><td>26–30일</td><td>꿈과 부르심</td><td>진로, 미래, 부르심</td></tr></tbody></table></div>
+      <h3 class="b-h">맛보기 · 1–2일차</h3>
+      <p class="muted" style="font-size:14px;margin-bottom:14px">책의 실제 쪽입니다. 옆으로 넘겨 보시고, 누르면 크게 볼 수 있습니다.</p>
+      <div class="pages"><a href="images/blessing/b4-p08.jpg" target="_blank" rel="noopener"><img src="images/blessing/b4-p08.jpg" alt="10대 자녀와 함께하는 가정 1일차 1쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b4-p09.jpg" target="_blank" rel="noopener"><img src="images/blessing/b4-p09.jpg" alt="10대 자녀와 함께하는 가정 1일차 2쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b4-p10.jpg" target="_blank" rel="noopener"><img src="images/blessing/b4-p10.jpg" alt="10대 자녀와 함께하는 가정 2일차 3쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b4-p11.jpg" target="_blank" rel="noopener"><img src="images/blessing/b4-p11.jpg" alt="10대 자녀와 함께하는 가정 2일차 4쪽" width="760" height="1100" loading="lazy"></a></div>
+      <p class="buy">전체 30일 기도문은 책으로 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다. <span>문의 010-2605-0309</span></p>
+    </div>
+  </section>
+  <section id="bless-5">
+    <div class="wrap">
+      <div class="book-top">
+        <img class="book-cover" src="images/blessing/b5-cover.jpg" alt="우리 아기를 위한 축복 표지" width="360" height="520" loading="lazy">
+        <div><span class="eyebrow">가족 축복 기도문 · 05</span><h2>우리 아기를 위한 축복</h2><p class="muted">부모가 잠들기 전 아이를 품에 안고 30일 동안 축복하며 기도하도록 돕는 책입니다.<br>아직 말을 못 하는 아기부터 취학 전 아이까지 함께할 수 있습니다.<br>30일이 지나면 이 책은 아이가 자라서 받을 귀한 선물이 됩니다.</p></div>
+      </div>
+      <h3 class="b-h">30일의 흐름</h3>
+      <div class="tbl"><table><thead><tr><th>기간</th><th>주제</th><th>내용</th></tr></thead><tbody><tr><td>1–5일</td><td>하나님이 주신 선물</td><td>생명, 이름, 하나님의 자녀</td></tr><tr><td>6–10일</td><td>지키시는 하나님</td><td>잠과 쉼, 보호하심</td></tr><tr><td>11–15일</td><td>몸과 마음이 자라는 아이</td><td>건강, 마음, 먹고 자라기</td></tr><tr><td>16–20일</td><td>하나님을 사랑하는 아이</td><td>예수님, 말씀, 찬양</td></tr><tr><td>21–25일</td><td>사랑하고 나누는 아이</td><td>사랑, 친절, 나눔, 화평</td></tr><tr><td>26–30일</td><td>믿음을 물려주는 가정</td><td>믿음의 유산, 축복</td></tr></tbody></table></div>
+      <h3 class="b-h">맛보기 · 1–2일차</h3>
+      <p class="muted" style="font-size:14px;margin-bottom:14px">책의 실제 쪽입니다. 옆으로 넘겨 보시고, 누르면 크게 볼 수 있습니다.</p>
+      <div class="pages"><a href="images/blessing/b5-p08.jpg" target="_blank" rel="noopener"><img src="images/blessing/b5-p08.jpg" alt="우리 아기를 위한 축복 1일차 1쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b5-p09.jpg" target="_blank" rel="noopener"><img src="images/blessing/b5-p09.jpg" alt="우리 아기를 위한 축복 1일차 2쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b5-p10.jpg" target="_blank" rel="noopener"><img src="images/blessing/b5-p10.jpg" alt="우리 아기를 위한 축복 2일차 3쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b5-p11.jpg" target="_blank" rel="noopener"><img src="images/blessing/b5-p11.jpg" alt="우리 아기를 위한 축복 2일차 4쪽" width="760" height="1100" loading="lazy"></a></div>
+      <p class="buy">전체 30일 기도문은 책으로 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다. <span>문의 010-2605-0309</span></p>
     </div>
   </section>
 </div>
@@ -1402,7 +1497,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
   [].forEach.call(document.querySelectorAll('.fold-all'),function(b){ b.addEventListener('click',function(){ var on=b.getAttribute('data-open')==='1'; [].forEach.call(document.querySelectorAll('#direction details.fold'),function(d){ d.open=on; }); }); });
   var views=[].slice.call(document.querySelectorAll('[data-view]'));
   var navLinks=[].slice.call(document.querySelectorAll('[data-nav]'));
-  var parentOf={direction:'about',prayer:'news'};
+  var parentOf={direction:'about',prayer:'news',blessing:'nextgen'};
   function route(){
     var id=(location.hash||'#home').slice(1);
     var el=document.getElementById(id);

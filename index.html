@@ -153,6 +153,12 @@ section.alt{background:var(--band)}
   .tbl.kv td:first-child{width:6.5em;white-space:normal}
 }
 
+.tbl tr.go{cursor:pointer;transition:background .2s}
+.tbl tr.go:hover{background:var(--band)}
+.rowlink{color:inherit;text-decoration:none}
+.rowlink span{color:var(--accent);opacity:0;transition:opacity .2s}
+.tbl tr.go:hover .rowlink span,.rowlink:focus-visible span{opacity:1}
+@media (hover:none){.rowlink span{opacity:1}}
 /* greeting */
 .letter p+p{margin-top:34px}
 .letter{max-width:38em}
@@ -411,9 +417,9 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
         <div class="tbl"><table>
           <thead><tr><th>예배</th><th>시간</th><th>장소</th></tr></thead>
           <tbody>
-            <tr><td>주일예배</td><td>주일 오후 4시</td><td>컬티 (남구 화합로194번길 12-1, 2층)</td></tr>
-            <tr><td>지틴즈 청소년 연합예배</td><td>주일 오후 1시 30분</td><td>서린빌딩 5층 (중구 중앙길 91)</td></tr>
-            <tr><td>SU스쿨</td><td>매주 토요일 오전 9시–오후 4시</td><td>북구 상방로 131, 지상 2층</td></tr>
+            <tr class="go" data-href="#first-visit"><td><a class="rowlink" href="#first-visit">주일예배<span aria-hidden="true"> →</span></a></td><td>주일 오후 4시</td><td>컬티 (남구 화합로194번길 12-1, 2층)</td></tr>
+            <tr class="go" data-href="#youth"><td><a class="rowlink" href="#youth">지틴즈 청소년 연합예배<span aria-hidden="true"> →</span></a></td><td>주일 오후 1시 30분</td><td>서린빌딩 5층 (중구 중앙길 91)</td></tr>
+            <tr class="go" data-href="#suschool"><td><a class="rowlink" href="#suschool">SU스쿨<span aria-hidden="true"> →</span></a></td><td>매주 토요일 오전 9시–오후 4시</td><td>북구 상방로 131, 지상 2층</td></tr>
           </tbody>
         </table></div>
       </div>
@@ -767,10 +773,10 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <div class="tbl"><table>
         <thead><tr><th>예배 · 모임</th><th>시간</th><th>장소</th><th>대상</th></tr></thead>
         <tbody>
-          <tr><td>주일예배</td><td>주일 오후 4시</td><td>컬티 (화합로194번길 12-1, 2층)</td><td>온 세대</td></tr>
-          <tr><td>지틴즈 청소년 연합예배</td><td>주일 오후 1시 30분</td><td>서린빌딩 5층 (중구 중앙길 91)</td><td>중 · 고등학생</td></tr>
-          <tr><td>복살프 (청년 모임)</td><td>수요일 저녁 7시–9시</td><td>그때마다 안내</td><td>청년</td></tr>
-          <tr><td>SU스쿨</td><td>토요일 오전 9시–오후 4시</td><td>북구 상방로 131, 지상 2층</td><td>초등학생–고등학생</td></tr>
+          <tr class="go" data-href="#first-visit"><td><a class="rowlink" href="#first-visit">주일예배<span aria-hidden="true"> →</span></a></td><td>주일 오후 4시</td><td>컬티 (화합로194번길 12-1, 2층)</td><td>온 세대</td></tr>
+          <tr class="go" data-href="#youth"><td><a class="rowlink" href="#youth">지틴즈 청소년 연합예배<span aria-hidden="true"> →</span></a></td><td>주일 오후 1시 30분</td><td>서린빌딩 5층 (중구 중앙길 91)</td><td>중 · 고등학생</td></tr>
+          <tr class="go" data-href="#young-adults"><td><a class="rowlink" href="#young-adults">복살프 (청년 모임)<span aria-hidden="true"> →</span></a></td><td>수요일 저녁 7시–9시</td><td>그때마다 안내</td><td>청년</td></tr>
+          <tr class="go" data-href="#suschool"><td><a class="rowlink" href="#suschool">SU스쿨<span aria-hidden="true"> →</span></a></td><td>토요일 오전 9시–오후 4시</td><td>북구 상방로 131, 지상 2층</td><td>초등학생–고등학생</td></tr>
           <tr><td>공동체성경읽기</td><td>매일</td><td>온라인(단톡방)</td><td>전 성도</td></tr>
           <tr><td>성찬식</td><td>때마다 미리 공지</td><td>주일예배 중</td><td>세례교인 · 입교인</td></tr>
         </tbody>
@@ -1190,6 +1196,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
     window.addEventListener('hashchange',function(){ if(location.hash==='#prayer'){ box.scrollLeft=0; paint(); } });
     paint();
   })();
+  document.addEventListener('click',function(e){ var tr=e.target.closest('tr.go'); if(!tr||e.target.closest('a')) return; location.hash=tr.getAttribute('data-href'); });
   var views=[].slice.call(document.querySelectorAll('[data-view]'));
   var navLinks=[].slice.call(document.querySelectorAll('[data-nav]'));
   var parentOf={direction:'about',prayer:'news'};

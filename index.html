@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
 <meta name="description" content="울산에서 열방까지 다음세대를 살리는 교회. 대한예수교장로회(고신) 울산다음세대교회, 주일예배 오후 4시.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="울산다음세대교회">
@@ -308,6 +309,12 @@ main section .wrap.two.keep{max-width:calc(1120px + 2 * max(16px, env(safe-area-
 .series30 a{color:inherit}
 .acct-card{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;padding:22px 26px;display:grid;gap:4px}
 .acct-no{font-size:clamp(22px,3.4vw,28px);font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.btn.call{flex-wrap:wrap;justify-content:center;column-gap:8px;row-gap:2px;text-align:center}
+.btn.call b{font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.btn.call .call-who{opacity:.85;font-size:14px}
+@media (max-width:560px){.btn.call{display:flex;width:100%;border-radius:18px;padding:14px 20px}}
+.tel{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+footer .tel{color:#fff}
 /* faq */
 .faq{display:grid;gap:12px}
 .faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
@@ -550,7 +557,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <div class="welcome">
         <div>
           <h2>처음 오시는 분께</h2>
-          <p class="muted">교회가 처음이어도 괜찮습니다. 준비물도, 정해진 옷차림도 없습니다. 주일 오후 4시, 카페 같은 공간에서 함께 예배합니다. 오시기 전에 궁금한 것이 있으면 010-2605-0309로 편하게 물어 주세요. 새로 오신 분과는 처음 얼마간 우리 교회의 목회 방향을 함께 읽으며, 우리가 어떤 교회인지를 나눕니다.</p>
+          <p class="muted">교회가 처음이어도 괜찮습니다. 준비물도, 정해진 옷차림도 없습니다. 주일 오후 4시, 카페 같은 공간에서 함께 예배합니다. 오시기 전에 궁금한 것이 있으면 <a class="tel" href="tel:010-2605-0309">010-2605-0309</a>로 편하게 물어 주세요. 새로 오신 분과는 처음 얼마간 우리 교회의 목회 방향을 함께 읽으며, 우리가 어떤 교회인지를 나눕니다.</p>
         </div>
         <div class="btns" style="margin-top:0">
           <a class="btn primary" href="#location">오시는 길 →</a>
@@ -692,7 +699,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
           <tr><td>주소</td><td>울산광역시 남구 화합로194번길 12-1, 2층 (컬티)</td></tr>
           <tr><td>주차</td><td>건물 1층 주차장, 주변 공용주차장</td></tr>
           
-          <tr><td>문의</td><td>010-2605-0309</td></tr>
+          <tr><td>문의</td><td><a class="tel" href="tel:010-2605-0309">010-2605-0309</a></td></tr>
         </tbody></table></div>
         <p class="muted" style="margin-top:16px">주일 오후에는 건물 2층 컬티에서 예배합니다.<br>처음 오시면 입구에서 안내해 드립니다.<br>2027년에는 새 예배처소를 준비하고 있어,<br>장소가 바뀌면 이곳에 먼저 알리겠습니다.</p>
         <p class="gap-p"><a class="btn line" href="https://map.naver.com/p/search/%EC%9A%B8%EC%82%B0%20%EB%82%A8%EA%B5%AC%20%ED%99%94%ED%95%A9%EB%A1%9C194%EB%B2%88%EA%B8%B8%2012-1" target="_blank" rel="noopener">네이버 지도에서 보기 →</a></p>
@@ -1147,7 +1154,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
             <h2 style="font-size:clamp(26px,3.6vw,34px)">무도스포츠 SU스쿨</h2>
             <p class="muted">SU스쿨(Sports Unique)은 무도와 스포츠로 아이들을 만나는 기독교 주말 대안학교입니다.<br>스포츠로 달란트를 발견하고 복음으로 자라는 아이를 세우는 것이 목표이며,<br>교회에 다니지 않는 아이도 참여할 수 있습니다.<br>우리 교회는 홈스쿨의 마음을 함께 나누기 위해 이 학교를 섬깁니다.</p>
             <div class="btns">
-              <span class="btn primary">참여 문의 010-9811-0048 (서정은 교감)</span>
+              <a class="btn primary call" href="tel:010-9811-0048"><span class="nw">참여 문의</span> <b class="nw">010-9811-0048</b> <span class="nw call-who">서정은 교감</span></a>
               <a class="btn line" href="https://blog.naver.com/su_school" target="_blank" rel="noopener">SU스쿨 블로그 →</a>
               <a class="btn line" href="https://www.instagram.com/su_school_1004/" target="_blank" rel="noopener">SU스쿨 인스타그램 →</a>
             </div>
@@ -1239,7 +1246,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <h3 class="b-h">맛보기 · 1–2일차</h3>
       <p class="muted" style="font-size:14px;margin-bottom:14px">책의 실제 쪽입니다. 옆으로 넘겨 보시고, 누르면 크게 볼 수 있습니다.</p>
       <div class="pages"><a href="images/blessing/b1-p08.jpg" target="_blank" rel="noopener"><img src="images/blessing/b1-p08.jpg" alt="아내가 먼저 믿은 가정 1일차 1쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b1-p09.jpg" target="_blank" rel="noopener"><img src="images/blessing/b1-p09.jpg" alt="아내가 먼저 믿은 가정 1일차 2쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b1-p10.jpg" target="_blank" rel="noopener"><img src="images/blessing/b1-p10.jpg" alt="아내가 먼저 믿은 가정 2일차 3쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b1-p11.jpg" target="_blank" rel="noopener"><img src="images/blessing/b1-p11.jpg" alt="아내가 먼저 믿은 가정 2일차 4쪽" width="760" height="1100" loading="lazy"></a></div>
-      <p class="buy">전체 30일 기도문은 책으로 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다. <span>문의 010-2605-0309</span></p>
+      <p class="buy">전체 30일 기도문은 책으로 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다. <span>문의 <a class="tel" href="tel:010-2605-0309">010-2605-0309</a></span></p>
     </div>
   </section>
   <section class="alt" id="bless-2">
@@ -1253,7 +1260,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <h3 class="b-h">맛보기 · 1–2일차</h3>
       <p class="muted" style="font-size:14px;margin-bottom:14px">책의 실제 쪽입니다. 옆으로 넘겨 보시고, 누르면 크게 볼 수 있습니다.</p>
       <div class="pages"><a href="images/blessing/b2-p08.jpg" target="_blank" rel="noopener"><img src="images/blessing/b2-p08.jpg" alt="남편이 먼저 믿은 가정 1일차 1쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b2-p09.jpg" target="_blank" rel="noopener"><img src="images/blessing/b2-p09.jpg" alt="남편이 먼저 믿은 가정 1일차 2쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b2-p10.jpg" target="_blank" rel="noopener"><img src="images/blessing/b2-p10.jpg" alt="남편이 먼저 믿은 가정 2일차 3쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b2-p11.jpg" target="_blank" rel="noopener"><img src="images/blessing/b2-p11.jpg" alt="남편이 먼저 믿은 가정 2일차 4쪽" width="760" height="1100" loading="lazy"></a></div>
-      <p class="buy">전체 30일 기도문은 책으로 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다. <span>문의 010-2605-0309</span></p>
+      <p class="buy">전체 30일 기도문은 책으로 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다. <span>문의 <a class="tel" href="tel:010-2605-0309">010-2605-0309</a></span></p>
     </div>
   </section>
   <section id="bless-3">
@@ -1267,7 +1274,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <h3 class="b-h">맛보기 · 1–2일차</h3>
       <p class="muted" style="font-size:14px;margin-bottom:14px">책의 실제 쪽입니다. 옆으로 넘겨 보시고, 누르면 크게 볼 수 있습니다.</p>
       <div class="pages"><a href="images/blessing/b3-p08.jpg" target="_blank" rel="noopener"><img src="images/blessing/b3-p08.jpg" alt="함께 자라는 가정 1일차 1쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b3-p09.jpg" target="_blank" rel="noopener"><img src="images/blessing/b3-p09.jpg" alt="함께 자라는 가정 1일차 2쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b3-p10.jpg" target="_blank" rel="noopener"><img src="images/blessing/b3-p10.jpg" alt="함께 자라는 가정 2일차 3쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b3-p11.jpg" target="_blank" rel="noopener"><img src="images/blessing/b3-p11.jpg" alt="함께 자라는 가정 2일차 4쪽" width="760" height="1100" loading="lazy"></a></div>
-      <p class="buy">전체 30일 기도문은 책으로 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다. <span>문의 010-2605-0309</span></p>
+      <p class="buy">전체 30일 기도문은 책으로 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다. <span>문의 <a class="tel" href="tel:010-2605-0309">010-2605-0309</a></span></p>
     </div>
   </section>
   <section class="alt" id="bless-4">
@@ -1281,7 +1288,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <h3 class="b-h">맛보기 · 1–2일차</h3>
       <p class="muted" style="font-size:14px;margin-bottom:14px">책의 실제 쪽입니다. 옆으로 넘겨 보시고, 누르면 크게 볼 수 있습니다.</p>
       <div class="pages"><a href="images/blessing/b4-p08.jpg" target="_blank" rel="noopener"><img src="images/blessing/b4-p08.jpg" alt="10대 자녀와 함께하는 가정 1일차 1쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b4-p09.jpg" target="_blank" rel="noopener"><img src="images/blessing/b4-p09.jpg" alt="10대 자녀와 함께하는 가정 1일차 2쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b4-p10.jpg" target="_blank" rel="noopener"><img src="images/blessing/b4-p10.jpg" alt="10대 자녀와 함께하는 가정 2일차 3쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b4-p11.jpg" target="_blank" rel="noopener"><img src="images/blessing/b4-p11.jpg" alt="10대 자녀와 함께하는 가정 2일차 4쪽" width="760" height="1100" loading="lazy"></a></div>
-      <p class="buy">전체 30일 기도문은 책으로 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다. <span>문의 010-2605-0309</span></p>
+      <p class="buy">전체 30일 기도문은 책으로 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다. <span>문의 <a class="tel" href="tel:010-2605-0309">010-2605-0309</a></span></p>
     </div>
   </section>
   <section id="bless-5">
@@ -1295,7 +1302,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <h3 class="b-h">맛보기 · 1–2일차</h3>
       <p class="muted" style="font-size:14px;margin-bottom:14px">책의 실제 쪽입니다. 옆으로 넘겨 보시고, 누르면 크게 볼 수 있습니다.</p>
       <div class="pages"><a href="images/blessing/b5-p08.jpg" target="_blank" rel="noopener"><img src="images/blessing/b5-p08.jpg" alt="우리 아기를 위한 축복 1일차 1쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b5-p09.jpg" target="_blank" rel="noopener"><img src="images/blessing/b5-p09.jpg" alt="우리 아기를 위한 축복 1일차 2쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b5-p10.jpg" target="_blank" rel="noopener"><img src="images/blessing/b5-p10.jpg" alt="우리 아기를 위한 축복 2일차 3쪽" width="760" height="1100" loading="lazy"></a><a href="images/blessing/b5-p11.jpg" target="_blank" rel="noopener"><img src="images/blessing/b5-p11.jpg" alt="우리 아기를 위한 축복 2일차 4쪽" width="760" height="1100" loading="lazy"></a></div>
-      <p class="buy">전체 30일 기도문은 책으로 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다. <span>문의 010-2605-0309</span></p>
+      <p class="buy">전체 30일 기도문은 책으로 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다. <span>문의 <a class="tel" href="tel:010-2605-0309">010-2605-0309</a></span></p>
     </div>
   </section>
 </div>
@@ -1355,7 +1362,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
           <p class="p-big">“하나님,<br>친구들이 찾아오고,<br>복음으로 살아나고,<br>세상으로 보냄받는 공간을 허락해 주세요.”</p>
           <p class="p-verse">“너희는 먼저 그의 나라와 그의 의를 구하라 그리하면 이 모든 것을 너희에게 더하시리라”<cite>마태복음 6:33</cite></p>
           <p class="p-amen">모든 것을 새롭게 하시는<br>예수님의 이름으로 기도합니다. 아멘.</p>
-          <p class="p-after">함께 기도해 주셔서 고맙습니다. 기도편지를 받고 싶으신 분은 010-2605-0309로 알려 주세요.</p></article>
+          <p class="p-after">함께 기도해 주셔서 고맙습니다. 기도편지를 받고 싶으신 분은 <a class="tel" href="tel:010-2605-0309">010-2605-0309</a>로 알려 주세요.</p></article>
       </div>
       <div class="pray-nav">
         <button type="button" id="pPrev" aria-label="이전 기도">←</button>
@@ -1424,7 +1431,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <div>
         <div class="head"><span class="eyebrow">Join</span><h2>함께하는 방법</h2></div>
         <div class="tbl kv"><table><tbody>
-          <tr><td>기도</td><td>기도제목을 정기적으로 나눕니다. 기도편지를 받고 싶으신 분은 010-2605-0309로 알려 주세요.</td></tr>
+          <tr><td>기도</td><td>기도제목을 정기적으로 나눕니다. 기도편지를 받고 싶으신 분은 <a class="tel" href="tel:010-2605-0309">010-2605-0309</a>로 알려 주세요.</td></tr>
           <tr><td>참여</td><td>SU스쿨 강사, 캠프 스태프, 찬양과 교육 봉사로 함께하실 수 있습니다.</td></tr>
           <tr><td>흘려보내기</td><td>받은 것에서 일정한 몫을 미리 떼어 선교와 구제를 위해 흘려보냅니다. 큰 액수가 아니어도 좋습니다. 보내 주신 후원은 다음세대 사역과 선교사 후원, 새 예배처소 준비에 사용합니다.</td></tr>
         </tbody></table></div>
@@ -1470,7 +1477,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <ul class="facts" style="margin-top:28px">
         <li>입금자명은 <b>이름 + 두세 글자</b>로 짧게 적어 주세요.<br>은행에 따라 입금자명 글자 수가 제한될 수 있습니다.</li>
         
-        <li>헌금 · 후원 문의: 010-2605-0309</li>
+        <li>헌금 · 후원 문의: <a class="tel" href="tel:010-2605-0309">010-2605-0309</a></li>
       </ul>
     </div>
   </section>
@@ -1485,8 +1492,8 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
         <b>울산다음세대교회</b>
         <p style="margin-top:8px">대한예수교장로회(고신) · 담임 고영석 목사</p>
         <p>울산광역시 남구 화합로194번길 12-1, 2층 · 주일예배 오후 4시</p>
-        <p>문의 010-2605-0309</p>
-        <p>SU스쿨 문의 010-9811-0048 (서정은 교감)</p>
+        <p>문의 <a class="tel" href="tel:010-2605-0309">010-2605-0309</a></p>
+        <p>SU스쿨 문의 <a class="tel" href="tel:010-9811-0048">010-9811-0048</a> (서정은 교감)</p>
         <p>후원 농협 301-0331-9920-11 (예금주: 울산다음세대교회) · <a href="#giving">자세히 보기</a></p>
       </div>
       <div><span class="h">바로가기</span><ul><li><a href="#direction">목회 방향</a></li><li><a href="#schedule">예배 안내</a></li><li><a href="#homeschool">홈스쿨</a></li><li><a href="#suschool">SU스쿨</a></li><li><a href="#notices">교회 소식</a></li><li><a href="#location">오시는 길</a></li></ul></div>

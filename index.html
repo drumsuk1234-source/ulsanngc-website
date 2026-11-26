@@ -313,15 +313,23 @@ main section .wrap.two.keep{max-width:calc(1120px + 2 * max(16px, env(safe-area-
 .faq details p{margin-top:8px;color:var(--muted)}
 
 /* sermon list */
-.sermons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-@media (max-width:900px){.sermons{grid-template-columns:1fr}}
+.sermons{display:grid;grid-template-columns:1fr;gap:18px}
+.sermon{display:grid;grid-template-columns:220px 1fr;gap:26px;align-items:center}
+.sermon .s-body{min-width:0;display:grid;gap:4px}
+.sermon .thumb{margin-bottom:0!important}
+.s-meta{margin:10px 0 0;display:grid;gap:4px;font-size:14px}
+.s-meta>div{display:grid;grid-template-columns:3em 1fr;gap:8px}
+.s-meta dt{color:var(--muted)}
+.s-meta dd{margin:0;color:var(--ink)}
+.nw{display:inline-block;white-space:nowrap}
+@media (max-width:640px){.sermon{grid-template-columns:1fr;gap:16px}}
 .sermon .thumb{aspect-ratio:16/9;max-width:100%;border-radius:10px;background:linear-gradient(135deg,var(--dawn-2),var(--dawn-1));display:grid;place-items:center;margin-bottom:12px}
 .play{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center}
 .play::after{content:"";border-left:15px solid #16223a;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
 .sermon time{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
 .sermon h4{font-size:18px;margin:2px 0}
 .sermon p{font-size:14px;color:var(--muted)}
-.sermon .series{display:block;font-size:12px;font-weight:700;color:var(--gold);letter-spacing:.04em;margin-top:6px}
+.sermon .series{display:block;font-size:12px;font-weight:700;color:var(--gold);letter-spacing:.04em;margin-top:6px;word-break:keep-all}
 .sermon .hymn{margin-top:4px}
 .sermon time .pin{margin-right:8px}
 
@@ -1015,13 +1023,16 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <div class="sermons">
         <a class="card sermon" style="text-decoration:none;color:inherit" href="https://www.youtube.com/@울산다음세대교회" target="_blank" rel="noopener">
           <div class="thumb"><span class="play"></span></div>
-          <time><span class="pin">이번 주일</span>2026. 11. 29.(주일)</time><span class="series">시리즈 · 돌에 맞은 사람을 위한 복음 (2)</span><h4>누가 나를 고칩니까</h4><p>베드로전서 2:22–25 · 고영석 목사</p><p class="hymn">찬송 570장 「주는 나를 기르시는 목자」</p></a>
+          <div class="s-body"><time><span class="pin">이번 주일</span>2026. 11. 29.(주일)</time><span class="series"><span class="nw">돌에 맞은 사람을 위한 복음</span>&nbsp;<span class="nw">(2)</span></span><h4>누가 나를 고칩니까</h4>
+          <dl class="s-meta"><div><dt>본문</dt><dd class="nw">베드로전서 2:22–25</dd></div><div><dt>설교</dt><dd class="nw">고영석 목사</dd></div><div><dt>찬송</dt><dd><span class="nw">570장</span> <span class="nw">「주는 나를 기르시는 목자」</span></dd></div></dl></div></a>
         <a class="card sermon" style="text-decoration:none;color:inherit" href="https://www.youtube.com/@울산다음세대교회" target="_blank" rel="noopener">
           <div class="thumb"><span class="play"></span></div>
-          <time>2026. 11. 22.(주일)</time><span class="series">시리즈 · 돌에 맞은 사람을 위한 복음 (1)</span><h4>누구를 먼저 봅니까</h4><p>사무엘상 1:6–18 · 고영석 목사</p><p class="hymn">찬송 369장 「죄짐 맡은 우리 구주」</p></a>
+          <div class="s-body"><time>2026. 11. 22.(주일)</time><span class="series"><span class="nw">돌에 맞은 사람을 위한 복음</span>&nbsp;<span class="nw">(1)</span></span><h4>누구를 먼저 봅니까</h4>
+          <dl class="s-meta"><div><dt>본문</dt><dd class="nw">사무엘상 1:6–18</dd></div><div><dt>설교</dt><dd class="nw">고영석 목사</dd></div><div><dt>찬송</dt><dd><span class="nw">369장</span> <span class="nw">「죄짐 맡은 우리 구주」</span></dd></div></dl></div></a>
         <a class="card sermon" style="text-decoration:none;color:inherit" href="https://www.youtube.com/@울산다음세대교회" target="_blank" rel="noopener">
           <div class="thumb"><span class="play"></span></div>
-          <time>2026. 11. 8.(주일)</time><h4>내 계획에 없는 계획</h4><p>야고보서 4:13–17 · 고영석 목사</p></a>
+          <div class="s-body"><time>2026. 11. 8.(주일)</time><h4>내 계획에 없는 계획</h4>
+          <dl class="s-meta"><div><dt>본문</dt><dd class="nw">야고보서 4:13–17</dd></div><div><dt>설교</dt><dd class="nw">고영석 목사</dd></div></dl></div></a>
       </div>
       <p style="margin-top:18px"><a class="btn primary" href="https://www.youtube.com/@울산다음세대교회" target="_blank" rel="noopener">유튜브 채널 가기 →</a></p>
     </div>

@@ -318,6 +318,10 @@ main section .wrap.two.keep{max-width:calc(1120px + 2 * max(16px, env(safe-area-
 .btn.call{display:flex;width:100%;border-radius:18px;padding:14px 20px}}
 .tel{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
 footer .tel{color:#fff}
+.stages .card h3{font-size:20px;margin:4px 0 12px}
+.toc{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:15px}
+.toc li{display:grid;grid-template-columns:2.2em 1fr;gap:6px}
+.toc .wd{color:var(--gold);font-weight:700;font-variant-numeric:tabular-nums}
 /* faq */
 .faq{display:grid;gap:12px}
 .faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
@@ -547,7 +551,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
         <div class="head" style="margin-bottom:14px"><span class="eyebrow">News</span><h2>교회 소식</h2></div>
         <ul class="news pair">
           <li><time>2026. 12. 6.</time><div><small class="kick">성례</small><b>입교 · 세례식 안내</b><p>12월 첫째 주일 예배 중</p></div></li>
-          <li><time>2026. 12.</time><div><small class="kick">기도 소책자</small><b>「말씀 앞에서 드리는 30일 기도」</b><p>30일 기도문 소책자 나눔</p></div></li>
+          <li><time>2026. 12.</time><div><small class="kick">기도 소책자</small><b><a href="#word-prayer" style="color:inherit">「말씀 앞에서 드리는 30일 기도」</a></b><p><a href="#word-prayer">맛보기 · 책 안내 →</a></p></div></li>
           <li><time>상시</time><div><small class="kick"><span class="pin">기도</span>함께 기도해 주세요</small><b><a href="#prayer" style="color:inherit">2027년 새 예배처소를 위한 기도</a></b><p><a href="#prayer">기도제목 보기 →</a></p></div></li>
         </ul>
         <p class="gap-p"><a class="btn line" href="#notices">소식 더 보기 →</a></p>
@@ -1317,7 +1321,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <div class="head"><span class="eyebrow">Notice</span><h2>공지 · 주보</h2><p>공지 · 주보 · 행사 안내 · 기도제목</p></div>
       <ul class="news">
         <li><time>2026. 12. 6.(주일)</time><div><b><span class="pin">고정</span>입교 · 세례식 안내</b><p>12월 첫째 주일 예배 중에 입교 · 세례식이 있습니다. 교회의 첫 성례를 함께 기뻐해 주세요.</p></div></li>
-        <li><time>2026. 12.</time><div><b>「말씀 앞에서 드리는 30일 기도」 안내</b><p>성경 읽기와 설교, 큐티 앞에 드리는 30일 기도문 소책자를 나눕니다.</p></div></li>
+        <li><time>2026. 12.</time><div><b><a href="#word-prayer" style="color:inherit">「말씀 앞에서 드리는 30일 기도」 안내</a></b><p>성경 읽기와 설교, 큐티 앞에 드리는 30일 기도문 소책자를 나눕니다.</p><a class="pray-link" href="#word-prayer">맛보기 · 책 안내 보기 →</a></div></li>
         <li><time>2027. 1. 22.–23.</time><div><b>GCN 청년복음캠프 “WHO'S YOUR KING?”</b><p>밀양 소명수련원, 1박 2일. 등록 안내는 추후 공지합니다.</p></div></li>
         
         <li><time>매년</time><div><b>목회 방향 함께 읽기</b><p>매년 우리는 목회 방향을 함께 읽고 나눕니다. <a href="#direction">목회 방향 보기</a></p></div></li>
@@ -1379,6 +1383,57 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <div class="head"><span class="eyebrow">Prayer Cards</span><h2>기도 카드 내려받기</h2><p>카톡 프로필이나 휴대폰 배경으로 두고 매일 기도해 주세요.<br>카드를 누르면 크게 보이고, 휴대폰에서는 길게 눌러 저장할 수 있습니다.</p></div>
       <ul class="cards"><li><a href="images/prayer/prayer-01.jpg" target="_blank" rel="noopener"><img src="images/prayer/thumb-01.jpg" alt="예배처소 기도 카드 1 / 11" width="180" height="320" loading="lazy"></a><a class="dl" href="images/prayer/prayer-01.jpg" download="예배처소기도_01.jpg">저장 1</a></li><li><a href="images/prayer/prayer-02.jpg" target="_blank" rel="noopener"><img src="images/prayer/thumb-02.jpg" alt="예배처소 기도 카드 2 / 11" width="180" height="320" loading="lazy"></a><a class="dl" href="images/prayer/prayer-02.jpg" download="예배처소기도_02.jpg">저장 2</a></li><li><a href="images/prayer/prayer-03.jpg" target="_blank" rel="noopener"><img src="images/prayer/thumb-03.jpg" alt="예배처소 기도 카드 3 / 11" width="180" height="320" loading="lazy"></a><a class="dl" href="images/prayer/prayer-03.jpg" download="예배처소기도_03.jpg">저장 3</a></li><li><a href="images/prayer/prayer-04.jpg" target="_blank" rel="noopener"><img src="images/prayer/thumb-04.jpg" alt="예배처소 기도 카드 4 / 11" width="180" height="320" loading="lazy"></a><a class="dl" href="images/prayer/prayer-04.jpg" download="예배처소기도_04.jpg">저장 4</a></li><li><a href="images/prayer/prayer-05.jpg" target="_blank" rel="noopener"><img src="images/prayer/thumb-05.jpg" alt="예배처소 기도 카드 5 / 11" width="180" height="320" loading="lazy"></a><a class="dl" href="images/prayer/prayer-05.jpg" download="예배처소기도_05.jpg">저장 5</a></li><li><a href="images/prayer/prayer-06.jpg" target="_blank" rel="noopener"><img src="images/prayer/thumb-06.jpg" alt="예배처소 기도 카드 6 / 11" width="180" height="320" loading="lazy"></a><a class="dl" href="images/prayer/prayer-06.jpg" download="예배처소기도_06.jpg">저장 6</a></li><li><a href="images/prayer/prayer-07.jpg" target="_blank" rel="noopener"><img src="images/prayer/thumb-07.jpg" alt="예배처소 기도 카드 7 / 11" width="180" height="320" loading="lazy"></a><a class="dl" href="images/prayer/prayer-07.jpg" download="예배처소기도_07.jpg">저장 7</a></li><li><a href="images/prayer/prayer-08.jpg" target="_blank" rel="noopener"><img src="images/prayer/thumb-08.jpg" alt="예배처소 기도 카드 8 / 11" width="180" height="320" loading="lazy"></a><a class="dl" href="images/prayer/prayer-08.jpg" download="예배처소기도_08.jpg">저장 8</a></li><li><a href="images/prayer/prayer-09.jpg" target="_blank" rel="noopener"><img src="images/prayer/thumb-09.jpg" alt="예배처소 기도 카드 9 / 11" width="180" height="320" loading="lazy"></a><a class="dl" href="images/prayer/prayer-09.jpg" download="예배처소기도_09.jpg">저장 9</a></li><li><a href="images/prayer/prayer-10.jpg" target="_blank" rel="noopener"><img src="images/prayer/thumb-10.jpg" alt="예배처소 기도 카드 10 / 11" width="180" height="320" loading="lazy"></a><a class="dl" href="images/prayer/prayer-10.jpg" download="예배처소기도_10.jpg">저장 10</a></li><li><a href="images/prayer/prayer-11.jpg" target="_blank" rel="noopener"><img src="images/prayer/thumb-11.jpg" alt="예배처소 기도 카드 11 / 11" width="180" height="320" loading="lazy"></a><a class="dl" href="images/prayer/prayer-11.jpg" download="예배처소기도_11.jpg">저장 11</a></li></ul>
       <p class="gap-p"><a class="btn primary" href="images/prayer/prayer-cards.zip" download="예배처소기도_카드11장.zip">11장 한꺼번에 내려받기 (ZIP)</a></p>
+    </div>
+  </section>
+</div>
+
+<!-- ================= 5-2. 말씀 앞에서 드리는 30일 기도 ================= -->
+<div data-view="word-prayer" id="word-prayer" hidden>
+  <div class="pagehead"><div class="wrap">
+    <span class="eyebrow">30 Days of Prayer · 울산다음세대교회</span>
+    <h1>말씀 앞에서 드리는 30일 기도</h1>
+    <p>읽기 전에, 듣기 전에, 살아 내기 전에 드리는 기도<br>책 전체는 교회에서 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다.</p>
+    <p style="margin-top:22px"><a class="pray-back" style="color:#fff" href="#notices">← 교회 소식</a></p>
+  </div></div>
+
+  <section id="wp-about">
+    <div class="wrap">
+      <div class="book-top">
+        <img class="book-cover" src="images/word/cover.jpg" alt="말씀 앞에서 드리는 30일 기도 표지" width="360" height="520" loading="lazy">
+        <div><span class="eyebrow">이 책은</span><h2>말씀 앞에 서기 전에<br>드리는 기도의 책</h2>
+          <p class="muted">이 책은 말씀을 해설하는 책이 아니라<br>말씀 앞에 서기 전에 드리는 기도의 책입니다.<br>날마다 말씀 앞에서 하기 쉬운 생각 하나를 이름 붙이고,<br>성경이 그 생각을 어떻게 바로잡는지 짧게 풀어 읽은 뒤,<br>그 말씀을 따라 기도합니다.</p></div>
+      </div>
+      <div class="motto" style="margin-top:40px">
+        <blockquote>말씀 앞에 설 수 있는 자격은 우리의 준비가 아니라,<br>우리를 위해 말씀으로 오시고 십자가에서 죽으신 그리스도께 있습니다.<cite>머리말에서</cite></blockquote>
+        <p class="muted">서툴러도 괜찮습니다.<br>매일 한 장씩, 말씀 앞에 먼저 앉는 연습을 함께 해 보시기 바랍니다.</p>
+      </div>
+
+      <h3 class="b-h">이 책을 쓰는 방법 · 하루 한 장, 두 쪽</h3>
+      <ol class="howto">
+        <li><b>말씀을 읽거나 듣기 전에 펼칩니다.</b><br>아침 큐티 전, 주일 예배 전, 성경 읽기 전에 하루치(두 쪽)를 펼칩니다. 5~10분이면 충분합니다.</li>
+        <li><b>오늘의 말씀과 풀어 읽기</b><br>말씀을 소리 내어 읽고, 풀어 읽기를 천천히 따라갑니다.<br>마지막 줄의 적용은 오늘 하루 실천할 작은 한 가지입니다.</li>
+        <li><b>나의 기도</b><br>기도문을 소리 내어 따라 합니다. 기도문 사이에 내 말로 덧붙여도 좋습니다.</li>
+        <li><b>기도 후 펼칠 말씀</b><br>읽거나 들을 본문을 빈 줄에 적고, 이어서 그 말씀을 읽거나 듣습니다.</li>
+        <li><b>생각해 볼 것</b><br>두 가지 질문을 하루 중에 다시 떠올리거나, 가정과 소그룹에서 나눌 때 사용합니다.</li>
+      </ol>
+      <p class="gap-p muted">30일을 연속해서 하지 않아도 괜찮습니다.<br>하루를 놓쳤다면 건너뛰지 말고 그날 장부터 이어서 하시면 됩니다.</p>
+    </div>
+  </section>
+
+  <section class="alt" id="wp-toc">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Contents</span><h2>30일, 여섯 단계</h2>
+        <p>먼저 말씀을 누가 하시는지를 묻고,<br>말씀 앞에 가져오는 나의 기대를 살피고, 마음의 밭을 돌아봅니다.<br>그다음 성경의 중심이신 그리스도께 나아가고,<br>설교를 듣는 자리를 다루고, 말씀을 들은 뒤의 삶으로 마칩니다.</p></div>
+      <div class="grid g2 stages"><div class="card stage"><span class="tag">1단계</span><h3>누가 말씀하시는가</h3><ul class="toc"><li><span class="wd">01</span>이것은 하나님의 말씀입니다</li><li><span class="wd">02</span>읽어도 달라지는 게 없다</li><li><span class="wd">03</span>내가 말씀을 평가한다</li><li><span class="wd">04</span>내 느낌대로 읽는다</li><li><span class="wd">05</span>먹고사는 일이 먼저다</li></ul></div><div class="card stage"><span class="tag">2단계</span><h3>내가 가진 기대</h3><ul class="toc"><li><span class="wd">06</span>읽었으니 됐다</li><li><span class="wd">07</span>말씀은 재미없는 의무다</li><li><span class="wd">08</span>뜨거운 감동이 있어야 한다</li><li><span class="wd">09</span>이미 아는 내용이라 새로울 게 없다</li><li><span class="wd">10</span>내게 맞는 말씀만 골라 듣는다</li></ul></div><div class="card stage"><span class="tag">3단계</span><h3>내 마음의 밭</h3><ul class="toc"><li><span class="wd">11</span>문제는 말씀이지 내 마음이 아니다</li><li><span class="wd">12</span>바빠서 말씀 볼 시간이 없다</li><li><span class="wd">13</span>이런 모습으로는 말씀을 펼 수 없다</li><li><span class="wd">14</span>속마음과 죄는 감추고 읽는다</li><li><span class="wd">15</span>많이 들어서 이제는 무덤덤하다</li></ul></div><div class="card stage"><span class="tag">4단계</span><h3>말씀 속의 그리스도</h3><ul class="toc"><li><span class="wd">16</span>구약은 옛날 이야기, 신약만 내 이야기다</li><li><span class="wd">17</span>많이 알수록 믿음이 깊다</li><li><span class="wd">18</span>성경은 착하게 살라는 교훈집이다</li><li><span class="wd">19</span>내 머리와 노력으로 깨달아야 한다</li><li><span class="wd">20</span>답은 영상 · 책 · 사람에게서 찾으면 된다</li></ul></div><div class="card stage"><span class="tag">5단계</span><h3>듣는 자리</h3><ul class="toc"><li><span class="wd">21</span>설교는 앉아서 받기만 하면 된다</li><li><span class="wd">22</span>설교를 공연처럼 감상하고 평가한다</li><li><span class="wd">23</span>들었으니 됐다</li><li><span class="wd">24</span>이 말씀은 옆 사람에게 필요한 말이다</li><li><span class="wd">25</span>찔리면 변명하거나 피한다</li></ul></div><div class="card stage"><span class="tag">6단계</span><h3>말씀 이후의 삶</h3><ul class="toc"><li><span class="wd">26</span>아는 것과 사는 것은 별개다</li><li><span class="wd">27</span>은혜니까 순종은 선택이다</li><li><span class="wd">28</span>말씀대로 살면 손해 보고 뒤처진다</li><li><span class="wd">29</span>열매는 내가 노력해서 만든다</li><li><span class="wd">30</span>멀리 있는 답을 다 알아야 걸을 수 있다</li></ul></div></div>
+    </div>
+  </section>
+
+  <section id="wp-sample">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Sample</span><h2>맛보기 · 1–2일차</h2>
+        <p>책의 실제 쪽입니다.<br>옆으로 넘겨 보시고, 누르면 크게 볼 수 있습니다.</p></div>
+      <div class="pages"><a href="images/word/p12.jpg" target="_blank" rel="noopener"><img src="images/word/p12.jpg" alt="말씀 앞에서 드리는 30일 기도 1일차" width="760" height="1100" loading="lazy"></a><a href="images/word/p13.jpg" target="_blank" rel="noopener"><img src="images/word/p13.jpg" alt="말씀 앞에서 드리는 30일 기도 1일차" width="760" height="1100" loading="lazy"></a><a href="images/word/p14.jpg" target="_blank" rel="noopener"><img src="images/word/p14.jpg" alt="말씀 앞에서 드리는 30일 기도 2일차" width="760" height="1100" loading="lazy"></a><a href="images/word/p15.jpg" target="_blank" rel="noopener"><img src="images/word/p15.jpg" alt="말씀 앞에서 드리는 30일 기도 2일차" width="760" height="1100" loading="lazy"></a></div>
+      <p class="buy">책 전체는 교회에서 만나실 수 있습니다.<br>필요하신 분은 교회에 요청해 주시면 책을 구입하실 수 있습니다. <span>문의 <a class="tel" href="tel:010-2605-0309">010-2605-0309</a></span></p>
     </div>
   </section>
 </div>
@@ -1542,7 +1597,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
   [].forEach.call(document.querySelectorAll('.fold-all'),function(b){ b.addEventListener('click',function(){ var on=b.getAttribute('data-open')==='1'; [].forEach.call(document.querySelectorAll('#direction details.fold'),function(d){ d.open=on; }); }); });
   var views=[].slice.call(document.querySelectorAll('[data-view]'));
   var navLinks=[].slice.call(document.querySelectorAll('[data-nav]'));
-  var parentOf={direction:'about',prayer:'news',blessing:'nextgen'};
+  var parentOf={direction:'about',prayer:'news',blessing:'nextgen','word-prayer':'news'};
   function route(){
     var id=(location.hash||'#home').slice(1);
     var el=document.getElementById(id);

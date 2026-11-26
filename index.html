@@ -306,6 +306,8 @@ main section .wrap.two.keep{max-width:calc(1120px + 2 * max(16px, env(safe-area-
 .buy{margin-top:32px;padding:18px 22px;border-radius:14px;border:1px solid var(--gold);background:var(--surface);line-height:1.8}
 .buy span{display:inline-block;font-weight:700;color:var(--gold)}
 .series30 a{color:inherit}
+.acct-card{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;padding:22px 26px;display:grid;gap:4px}
+.acct-no{font-size:clamp(22px,3.4vw,28px);font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.02em}
 /* faq */
 .faq{display:grid;gap:12px}
 .faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
@@ -1432,19 +1434,43 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
 
   <section id="giving">
     <div class="wrap">
-      <div class="head"><span class="eyebrow">Giving</span><h2>후원 계좌</h2></div>
+      <div class="head"><span class="eyebrow">Giving</span><h2>헌금 · 후원 안내</h2>
+        <p>모든 헌금과 후원은 아래 한 계좌로 드립니다.<br>입금자명에 이름과 용도를 함께 적어 주시면 구분해서 사용합니다.</p></div>
+      <div class="acct-card">
+        <span class="tag">헌금 · 후원 계좌</span>
+        <p class="acct-no">농협 301-0331-9920-11</p>
+        <p class="muted">예금주 울산다음세대교회</p>
+      </div>
+
+      <h3 class="b-h">헌금</h3>
+      <p class="muted" style="margin:-6px 0 16px">예배와 함께 하나님께 드리는 헌금입니다.</p>
       <div class="tbl"><table>
-        <thead><tr><th>구분</th><th>계좌</th></tr></thead>
+        <thead><tr><th>구분</th><th>설명</th><th>입금자명 예시</th></tr></thead>
         <tbody>
-          <tr><td>교회 헌금 · 후원</td><td class="acct">농협 301-0331-9920-11 (예금주: 울산다음세대교회)</td></tr>
-          
-          
+          <tr><td>주일헌금</td><td>주일 예배 때 드리는 헌금</td><td>홍길동주일</td></tr>
+          <tr><td>십일조</td><td>수입의 십분의 일</td><td>홍길동십일조</td></tr>
+          <tr><td>감사헌금</td><td>삶의 감사 제목을 담아 드리는 헌금</td><td>홍길동감사</td></tr>
+          <tr><td>절기헌금</td><td>신년감사 · 부활절 · 맥추감사절 · 추수감사절 · 성탄절</td><td>홍길동절기</td></tr>
+          <tr><td>선교헌금</td><td>선교사 후원과 선교 사역</td><td>홍길동선교</td></tr>
+          <tr><td>구제헌금</td><td>어려운 이웃과 다문화 가정 돕기</td><td>홍길동구제</td></tr>
         </tbody>
       </table></div>
-      <ul class="facts" style="margin-top:18px">
-        <li>입금자명 뒤에 용도를 적어 주세요. 예: 홍길동(선교)</li>
+
+      <h3 class="b-h">후원</h3>
+      <p class="muted" style="margin:-6px 0 16px">교회 밖에서도 함께하실 수 있는 후원입니다.</p>
+      <div class="tbl"><table>
+        <thead><tr><th>구분</th><th>쓰이는 곳</th><th>입금자명 예시</th></tr></thead>
+        <tbody>
+          <tr><td>다음세대 후원</td><td>지틴즈, 캠프, 청소년 사역</td><td>홍길동다음</td></tr>
+          <tr><td>SU스쿨 후원</td><td>무도 · 스포츠 · 문화체험 교육</td><td>홍길동SU</td></tr>
+          <tr><td>새 예배처소 후원</td><td>2027년 새 예배처소 마련</td><td>홍길동처소</td></tr>
+        </tbody>
+      </table></div>
+
+      <ul class="facts" style="margin-top:28px">
+        <li>입금자명은 <b>이름 + 두세 글자</b>로 짧게 적어 주세요.<br>은행에 따라 입금자명 글자 수가 제한될 수 있습니다.</li>
         
-        <li>후원 문의: 010-2605-0309</li>
+        <li>헌금 · 후원 문의: 010-2605-0309</li>
       </ul>
     </div>
   </section>

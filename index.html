@@ -162,6 +162,9 @@ section.alt{background:var(--band)}
 /* greeting */
 .letter p+p{margin-top:34px}
 .letter{max-width:38em}
+#greeting .letter{margin-inline:auto}
+.vision-stack{max-width:760px;margin-inline:auto;gap:clamp(48px,6vw,72px)}
+.vision-stack .card h3{font-size:clamp(22px,3vw,28px)!important}
 .letter .sign{margin-top:22px;font-family:var(--display);font-size:18px}
 .mission-list{list-style:none;padding:0;display:grid;gap:10px;counter-reset:m}
 .mission-list li{display:flex;gap:12px;align-items:baseline;font-family:var(--display);font-size:19px}
@@ -488,7 +491,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
   <div class="pagehead"><div class="wrap"><span class="eyebrow">About</span><h1>교회 소개</h1><p>2023년 7월,<br>다음 세대에게 복음을 전하고 싶다는 마음으로 시작한 교회입니다.</p></div></div>
 
   <section id="greeting">
-    <div class="wrap two">
+    <div class="wrap">
       <div class="letter">
         <div class="head" style="margin-bottom:18px"><span class="eyebrow">Greeting</span><h2>담임목사 인사말</h2></div>
         <p>울산다음세대교회를 찾아 주셔서 고맙습니다.</p>
@@ -499,7 +502,12 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
         <p class="sign">담임목사 고영석 드림</p>
         <p style="margin-top:18px"><a class="btn line" href="#direction">목회 방향 읽기 →</a></p>
       </div>
-      <div class="stack" style="gap:28px">
+    </div>
+  </section>
+
+  <section class="alt" id="vision">
+    <div class="wrap">
+      <div class="stack vision-stack">
         <div class="card stack">
           <span class="eyebrow">Vision</span>
           <h3 style="font-size:24px">울산에서 열방까지<br>다음세대를 살리는 전문인 교회</h3>
@@ -524,7 +532,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
     </div>
   </section>
 
-  <section class="alt" id="history">
+  <section id="history">
     <div class="wrap">
       <div class="two">
         <div class="motto">
@@ -548,7 +556,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
     </div>
   </section>
 
-  <section id="timeline">
+  <section class="alt" id="timeline">
     <div class="wrap">
       <div class="two">
         <div class="stack">
@@ -576,7 +584,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
     </div>
   </section>
 
-  <section class="alt" id="staff">
+  <section id="staff">
     <div class="wrap">
       <div class="head"><span class="eyebrow">Staff</span><h2>섬기는 분들</h2><p class="lines"><span>교회는 목사가 모든 것을 주고</span> <span>성도는 받기만 하는 곳이 아니라,</span><br><span>하나님께서 각 사람에게 주신 은사로</span> <span>함께 세워 가는 한 몸입니다.</span></p></div>
       <div class="staff">
@@ -601,7 +609,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
     </div>
   </section>
 
-  <section id="location">
+  <section class="alt" id="location">
     <div class="wrap two">
       <div>
         <div class="head" style="margin-bottom:18px"><span class="eyebrow">Location</span><h2>오시는 길</h2></div>

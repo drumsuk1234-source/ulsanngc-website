@@ -187,8 +187,10 @@ section.alt{background:var(--band)}
 .person p{font-size:14px;color:var(--muted);margin-top:6px}
 
 /* staff profiles */
-.profile{display:grid;gap:26px;align-content:start}
-.profile-top{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:center}
+.staff{grid-auto-rows:auto}
+.profile{display:grid;gap:26px;align-content:start;grid-row:span 2;grid-template-rows:subgrid}
+.profile-top{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:start}
+@supports not (grid-template-rows:subgrid){.profile-top{min-height:150px}}
 .profile-top>div{min-width:0}
 .photo{display:block;width:120px;height:120px;max-width:100%;border-radius:50%;object-fit:cover;box-shadow:0 0 0 4px var(--surface),0 0 0 5px var(--line)}
 .profile .role{font-size:13px;color:var(--accent);font-weight:700;letter-spacing:.04em}
@@ -583,7 +585,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
           <dl class="bio">
             <div><dt>학력</dt><dd><ul><li>고신대학교 국제문화선교학</li><li>고려신학대학원 목회학 석사(M.Div.)</li></ul></dd></div>
             <div><dt>자격</dt><dd><ul><li>청소년진로상담사</li></ul></dd></div>
-            <div><dt>경력</dt><dd><ul><li>필리핀 아름다운교회(한인) 전도사 <small>중고등부</small></li><li>일원동교회 전도사 · 강도사 (2007–) <small>초등, 청년, 행정, 예배</small></li><li>다음세대교회 강도사 · 목사 (2012–) <small>청소년, 청년, 행정</small></li><li>우정교회 목사 (2016–) <small>유치, 영유아부</small></li><li>IMM(국제선교동원) 대표간사 <small>선교동원사역</small></li><li>청소년 ‘주티캠프’ 사역</li><li>스프링스 선교단체 총무</li><li>CBMC 울산열방지회 회장 역임</li><li>CBMC 울산글로벌지회 지도목사</li></ul></dd></div>
+            <div><dt>경력</dt><dd><ul><li>필리핀 아름다운교회(한인)</li><li>일원동교회(2007–)</li><li>다음세대교회(2012–)</li><li>우정교회(2016–)</li><li>청소년 ‘주티캠프’ 사역</li><li>CBMC 울산열방지회 회장 역임</li><li>CBMC 울산글로벌지회 지도목사</li></ul></dd></div>
           </dl>
         </article>
         <article class="card profile">

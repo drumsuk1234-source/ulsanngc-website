@@ -155,8 +155,10 @@ main section .wrap.two.keep{max-width:calc(1120px + 2 * max(16px, env(safe-area-
   .tbl:not(.kv) td[data-label]:not(:first-child)::before{content:attr(data-label);flex:none;width:3.6em;color:var(--muted);font-size:13px;padding-top:2px}
 }
 @container (max-width:420px){
-  .tbl.kv td{padding:14px 16px}
-  .tbl.kv td:first-child{width:7.5em;white-space:normal;word-break:keep-all}
+  .tbl.kv tr{display:block;padding:14px 18px;border-bottom:1px solid var(--line)}
+  .tbl.kv tr:last-child{border-bottom:0}
+  .tbl.kv td{display:block;width:auto!important;padding:0;border:0}
+  .tbl.kv td:first-child{font-size:13px;margin-bottom:4px;white-space:normal}
 }
 
 .tbl tr.go{cursor:pointer;transition:background .2s}
@@ -312,7 +314,8 @@ main section .wrap.two.keep{max-width:calc(1120px + 2 * max(16px, env(safe-area-
 .btn.call{flex-wrap:wrap;justify-content:center;column-gap:8px;row-gap:2px;text-align:center}
 .btn.call b{font-variant-numeric:tabular-nums;letter-spacing:.02em}
 .btn.call .call-who{opacity:.85;font-size:14px}
-@media (max-width:560px){.btn.call{display:flex;width:100%;border-radius:18px;padding:14px 20px}}
+@media (max-width:560px){#suschool>.wrap>.card{padding:22px 18px!important}
+.btn.call{display:flex;width:100%;border-radius:18px;padding:14px 20px}}
 .tel{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
 footer .tel{color:#fff}
 /* faq */
@@ -1163,7 +1166,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
             <tr><td>언제</td><td>매주 토요일 오전 9시–오후 4시</td></tr>
             <tr><td>어디서</td><td>울산 북구 상방로 131, 지상 2층</td></tr>
             <tr><td>대상</td><td>초등학생부터 고등학생까지</td></tr>
-            <tr><td>무엇을</td><td>무도, 스포츠, 예배, 체험학습,<br>다양한 문화체험 (언어 공부 외 문화교육)</td></tr>
+            <tr><td>무엇을</td><td><span class="nw2">무도, 스포츠, 예배, 체험학습,</span><br>다양한 문화체험<br><span class="nw2">(언어 공부 외 문화교육)</span></td></tr>
           </tbody></table></div>
         </div>
       </div>

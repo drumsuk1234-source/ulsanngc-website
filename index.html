@@ -100,13 +100,17 @@ section{padding-block:clamp(72px,10vw,128px)}
 .gap-p{margin-top:30px}
 section.alt{background:var(--band)}
 .head{display:grid;gap:12px;margin-bottom:clamp(32px,4vw,48px);max-width:720px}
+/* 본문은 가운데 한 기둥(820px)으로 위에서 아래로 */
+main section .wrap, .pagehead .wrap{max-width:calc(820px + 2 * max(16px, env(safe-area-inset-left,0px)))}
+main section .wrap.two.keep{max-width:calc(1120px + 2 * max(16px, env(safe-area-inset-left,0px)))}
+.doc{margin-inline:auto}
 .head h2{font-size:clamp(26px,3.6vw,34px)}
 .head p{color:var(--muted);line-height:1.95}
 .lines span{display:inline-block}
-.two{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(48px,7vw,96px);align-items:start}
+.two{display:grid;grid-template-columns:1fr;gap:clamp(48px,6vw,72px);align-items:start}
 .two>*{min-width:0}
-.two.even{grid-template-columns:1fr 1fr}
-@media (max-width:900px){.two,.two.even{grid-template-columns:1fr}}
+.two.keep{grid-template-columns:1fr 1fr;gap:clamp(48px,7vw,96px)}
+@media (max-width:900px){.two,.two.keep{grid-template-columns:1fr}}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(22px,3vw,32px)}
 .grid{display:grid;gap:clamp(16px,2.4vw,24px)}
 .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -342,7 +346,7 @@ section.alt{background:var(--band)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
 .chips a{padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.5);color:#fff;text-decoration:none;font-size:14px}
 .chips a:hover{background:rgba(255,255,255,.12)}
-.doc{max-width:760px}
+.doc{max-width:820px}
 .doc .kicker{font-size:13px;letter-spacing:.14em;color:var(--gold);font-weight:700}
 .doc h2{font-size:clamp(26px,3.8vw,36px);margin:6px 0 6px}
 .doc .sub-t{font-family:var(--display);font-size:19px;color:var(--muted)}
@@ -491,7 +495,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
   </section>
 
   <section>
-    <div class="wrap two even">
+    <div class="wrap two keep">
       <div>
         <div class="head" style="margin-bottom:14px"><span class="eyebrow">Sermon</span><h2>최근 설교</h2></div>
         <ul class="news pair">

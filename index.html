@@ -272,6 +272,11 @@ footer a{color:#d9e1ee;text-decoration:none}
 footer a:hover{text-decoration:underline}
 footer .todo{background:rgba(255,255,255,.12);color:#ffd99a}
 footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15);opacity:.7;font-size:13px}
+
+/* 스크롤 등장 효과: 화면에 들어오면 연하게 있다가 살짝 올라오며 나타남 */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -1013,6 +1018,17 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       [].forEach.call(tr.children,function(td,i){ if(hs[i]) td.setAttribute('data-label',hs[i]); });
     });
   });
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var sel='.hero .wrap > *, .pagehead .wrap > *, main section .wrap > *, .two > *, .grid > *, .places > *, .roles > *, .albums > *, .sermons > *, .staff > *, .news > li, .steps > li';
+    var cand=[].slice.call(document.querySelectorAll(sel));
+    var items=cand.filter(function(el){ return !cand.some(function(o){ return o!==el && el.contains(o); }); });
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+    items.forEach(function(el){
+      var sib=[].indexOf.call(el.parentNode.children,el);
+      el.style.setProperty('--d',Math.min(sib,5)*110+'ms');
+      el.classList.add('reveal'); io.observe(el);
+    });
+  }
   var views=[].slice.call(document.querySelectorAll('[data-view]'));
   var navLinks=[].slice.call(document.querySelectorAll('[data-nav]'));
   var parentOf={direction:'about'};

@@ -547,6 +547,10 @@ button.btn.line{cursor:pointer}
 .br-allbooks{padding-top:10px}
 .br-allbooks .br-bookchip{font-size:14px;padding:6px 12px;margin:0 6px 6px 0}
 .br-dl{max-width:680px}
+.br-dl .br-files{margin-top:4px}
+.br-prs{max-width:680px;margin-top:16px}
+.br-prslist{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:4px}
+.br-prslist a{display:block;padding:8px 0;color:var(--accent);text-decoration:none;font-weight:500;line-height:1.45}
 .br-pano{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;max-width:720px}
 .br-panocard b{display:block;font-family:var(--display);font-size:20px;margin:4px 0 6px}
 .br-join{max-width:640px}
@@ -1581,7 +1585,7 @@ button.btn.line{cursor:pointer}
   <section id="br-today">
     <div class="wrap">
       <div class="head"><span class="eyebrow">Today</span><h2>오늘의 본문</h2>
-        <p>버튼을 누르면 읽기 영상으로 이어집니다.<br>편한 번역으로 듣고 읽으며 하루를 여세요.</p></div>
+        <p>버튼을 누르면 그날의 읽기 영상으로 이어집니다.<br>개역개정과 우리말성경 가운데,<br>편한 번역으로 듣고 읽으며 하루를 여세요.</p></div>
       <div class="br-card" aria-live="polite">
         <div class="br-top">
           <button type="button" class="br-step" data-step="-1" aria-label="전날">‹</button>
@@ -1631,6 +1635,15 @@ button.btn.line{cursor:pointer}
       <div class="head"><span class="eyebrow">Download</span><h2>읽기표 내려받기</h2>
         <p>한 해 읽기표를 내려받아,<br>출력하거나 휴대폰에 저장해 두고 체크하며 읽으세요.</p></div>
       <div class="card br-dl"></div>
+      <div class="card br-prs">
+        <h3>공동체성경읽기(PRS) 자료</h3>
+        <p>우리가 함께 듣는 읽기 영상은 공동체성경읽기(PRS)에서 만든 것입니다.<br>PRS 자료실에서 소개 자료를 더 받아 보실 수 있습니다.</p>
+        <ul class="br-prslist">
+          <li><a href="https://www.prsi.org/ko/resources" target="_blank" rel="noopener">PRS 자료실 · 팜플렛, 브로셔, 권별 듣기 시간표 →</a></li>
+          <li><a href="https://prs.app/ko/bible" target="_blank" rel="noopener">PRS 앱 · 웹에서 오디오 드라마 바이블 듣기 →</a></li>
+          <li><a href="https://www.youtube.com/@prs/playlists" target="_blank" rel="noopener">PRS 유튜브 · 권별, 장별 읽기 영상 →</a></li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -1655,13 +1668,17 @@ button.btn.line{cursor:pointer}
 <script>
 /* ===== 공동체성경읽기 자료 =====
    days[회차-1] = [본문, 시편, 걸리는 시간(분:초), [[바이블프로젝트 영상 제목, 유튜브 ID], …]]
-   audio[회차] = {krv:'개역개정 영상 주소', easy:'쉬운성경 영상 주소'}
+   krv[회차-1] = 개역개정 읽기 영상 유튜브 ID (PRS ‘365일 읽기 플랜(개역개정)’)
+   wrm['회차'] = 우리말성경 읽기 영상 유튜브 ID (PRS ‘2023년 우리말 365 PRS’) — 없으면 재생목록으로 연결
    bookFiles['창세기'] = '교회 자료 파일 주소(PDF)'
-   planPdf = 한 해 읽기표 PDF 주소 */
+   plans = 한 해 읽기표 PDF */
 var BIBLE_READING={
   start:'2027-01-01',
-  planPdf:'',
-  audio:{},
+  plans:[{label:'개역개정',file:'files/bible/2027-365-krv.pdf'},{label:'우리말성경',file:'files/bible/2027-365-woorimal.pdf'}],
+  krvList:'PLVcVykBcFZTR4Q6cvmybjPgCklZlv-Ghj',
+  wrmList:'PLVcVykBcFZTT0hugHClJM2FZrVAckYk17',
+  krv:["IlUTmc7LCgs","6AmljmkX4dg","nEZXX7JfFe4","Y9T5NxZ16rA","zl5Pdwa1ldQ","CELX4Iv5Arw","X6ptorACGRc","R2yaaPsBk0g","hJMcKN2yOvQ","EskWjK6Fl4k","6m_NHeFM5kI","dlij5BY1mCM","OgFJBpJ6dtM","xkANdOCsKvU","PiwTop8Z-CQ","_Grucry5llw","4FcjtQ3qbxU","VQ9L3gs9Ojc","X6QDNBDDEpw","_9Dm9KlwIbY","9vgKF9zvljU","jYZSUXqAeW4","lYaJubWLNAQ","AQfCiSiytWw","Ph2uLBQSbLI","MEc4W0C0Dw8","PtWou_454Dc","9_5viOf_GLQ","zFtT5m_h92k","7ZOYUFR2FYg","Kl_S-4_11Fg","lXuOZySw1SA","rGP-vCg8Rzs","U0gFmqLXBnQ","oqWfNhRSiv0","3IOc3A7FBas","z8yNS5pefYQ","LxfYIdM_vTQ","SySgGHLrQvc","q1XyHlMBtyQ","0jXrjDotSTQ","MI8phIBVILM","xjBDWDN-AKA","kKuL0vXHY1Q","lo0QJD1JZAY","t-jZRuWhQNE","j84kVuOpfmI","dS8TC29LHhk","cibWv4afbPU","J21aHrGBd5s","inr8WXt0XSo","AGLW8_9S4tk","8tgYQQH2vyc","Raorjpr6JKs","At5Id1J3JIg","R1Ihcid3AXA","QLDVNDMaPY0","1NP6Je0Nuak","MxTDKAVvL7A","m27kL3b3KlY","IOqbWfzojkM","U8Hakkb8Dk4","teFXD3l_2L4","KT0fSIRpqEQ","6d45_lhQnto","cRlwUCMOSak","k6z9t4xXAUQ","Y6u9c3pdAiU","HvjX4cYbLFQ","vfaGvUxoZhc","Q4gXnf-v768","u-cg4Ph3LQc","Muy_9rj954M","bKy-68zf_p0","1G2pWBO2atc","AuL_J8aV3Jk","mXCd8O6XiH0","Emh8vrsESRE","paJwdp1QPKc","7qHMU7v7xqs","63zcpUCLM1g","5-p1A1T2KJk","49aqh30iAko","2C_w1SCKvbM","8DrHmjwI6nw","MEI_1fvKrFA","f9uSl8HdoDk","gxxbvbPBIGw","cxP7fuMn5OA","ArBBcuOG1Qo","xRoLxnchhFM","W574a8wxNFA","4731w4ExUpk","HADo-AdEg-w","Djbn1YXrOuY","74wvDPFB4BI","KlYhMNhlKkc","zUEBfyA3vqY","bzCCnah5Jew","bV7av1FMwYY","hQ85nHq_bJ8","phbE29z-pxI","viRux0v380A","eI-a6gztkZU","BKRrBMjPb0U","IIxWBCW1OBo","cpmuxNC-uas","iFPeC8LEKjM","lF1SOtSf-_Q","XhFTJR6GLOs","_FD3vdwromU","VXOVw6tWLWA","1h_c4pnNphk","M7evgfeJO8w","IxBgAUUjk40","c3o6YhFoXWA","kGpk33CLRrE","SIbrE6mLNvo","6TE-VJTLdmQ","A9fqv3sUT08","GdG_MMkEVn8","a78MOMrCzpc","sKU8D2Jvmq8","IyqFEFaIYuQ","55TaW9oB8mE","dQg1i2_AyZw","GZkHjEpVbuo","XAyw2WuxIyo","L38JFFw9hOM","ctPM-vMnikQ","HWvap5VeudA","vOnwEb7gMCI","dvH1BkuMJXA","sU7xzgrsrzk","tdimHHloHJA","gwuZn8fIbiU","vDtaOkiasUA","gyZMCO9Ouxk","3liy-_NkEKM","5fONlgjSMag","VOXhhjsKVQw","gDcXtfRKa-0","Nh00u2JzJec","dVRjAsZvqx8","LHHVj5bF0Ew","mcJD4yAbhVk","dsdcNKfz6Uk","Goel8e1CBU8","FOBiccEJuJE","HgwYKu6sHL0","PVnvwDkxbQQ","CRdNJBrOIvE","qYNdCpZgL34","dIfiftIJFcc","6d8zosn9PjY","8EWLyKNLGxY","HHgnRbdgUYQ","fxbU4nW_BlU","EWNv8yJ-nqE","9kzZKyuJNzY","ez9DrhB2YEk","Kz7Ep_zb67Q","75HoNlm02f4","iAB09d6VatY","Lm0c-msP5_M","-0NlRA2UhY4","ZyodreKVGVU","l_-R6AFbenQ","ypGPzZYEwtI","EGdwmE13ZPI","-3RBH8ST2KM","rUOMRTcG6IU","7ki84mMsGCs","heGQEYhJGOg","M46a86cL1o8","BZaTL0azJSg","UvE0TDkZNRI","paI3Sa7SCVE","8IG4CnwDE3E","DmcRJRMOIj8","-MMn0aFrz4Q","MAxCIUi9tKA","NCfcM1UggFs","WXDWkP0HD7w","wnJT62ILNVo","LYEfVU7r_KQ","eTEYOPih1vE","6lBYdsDQwao","1Fb5TPouhVg","j0aT7bLN7sI","v6JPNAyu0Z0","4ZUAfc8y5eM","z5p5ButDGWI","QYhT823Zg4I","TospaOS01YY","8_bSq6n6BvA","Ehwn_8sn8gU","jSpYLHDCcr8","MRjRSmeA3Qc","Em3uGgNOX9Y","68jLToraxO8","swYpde-Lr-8","5iYy1n6PJDE","VPpAGdeJOm8","2ZmZuXDXRkc","qeBDX26F2u4","hlrumsQbliY","m1jK2zvNQMU","gJQdmiwwMSk","0V26CLdZlIY","GH1TBh0aUd0","y8aDcNeOIj4","js0eg1BLAkE","g0TlA6V6z1I","vtJPAGXk2nk","cyV6HDRJuXI","cltvyVXIhpM","Wpj3EvyNk78","RzrK86xmemU","nOztAeUSXFg","VAz60L4h4kk","JOE2w43eDzk","p4Myn2KmZRc","yIw_l57ecMM","gx8f_Z8K2l0","Lxw6JPz5mBQ","ck8gju_bjCo","3YuWO5wkG-c","_zaDVVTqVm8","8KsJpI1CcbA","QViG3gZl2dM","uBYRb2DqOuA","10sKlSGaPdk","roUj6fc5BJc","bQX5nMoeAcE","e58m12FG1E0","zBUA_Hk2n3s","q5dMgMvLdC0","5kj4kDsI2zA","Ayb21Lq6a5Q","d4nya4kXfHk","2B1VWm3oZ8I","MBJp_bkeD3o","2ROVYng6p9Y","OKfEihCnIcQ","","0ly6MaEWV2M","1IjQ9vplThk","zvX-B-J9c20","0uoYEl1SDeo","JZLRinMrDjY","LMQOBnvA3qs","PQMfrHZ1VWs","drWhXPvE7vQ","saRuAD4UKUQ","fDFT2aWWLtA","pEkvKngjc_w","k_0TCt0OCds","HPtWaFSSVz0","ImGHB6F2Cfo","ax4EmCKslGA","2F505MoVoJQ","3n5-oK_JqxE","-R1odZagdBI","A8_zS9y8s3g","27FhylcQA6M","Kf4kp1Ccomw","nHvYlRRBjWg","3P1MFNjvjV0","JSgbGn2f-Mo","b86UCNgRDfw","4YF4afXnErk","U_htjMPuW0s","rd6b2jjWvRU","a0iMFYO4faY","zBees3L2Wss","mMuoN_vuhpk","wYrQ2wq0hoU","Q6RUhu7npzc","A4D6fGlCWDY","YYnfj4W6KVM","CDtoDlJG9R8","YiYJYKHZpUo","_zq4fPWmS8I","GOLok99cvXE","q9DBABV5-ko","kFpzaJ3WTTA","84XqrpWI4ko","3aMtYp9hB64","bNtnNSzLQgw","4_RQU66S7hM","w-7lluAEUOc","y4HpBUCt8d8","IHOvOqkiqsw","z9Os49SwI1Q","7ES4htqR7rU","RvK4C3vs_AI","pSelLXtmeM0","08gByft7e8c","8kASoqhDPes","MLxiNxl5r5w","EH_s8vlrDb0","4N1hqE1QgEE","2Ev-v7H-UlE","eeHlX4h4jCk","ieQpbogOkBg","aOQcAAlngK8","aTMv5m_i24E","3UWBfzjdwqE","uRQMefbwHuI","2Rek_ZJ82UE","0XSIg5yWo2I","B-gkJZYRfLE","rRmru23oqEI","Yhq4M-5v9RA","tZ-TkHeWYmc","VP23JqGJdYA","ftGMB-SBhUw","TBTp1KJjA3k","1xtXosYmGi0","Q0ojxYU8whg","q7GoezV_4nY","hjGIsO9nn9s","Y1H89UrYRaI","oN8TGJ8ZazE","PuKUPR3S8i8","ldpSEg54OrQ","iblGkCy8Vhk","hsFT8nD88Ac","q9-dPxsvL38","ttEl9mCLelY","_5U60vMC-NY","iCDtE-z_BHo","sJeblo2ARcI","Jz_O_yxifvU","cOYfuhlAirQ","PAmf9HZcWJs","hWR-QT0jNkY","f6Ha7fMEDaE","XufOCmy09tk","T1OUO7aJDCk","3tkwEi7al0c","9il6EEBdkkI","p7_2h9ADsSE","9c8AmmksDgc","RrqTcRDNHU0","P0ObcF0qDvU","UGuvJGI0KmQ","2ezE2DZ4IU4","P5f83Ij785M","JVS1QUbG70E","br0rgk3LoYk","UgmbxXhnn90","_m9jAPIeA3w","1-fFoQ9Aunk","yJ36iIQgtyI","tqrBL4ZH_fY","KuyFlYLi-zY","qVWuLvDnupM","mpdIa0kY_8Q","6IaTSSonyo4","-rKC46g6Gi0","JMdBVB5RDZc","z9cXitXG4mo","ytyHinRxtrw"],
+  wrm:{"1":"aC8aDRmm4hY","117":"cHfLJrCQ-1U","123":"MVQNMEEQBNY","128":"jzs5tVVKvGI","131":"0QGx7sqHAlo","132":"T1TTSMwkgMw","134":"WtlvlkZxFqo","141":"Av1cHLKzYRk","150":"wmCHcVH0OfE","153":"dqAGB4b_uGM","156":"0fj2Ntxur6g","162":"MW3_Cv3C9Ck","166":"Hn1mUWhjbmc","171":"w7N7TANOTpg","174":"-IfHp0N_Qsk","196":"mqfTWmH9qyo","219":"njaSnhe6ot0","225":"IdYGA7CbQ50","237":"cF0xqLBmdRI","272":"-_oEkkuIMUA","273":"pfxNAPL4xmQ","285":"SKYC6qpYsCM","286":"n8e2SreqOB0","288":"c24x7THWW0M","294":"fU0zE8kzBqg","300":"XUS7-wKUrx0","304":"yUiO9IM-tzA","310":"YvVoqmpFAxY","315":"LPcDs7rcQYA"},
   bookFiles:{},
   panorama:[
     {half:'상반기', date:'', title:'성경 파노라마 · 상반기', link:''},
@@ -1690,17 +1707,17 @@ var BIBLE_READING={
   var cur=todayIdx(), month=dateOf(cur).getMonth(), openBook=null;
   var card=root.querySelector('.br-card');
 
-  function btn(url,label){ return url ? '<a class="btn primary" href="'+esc(url)+'" target="_blank" rel="noopener">'+label+' 읽기 영상 →</a>' : '<span class="btn line br-off">'+label+' · 준비 중</span>'; }
+  function btn(id,list,label){ return id ? '<a class="btn primary" href="'+YT+esc(id)+'" target="_blank" rel="noopener">▶ '+label+'</a>' : '<a class="btn line" href="https://www.youtube.com/playlist?list='+esc(list)+'" target="_blank" rel="noopener">▶ '+label+' 재생목록</a>'; }
   function vidList(v){ return '<ul class="br-vlist">'+v.map(function(x){ return '<li><a href="'+YT+esc(x[1])+'" target="_blank" rel="noopener"><span class="play-i" aria-hidden="true">▶</span>'+esc(x[0])+'</a></li>'; }).join('')+'</ul>'; }
   function show(i){
     cur=Math.max(0,Math.min(N-1,i));
-    var d=dateOf(cur), r=D.days[cur], t=idxOf(new Date()), a=D.audio[cur+1]||{};
+    var d=dateOf(cur), r=D.days[cur], t=idxOf(new Date());
     card.querySelector('.br-dayno').textContent=(cur+1)+'회차'+(cur===t?' · 오늘':'');
     card.querySelector('.br-date').textContent=fmt(d);
     card.querySelector('.br-ref').textContent=r[0];
     card.querySelector('.br-psalm').textContent='+ '+r[1];
     card.querySelector('.br-time').textContent='함께 읽는 데 약 '+mins(r[2])+'분';
-    card.querySelector('.br-links').innerHTML=btn(a.krv,'개역개정')+btn(a.easy,'쉬운성경');
+    card.querySelector('.br-links').innerHTML=btn(D.krv[cur],D.krvList,'개역개정')+btn(D.wrm[cur+1],D.wrmList,'우리말성경');
     var nb=newBooks(cur);
     card.querySelector('.br-new').innerHTML=nb.length?'<span class="br-lab">오늘 새로 시작하는 책</span>'+nb.map(function(b){ return '<button type="button" class="br-bookchip" data-book="'+esc(b)+'">'+esc(b)+' 자료 보기 →</button>'; }).join(''):'';
     card.querySelector('.br-vids').innerHTML=r[3].length?'<span class="br-lab">함께 보면 좋은 영상 · 바이블프로젝트</span>'+vidList(r[3]):'';
@@ -1739,9 +1756,8 @@ var BIBLE_READING={
   }
   function goBook(b){ openBook=b; show(D.books[b].f-1); var el=root.querySelector('.br-book[data-book="'+b+'"]'); if(el){ el.open=true; el.scrollIntoView({behavior:'smooth',block:'center'}); } }
   root.querySelector('.br-allbooks').innerHTML=D.order.map(function(b){ return '<button type="button" class="br-bookchip" data-book="'+esc(b)+'">'+esc(b)+'</button>'; }).join('');
-  root.querySelector('.br-dl').innerHTML=D.planPdf
-    ? '<h3>'+start.getFullYear()+'년 365 읽기표</h3><p>회차별 본문, 시편, 함께 볼 영상이 정리된 표입니다.</p><p><a class="btn primary" href="'+esc(D.planPdf)+'" download target="_blank" rel="noopener">읽기표 PDF 내려받기</a></p>'
-    : '<h3>'+start.getFullYear()+'년 365 읽기표</h3><p>새해 읽기표를 준비하고 있습니다.<br>준비되는 대로 이곳에서 내려받으실 수 있습니다.</p><p><span class="btn line br-off">읽기표 PDF · 준비 중</span></p>';
+  root.querySelector('.br-dl').innerHTML='<h3>'+start.getFullYear()+'년 공동체성경읽기 365 읽기표</h3><p>일차, 날짜, 본문, 시편이 달별로 정리된 표입니다.<br>번역본에 맞는 표를 내려받으세요.</p><div class="br-files">'
+    +D.plans.map(function(x){ return '<a class="btn primary" href="'+esc(x.file)+'" download target="_blank" rel="noopener">'+esc(x.label)+' 읽기표 (PDF)</a>'; }).join('')+'</div>';
   root.querySelector('.br-pano').innerHTML=D.panorama.map(function(x){
     return '<div class="card br-panocard"><span class="book-kind">'+esc(x.half)+'</span><b>'+esc(x.title)+'</b><p>'+(x.date?fmt(p(x.date))+' · 주일예배':'날짜는 추후 안내합니다.')+'</p><p class="muted">준비 · 서정은 전도사</p>'+(x.link?'<a href="'+esc(x.link)+'" target="_blank" rel="noopener">영상 보기 →</a>':'')+'</div>';
   }).join('');

@@ -322,6 +322,13 @@ footer .tel{color:#fff}
 .toc{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:15px}
 .toc li{display:grid;grid-template-columns:2.2em 1fr;gap:6px}
 .toc .wd{color:var(--gold);font-weight:700;font-variant-numeric:tabular-nums}
+/* 돌아가기 · 맨 위로 */
+.back-btn{position:fixed;left:calc(16px + env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;padding:12px 20px;border:0;border-radius:999px;background:var(--ink);color:#fff;font:500 15px var(--body);cursor:pointer;box-shadow:0 8px 24px rgba(10,20,40,.25);max-width:calc(100vw - 100px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.back-btn:hover{background:var(--accent)}
+.to-top{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:700 20px var(--body);cursor:pointer;box-shadow:0 6px 18px rgba(10,20,40,.15)}
+body[data-view="prayer"] .back-btn,body[data-view="prayer"] .to-top{bottom:calc(100px + env(safe-area-inset-bottom,0px))}
+.memo-toggle{bottom:calc(76px + env(safe-area-inset-bottom,0px))!important}
+@media print{.back-btn,.to-top{display:none!important}}
 /* faq */
 .faq{display:grid;gap:12px}
 .faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
@@ -1559,6 +1566,9 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
   </div>
 </footer>
 
+<button class="back-btn" id="backBtn" type="button" hidden>← 돌아가기</button>
+<button class="to-top" id="toTop" type="button" aria-label="맨 위로" hidden>↑</button>
+
 <script>
 (function(){
   [].forEach.call(document.querySelectorAll('.tbl table'),function(t){
@@ -1595,6 +1605,34 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
   })();
   document.addEventListener('click',function(e){ var tr=e.target.closest('tr.go'); if(!tr||e.target.closest('a')) return; location.hash=tr.getAttribute('data-href'); });
   [].forEach.call(document.querySelectorAll('.fold-all'),function(b){ b.addEventListener('click',function(){ var on=b.getAttribute('data-open')==='1'; [].forEach.call(document.querySelectorAll('#direction details.fold'),function(d){ d.open=on; }); }); });
+  (function(){
+    var back=document.getElementById('backBtn'), top=document.getElementById('toTop'), stack=[], pending=null;
+    var names={home:'홈',about:'교회 소개',direction:'목회 방향',worship:'예배',nextgen:'다음세대',news:'교회 소식',mission:'선교 · 후원',prayer:'예배처소 기도',blessing:'30일 축복',"word-prayer":'말씀 앞 기도'};
+    function viewOf(h){ var el=document.getElementById((h||'#home').slice(1)); var v=el&&(el.matches('[data-view]')?el:el.closest('[data-view]')); return v?v.id:'home'; }
+    function ro(w){ var c=w.charCodeAt(w.length-1); if(c<0xAC00||c>0xD7A3) return w+'로'; var j=(c-0xAC00)%28; return w+((j===0||j===8)?'로':'으로'); }
+    function update(){
+      if(!stack.length){ back.hidden=true; return; }
+      var t=stack[stack.length-1], tv=viewOf(t.h), cv=viewOf(location.hash);
+      back.textContent = tv===cv ? '← 보던 곳으로 돌아가기' : '← '+ro(names[tv]||'이전 화면')+' 돌아가기';
+      back.hidden=false;
+    }
+    document.addEventListener('click',function(e){
+      var a=e.target.closest('a[href^="#"], tr.go'); if(!a) return;
+      var to=a.matches('tr.go')?a.getAttribute('data-href'):a.getAttribute('href');
+      if(a.closest('#mainNav')||a.closest('.brand')){ stack=[]; update(); return; }
+      if(!to||to===location.hash) return;
+      stack.push({h:location.hash||'#home',y:window.scrollY}); if(stack.length>12) stack.shift();
+    },true);
+    back.addEventListener('click',function(){ var t=stack.pop(); if(!t) return; pending=t; location.hash=t.h; });
+    window.addEventListener('hashchange',function(){
+      var t=pending; pending=null;
+      if(!t && stack.length && stack[stack.length-1].h===(location.hash||'#home')) t=stack.pop();
+      if(t) requestAnimationFrame(function(){ window.scrollTo(0,t.y); update(); });
+      else update();
+    });
+    window.addEventListener('scroll',function(){ top.hidden = window.scrollY < 1200; },{passive:true});
+    top.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+  })();
   var views=[].slice.call(document.querySelectorAll('[data-view]'));
   var navLinks=[].slice.call(document.querySelectorAll('[data-nav]'));
   var parentOf={direction:'about',prayer:'news',blessing:'nextgen','word-prayer':'news'};
@@ -1604,6 +1642,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
     var view=el ? (el.matches('[data-view]') ? el : el.closest('[data-view]')) : null;
     if(!view){ view=views[0]; el=view; }
     views.forEach(function(v){ v.hidden = v!==view; });
+    document.body.setAttribute('data-view',view.dataset.view);
     var key=parentOf[view.dataset.view]||view.dataset.view;
     navLinks.forEach(function(a){ if(a.dataset.nav===key) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
     if(el===view) window.scrollTo(0,0); else el.scrollIntoView();

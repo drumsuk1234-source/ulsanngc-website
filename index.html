@@ -329,6 +329,19 @@ footer .tel{color:#fff}
 body[data-view="prayer"] .back-btn,body[data-view="prayer"] .to-top{bottom:calc(100px + env(safe-area-inset-bottom,0px))}
 .memo-toggle{bottom:calc(76px + env(safe-area-inset-bottom,0px))!important}
 @media print{.back-btn,.to-top{display:none!important}}
+.worship-order{list-style:none;counter-reset:wo;margin:0;padding:0;display:grid;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px 0}
+.worship-order li{counter-increment:wo;display:grid;grid-template-columns:44px 1fr;column-gap:6px;padding:12px 22px 12px 14px}
+.worship-order li+li{border-top:1px solid var(--line)}
+.worship-order li::before{content:counter(wo);grid-row:span 2;font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums;text-align:center;padding-top:1px}
+.worship-order b{font-family:var(--display);font-size:18px;font-weight:700}
+.worship-order span{font-size:14px;color:var(--muted)}
+.bulletin{display:grid;gap:12px;margin-bottom:clamp(40px,5vw,56px);border-top:4px solid var(--accent)}
+.bulletin h3{font-size:clamp(24px,3.4vw,30px)!important;margin:0!important}
+.b-series{font-size:13px;font-weight:700;color:var(--gold);margin-top:4px}
+.b-fold{margin-top:4px}
+.b-fold>summary{font-size:17px;padding:14px 18px}
+.verses{margin:0;padding-left:30px;display:grid;gap:10px;font-family:var(--display);font-size:17px;line-height:1.8}
+.verses li::marker{color:var(--gold);font-family:var(--body);font-size:13px;font-weight:700}
 /* faq */
 .faq{display:grid;gap:12px}
 .faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
@@ -519,7 +532,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
         <div class="tbl"><table>
           <thead><tr><th>예배</th><th>시간</th><th>장소</th></tr></thead>
           <tbody>
-            <tr class="go" data-href="#first-visit"><td><a class="rowlink" href="#first-visit">주일예배<span aria-hidden="true"> →</span></a></td><td>주일 오후 4시</td><td>컬티 (남구 화합로194번길 12-1, 2층)</td></tr>
+            <tr class="go" data-href="#first-visit"><td><a class="rowlink" href="#first-visit">주일예배<span aria-hidden="true"> →</span></a></td><td>주일 오후 4시</td><td>컬티 카페 (남구 화합로194번길 12-1, 2층)</td></tr>
             <tr class="go" data-href="#youth"><td><a class="rowlink" href="#youth">지틴즈 청소년 연합예배<span aria-hidden="true"> →</span></a></td><td>주일 오후 1시 30분<br><span class="muted" style="font-size:13px">매월 둘째–다섯째 주일</span></td><td>서린빌딩 5층 (중구 중앙길 91)</td></tr>
             <tr class="go" data-href="#suschool"><td><a class="rowlink" href="#suschool">SU스쿨<span aria-hidden="true"> →</span></a></td><td>매주 토요일 오전 9시–오후 4시</td><td>북구 상방로 131, 지상 2층</td></tr>
           </tbody>
@@ -571,7 +584,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <div class="welcome">
         <div>
           <h2>처음 오시는 분께</h2>
-          <p class="muted">교회가 처음이어도 괜찮습니다. 준비물도, 정해진 옷차림도 없습니다. 주일 오후 4시, 카페 같은 공간에서 함께 예배합니다. 오시기 전에 궁금한 것이 있으면 <a class="tel" href="tel:010-2605-0309">010-2605-0309</a>로 편하게 물어 주세요. 새로 오신 분과는 처음 얼마간 우리 교회의 목회 방향을 함께 읽으며, 우리가 어떤 교회인지를 나눕니다.</p>
+          <p class="muted">교회가 처음이어도 괜찮습니다.<br>준비물도, 정해진 옷차림도 없습니다.<br>주일 오후 4시, 컬티 카페에서 함께 예배합니다.<br>예배 순서는 화면에 나와 있으니 편안하게 따라오시면 됩니다.<br>예배 후에는 함께 식사하며 인사 나누고 싶습니다.<br>오시기 전에 궁금한 것이 있으면 <a class="tel" href="tel:010-2605-0309">010-2605-0309</a>로 편하게 물어 주세요. 새로 오신 분과는 처음 얼마간 우리 교회의 목회 방향을 함께 읽으며, 우리가 어떤 교회인지를 나눕니다.</p>
         </div>
         <div class="btns" style="margin-top:0">
           <a class="btn primary" href="#location">오시는 길 →</a>
@@ -710,16 +723,16 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <div>
         <div class="head" style="margin-bottom:18px"><span class="eyebrow">Location</span><h2>오시는 길</h2></div>
         <div class="tbl kv"><table><tbody>
-          <tr><td>주소</td><td>울산광역시 남구 화합로194번길 12-1, 2층 (컬티)</td></tr>
+          <tr><td>주소</td><td>울산광역시 남구 화합로194번길 12-1, 2층 (컬티 카페)</td></tr>
           <tr><td>주차</td><td>건물 1층 주차장, 주변 공용주차장</td></tr>
           
           <tr><td>문의</td><td><a class="tel" href="tel:010-2605-0309">010-2605-0309</a></td></tr>
         </tbody></table></div>
-        <p class="muted" style="margin-top:16px">주일 오후에는 건물 2층 컬티에서 예배합니다.<br>처음 오시면 입구에서 안내해 드립니다.<br>2027년에는 새 예배처소를 준비하고 있어,<br>장소가 바뀌면 이곳에 먼저 알리겠습니다.</p>
+        <p class="muted" style="margin-top:16px">주일 오후에는 건물 2층 컬티 카페에서 예배합니다.<br>처음 오시면 입구에서 안내해 드립니다.<br>2027년에는 새 예배처소를 준비하고 있어,<br>장소가 바뀌면 이곳에 먼저 알리겠습니다.</p>
         <p class="gap-p"><a class="btn line" href="https://map.naver.com/p/search/%EC%9A%B8%EC%82%B0%20%EB%82%A8%EA%B5%AC%20%ED%99%94%ED%95%A9%EB%A1%9C194%EB%B2%88%EA%B8%B8%2012-1" target="_blank" rel="noopener">네이버 지도에서 보기 →</a></p>
       </div>
       <div class="stack">
-        <div class="map"><span>컬티 2층</span></div>
+        <div class="map"><span>컬티 카페 2층</span></div>
       </div>
     </div>
   </section>
@@ -993,9 +1006,9 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <div class="tbl"><table>
         <thead><tr><th>예배 · 모임</th><th>시간</th><th>장소</th><th>대상</th></tr></thead>
         <tbody>
-          <tr class="go" data-href="#first-visit"><td><a class="rowlink" href="#first-visit">주일예배<span aria-hidden="true"> →</span></a></td><td>주일 오후 4시</td><td>컬티 (화합로194번길 12-1, 2층)</td><td>온 세대</td></tr>
+          <tr class="go" data-href="#first-visit"><td><a class="rowlink" href="#first-visit">주일예배<span aria-hidden="true"> →</span></a></td><td>주일 오후 4시</td><td>컬티 카페 (화합로194번길 12-1, 2층)</td><td>온 세대</td></tr>
           <tr class="go" data-href="#youth"><td><a class="rowlink" href="#youth">지틴즈 청소년 연합예배<span aria-hidden="true"> →</span></a></td><td>주일 오후 1시 30분<br><span class="muted" style="font-size:13px">매월 둘째–다섯째 주일</span></td><td>서린빌딩 5층 (중구 중앙길 91)</td><td>중 · 고등학생</td></tr>
-          <tr class="go" data-href="#young-adults"><td><a class="rowlink" href="#young-adults">복살프 (청년 모임)<span aria-hidden="true"> →</span></a></td><td>수요일 저녁 7시–9시</td><td>그때마다 안내</td><td>청년</td></tr>
+          <tr class="go" data-href="#young-adults"><td><a class="rowlink" href="#young-adults">수요 모임 (복살프)<span aria-hidden="true"> →</span></a></td><td>수요일 저녁 7시–9시</td><td>그때마다 안내</td><td>누구나</td></tr>
           <tr class="go" data-href="#suschool"><td><a class="rowlink" href="#suschool">SU스쿨<span aria-hidden="true"> →</span></a></td><td>토요일 오전 9시–오후 4시</td><td>북구 상방로 131, 지상 2층</td><td>초등학생–고등학생</td></tr>
           <tr><td>공동체성경읽기</td><td>매일</td><td>온라인(단톡방)</td><td>전 성도</td></tr>
           <tr><td>성찬식</td><td>때마다 미리 공지</td><td>주일예배 중</td><td>세례교인 · 입교인</td></tr>
@@ -1010,9 +1023,14 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
       <div class="head"><span class="eyebrow">Sunday</span><h2>주일예배 안내</h2></div>
       <div class="two">
         <div class="stack">
+          <h3 style="font-size:22px">주일예배 순서</h3>
+          <p class="muted">약 70분 동안 드립니다. 순서마다 담긴 뜻을 알고 오시면 더 편안하게 함께하실 수 있습니다.</p>
+          <ol class="worship-order"><li><b>예배의 부름</b><span>하나님께서 말씀으로 우리를 부르십니다. 예배는 그 부르심에 대한 응답입니다.</span></li><li><b>찬양</b><span>우리를 부르신 하나님을 한목소리로 찬양합니다.</span></li><li><b>사도신경</b><span>교회가 2천 년 동안 함께 고백해 온 믿음의 요약입니다.</span></li><li><b>회개기도와 사죄의 확신</b><span>우리 죄를 정직하게 고백하고, 그리스도 안에서 약속된 용서를 듣습니다.</span></li><li><b>대표기도</b><span>맡은 성도가 대표로 기도합니다. 듣는 시간이 아니라 마음을 모아 함께 기도하는 시간입니다.</span></li><li><b>성경봉독</b><span>오늘 우리에게 주시는 하나님의 말씀을 듣습니다.</span></li><li><b>설교</b><span>한 본문에서 한 가지 핵심을, 일상의 말로 전합니다.</span></li><li><b>설교 후 기도</b><span>들은 말씀을 붙들고 기도합니다.</span></li><li><b>찬송</b><span>말씀에 응답하며 찬송합니다.</span></li><li><b>봉헌</b><span>가진 모든 것이 하나님께로부터 왔음을 고백합니다. 처음 오신 분은 부담 갖지 않으셔도 됩니다.</span></li><li><b>교회 소식</b><span>한 주간 교회의 일을 함께 나눕니다.</span></li><li><b>축도</b><span>하나님께서 우리를 세상으로 보내시며 복을 선언하십니다.</span></li></ol>
+        </div>
+        <div class="stack">
           <h3 style="font-size:22px">주일예배는 이렇게 드립니다</h3>
           <ul class="facts">
-            <li>찬양, 기도, 성경 봉독, 설교, 축도 순서로 드립니다.</li>
+            <li>찬양, 기도, 성경 봉독, 설교, 축도 순서로 약 70분 동안 드립니다.</li>
             <li>대한예수교장로회 고신 교단의 예배 지침을 따릅니다.</li>
             <li>예배 10분 전에 오시면 자리를 안내해 드립니다.</li>
             <li>아이들도 부모와 함께 예배합니다. 부모가 먼저 하나님을 예배하고, 자녀가 그 모습을 보고 자랍니다.</li>
@@ -1033,7 +1051,7 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
             <details open><summary>무엇을 준비해야 하나요?</summary><p>없습니다. 성경이 없어도 화면으로 함께 봅니다.</p></details>
             <details><summary>헌금을 해야 하나요?</summary><p>처음 오신 분은 하지 않으셔도 됩니다.</p></details>
             <details><summary>아이와 같이 가도 되나요?</summary><p>됩니다. 아이들이 함께 예배하는 교회입니다.</p></details>
-            
+            <details><summary>예배 후에는 무엇을 하나요?</summary><p>함께 식사하며 교제합니다.<br>처음 오신 분과도 인사 나누고 싶습니다.</p></details>
             <details><summary>처음 오면 무엇을 함께하나요?</summary><p>새로 오신 분과는 처음 얼마간 우리 교회의 목회 방향을 함께 읽으며, 우리가 어떤 교회인지를 나눕니다.</p></details>
           </div>
         </div>
@@ -1208,10 +1226,10 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
         <p class="lines">청년부에는 대학생과 청년이 함께합니다.<br><span>대학 생활과 취업 준비, 일터와 결혼까지</span><br><span>청년의 삶에서 마주하는 모든 고민을</span> <span>복음 안에서 함께 나눕니다.</span><br>복음 위에 자기 신앙을 단단히 세우고,<br>장차 다음 세대를 이끌 일꾼으로 준비합니다.</p></div>
       <div class="two even">
         <div class="card bokslp">
-          <span class="tag">매주 수요일 저녁</span>
+          <span class="tag">수요 모임 · 누구나 함께</span>
           <h3>복살프</h3>
           <p class="bk-name"><b>복</b>음으로 <b>살</b>자 <b>프</b>로젝트<br><b>복</b>스럽게 <b>살</b>찌우는 <b>프</b>로젝트</p>
-          <p class="lines">매주 수요일 저녁에 모여<br>맛있는 식사로 교제하고,<br><span>한 주의 삶과 말씀,</span> <span>함께 읽은 책을</span><br>자유롭게 나누는 청년들의 풍성한 저녁입니다.</p>
+          <p class="lines">매주 수요일 저녁에 모여<br>맛있는 식사로 교제하고,<br><span>한 주의 삶과 말씀,</span> <span>함께 읽은 책을</span><br>자유롭게 나누는 풍성한 저녁입니다.<br>청년부가 중심이 되어 모이지만, 누구나 함께할 수 있습니다.</p>
           <p class="bk-when">수요일 저녁 7시–9시 · 장소는 그때마다 안내</p>
         </div>
         <div class="tbl kv"><table><tbody>
@@ -1326,6 +1344,19 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
   <section id="notices">
     <div class="wrap">
       <div class="head"><span class="eyebrow">Notice</span><h2>공지 · 주보</h2><p>공지 · 주보 · 행사 안내 · 기도제목</p></div>
+      <article class="card bulletin" id="this-week">
+        <span class="tag">이번 주 주보 · 2026. 11. 29.(주일) 오후 4시 · 컬티 카페</span>
+        <p class="b-series">돌에 맞은 사람을 위한 복음 (2)</p>
+        <h3>누가 나를 고칩니까</h3>
+        <dl class="s-meta"><div><dt>본문</dt><dd class="nw">베드로전서 2:22–25</dd></div><div><dt>설교</dt><dd class="nw">고영석 목사</dd></div><div><dt>찬송</dt><dd><span class="nw">570장</span> <span class="nw">「주는 나를 기르시는 목자」</span></dd></div></dl>
+        <details class="fold b-fold"><summary><span class="f-t">오늘의 말씀 · 베드로전서 2:22–25</span><span class="f-chev" aria-hidden="true"></span></summary><div class="fold-body">
+          <ol class="verses" start="22"><li>그는 죄를 범하지 아니하시고 그 입에 거짓도 없으시며</li><li>욕을 당하시되 맞대어 욕하지 아니하시고 고난을 당하시되 위협하지 아니하시고 오직 공의로 심판하시는 이에게 부탁하시며</li><li>친히 나무에 달려 그 몸으로 우리 죄를 담당하셨으니 이는 우리로 죄에 대하여 죽고 의에 대하여 살게 하려 하심이라 그가 채찍에 맞음으로 너희는 나음을 얻었나니</li><li>너희가 전에는 양과 같이 길을 잃었더니 이제는 너희 영혼의 목자와 감독 되신 이에게 돌아왔느니라</li></ol>
+        </div></details>
+        <details class="fold b-fold"><summary><span class="f-t">나눔 질문 · 가정과 소그룹에서</span><span class="f-chev" aria-hidden="true"></span></summary><div class="fold-body">
+          <ol class="howto"><li>내가 마음으로 쥐고 있는 돌은 무엇입니까?<br>그 사람에게 하고 싶은 말, 그 사람에게 일어났으면 하는 일은 무엇입니까?</li><li>내가 던진 돌은 누구에게 떨어졌습니까?<br>그 돌을 예수님이 지셨다는 것은 오늘 나에게 무슨 뜻입니까?</li></ol>
+        </div></details>
+        <p class="muted" style="font-size:14px">처음 오신 분께 · 예배 순서는 화면에 나와 있으니 편안하게 따라오시면 됩니다. <a href="#first-visit">주일예배 순서 보기 →</a></p>
+      </article>
       <ul class="news">
         <li><time>2026. 12. 6.(주일)</time><div><b><span class="pin">고정</span>입교 · 세례식 안내</b><p>12월 첫째 주일 예배 중에 입교 · 세례식이 있습니다. 교회의 첫 성례를 함께 기뻐해 주세요.</p></div></li>
         <li><time>2026. 12.</time><div><b><a href="#word-prayer" style="color:inherit">「말씀 앞에서 드리는 30일 기도」 안내</a></b><p>성경 읽기와 설교, 큐티 앞에 드리는 30일 기도문 소책자를 나눕니다.</p><a class="pray-link" href="#word-prayer">맛보기 · 책 안내 보기 →</a></div></li>

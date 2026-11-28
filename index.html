@@ -1674,7 +1674,7 @@ button.btn.line{cursor:pointer}
    bookFiles['창세기'] = '교회 자료 파일 주소(PDF)'
    plans = 한 해 읽기표 PDF */
 var BIBLE_READING={
-  start:'2027-01-01',
+  start:'auto',   /* 'auto' = 올해 1월 1일이 1회차. 특정 날짜로 고정하려면 '2027-01-01'처럼 적습니다. */
   plans:[{label:'개역개정',file:'files/bible/2027-365-krv.pdf'},{label:'우리말성경',file:'files/bible/2027-365-woorimal.pdf'}],
   krvList:'PLVcVykBcFZTR4Q6cvmybjPgCklZlv-Ghj',
   wrmList:'PLVcVykBcFZTT0hugHClJM2FZrVAckYk17',
@@ -1693,7 +1693,8 @@ var BIBLE_READING={
   var D=BIBLE_READING, root=document.getElementById('bible'); if(!root) return;
   var N=D.days.length, W=['일','월','화','수','목','금','토'], YT='https://youtu.be/';
   function p(s){ var a=s.split('-'); return new Date(+a[0],+a[1]-1,+a[2]); }
-  var start=p(D.start), DAY=864e5;
+  function startOf(){ var t=new Date(); return D.start==='auto' ? new Date(t.getFullYear(),0,1) : p(D.start); }
+  var start=startOf(), DAY=864e5;
   function dateOf(i){ return new Date(start.getFullYear(),start.getMonth(),start.getDate()+i); }
   function idxOf(d){ return Math.round((new Date(d.getFullYear(),d.getMonth(),d.getDate())-start)/DAY); }
   function md(d){ return (d.getMonth()+1)+'. '+d.getDate()+'.('+W[d.getDay()]+')'; }
@@ -1757,7 +1758,7 @@ var BIBLE_READING={
   }
   function goBook(b){ openBook=b; show(D.books[b].f-1); var el=root.querySelector('.br-book[data-book="'+b+'"]'); if(el){ el.open=true; el.scrollIntoView({behavior:'smooth',block:'center'}); } }
   root.querySelector('.br-allbooks').innerHTML=D.order.map(function(b){ return '<button type="button" class="br-bookchip" data-book="'+esc(b)+'">'+esc(b)+'</button>'; }).join('');
-  root.querySelector('.br-dl').innerHTML='<h3>'+start.getFullYear()+'년 공동체성경읽기 365 읽기표</h3><p>일차, 날짜, 본문, 시편이 달별로 정리된 표입니다.<br>번역본에 맞는 표를 내려받으세요.</p><div class="br-files">'
+  root.querySelector('.br-dl').innerHTML='<h3>2027년 공동체성경읽기 365 읽기표</h3><p>일차, 날짜, 본문, 시편이 달별로 정리된 표입니다.<br>번역본에 맞는 표를 내려받으세요.</p><div class="br-files">'
     +D.plans.map(function(x){ return '<a class="btn primary" href="'+esc(x.file)+'" download target="_blank" rel="noopener">'+esc(x.label)+' 읽기표 (PDF)</a>'; }).join('')+'</div>';
   root.querySelector('.br-pano').innerHTML=D.panorama.map(function(x){
     return '<div class="card br-panocard"><span class="book-kind">'+esc(x.half)+'</span><b>'+esc(x.title)+'</b><p>'+(x.date?fmt(p(x.date))+' · 주일예배':'날짜는 추후 안내합니다.')+'</p><p class="muted">준비 · 서정은 전도사</p>'+(x.link?'<a href="'+esc(x.link)+'" target="_blank" rel="noopener">영상 보기 →</a>':'')+'</div>';
@@ -1773,6 +1774,14 @@ var BIBLE_READING={
   });
   root.addEventListener('toggle',function(e){ if(e.target.matches&&e.target.matches('.br-book')&&e.target.open) openBook=e.target.dataset.book; },true);
   months(); show(cur);
+  /* 자정이 지나면 그날 본문으로 바뀌도록 1분마다 날짜를 확인 */
+  var lastDay=new Date().toDateString();
+  setInterval(function(){
+    var now=new Date().toDateString(); if(now===lastDay) return;
+    var wasToday=(cur===todayIdx()); lastDay=now; start=startOf();
+    if(wasToday) show(todayIdx()); else { grid(); show(cur); }
+  },60000);
+  document.addEventListener('visibilitychange',function(){ if(!document.hidden && new Date().toDateString()!==lastDay){ lastDay=new Date().toDateString(); start=startOf(); show(todayIdx()); } });
 })();
 </script>
 </div>

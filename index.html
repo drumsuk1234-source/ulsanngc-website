@@ -486,37 +486,69 @@ footer .copy-r{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,25
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 dd li.gap{margin-top:.9em}
-.br-card{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:16px;padding:clamp(20px,3vw,32px);max-width:640px;scroll-margin-top:90px}
+.br-card{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:16px;padding:clamp(20px,3vw,32px);max-width:680px;scroll-margin-top:90px}
 .br-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .br-when{text-align:center;display:flex;flex-direction:column;gap:2px}
 .br-dayno{font-weight:700;color:var(--gold);font-size:15px;letter-spacing:.02em}
 .br-date{color:var(--muted);font-size:14px}
-.br-step{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:24px;line-height:1;cursor:pointer}
+.br-step{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:24px;line-height:1;cursor:pointer;flex:none}
 .br-step:disabled{opacity:.3;cursor:default}
-.br-ref{font-family:var(--display);font-size:clamp(24px,5vw,32px);text-align:center;margin:22px 0 18px}
+.br-refs{text-align:center;margin:20px 0 18px}
+.br-ref{font-family:var(--display);font-size:clamp(24px,5.4vw,32px);margin:0;line-height:1.35;word-break:keep-all}
+.br-psalm{font-family:var(--display);font-size:clamp(18px,4vw,22px);color:var(--accent);margin:6px 0 0}
+.br-time{font-size:13px;color:var(--muted);margin:8px 0 0}
 .br-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
 .br-off{opacity:.55;cursor:default}
-.br-newbook{margin-top:22px;padding:18px;border-radius:12px;background:var(--band)}
-.br-newbook b,.br-bookcard b,.br-panocard b{display:block;font-family:var(--display);font-size:20px;margin:4px 0 6px}
-.br-newbook ul,.br-bookcard ul{margin:8px 0;padding-left:1.2em}
-.br-today-btn{display:block;margin:18px auto 0;border:0;background:none;color:var(--accent);font-weight:500;font-size:15px;cursor:pointer}
+.br-lab{display:block;font-size:13px;font-weight:700;color:var(--gold);margin:0 0 8px;letter-spacing:.02em}
+.br-new,.br-vids{margin-top:20px}
+.br-new:empty,.br-vids:empty{display:none}
+.br-vids{padding:16px 18px;border-radius:12px;background:var(--band)}
+.br-vlist{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.br-vlist a{display:flex;gap:10px;align-items:flex-start;text-decoration:none;color:var(--ink);padding:6px 0;line-height:1.45}
+.br-vlist a:hover{color:var(--accent)}
+.play-i{flex:none;width:24px;height:24px;border-radius:50%;background:#e33;color:#fff;font-size:10px;display:inline-flex;align-items:center;justify-content:center;margin-top:-1px}
+.br-bookchip{display:inline-block;margin:0 8px 8px 0;padding:8px 14px;border-radius:999px;border:1px solid var(--accent);background:var(--surface);color:var(--accent);font:inherit;font-size:15px;font-weight:500;cursor:pointer}
+.br-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.br-check{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:9px 16px;font:inherit;font-size:15px;cursor:pointer}
+.br-check[aria-pressed="true"]{background:#eef6ee;border-color:#7fb07f;color:#2d6a2d}
+.br-today-btn{border:0;background:none;color:var(--accent);font:inherit;font-weight:500;font-size:15px;cursor:pointer}
+.br-note{font-size:13px;margin-top:10px}
 .br-months{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:16px;scrollbar-width:none}
-.br-months button{flex:none;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:15px;cursor:pointer}
+.br-months button{flex:none;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:15px;cursor:pointer}
 .br-months button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
-.br-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+.br-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px}
 .br-day{text-align:left;display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;font:inherit;min-height:64px}
 .br-day .n{font-weight:700;font-size:17px}
 .br-day .n small{font-weight:400;font-size:12px;color:var(--muted);margin-left:4px}
+.br-day .n em{font-style:normal;color:#2d8a2d;margin-left:6px;font-size:14px}
 .br-day .k{font-size:12px;color:var(--muted)}
-.br-day .r{font-size:12px;color:var(--accent);line-height:1.35}
+.br-day .r{font-size:12px;color:var(--accent);line-height:1.35;word-break:keep-all}
 .br-day.today{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
 .br-day.on{background:var(--accent);border-color:var(--accent);color:#fff}
-.br-day.on .k,.br-day.on .r,.br-day.on .n small{color:rgba(255,255,255,.85)}
-@media (max-width:560px){.br-grid{grid-template-columns:repeat(4,1fr);gap:6px}.br-day{padding:8px;min-height:56px}.br-day .r{display:none}}
-.br-range{font-weight:500;color:var(--muted);margin-bottom:12px}
-.br-week{display:grid;gap:14px;max-width:720px}
-.br-from{font-size:13px;color:var(--muted)}
+.br-day.on .k,.br-day.on .r,.br-day.on .n small,.br-day.on .n em{color:rgba(255,255,255,.9)}
+@media (max-width:560px){.br-grid{grid-template-columns:repeat(3,1fr);gap:6px}.br-day{padding:8px}}
+.br-wk{font-weight:500;color:var(--muted);margin-bottom:12px}
+.br-shelf{display:grid;gap:12px;max-width:760px}
+.br-book{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px}
+.br-book summary{list-style:none;cursor:pointer;padding:16px 18px;display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:12px}
+.br-book summary::-webkit-details-marker{display:none}
+.br-book summary .br-from{grid-column:1;font-size:13px;color:var(--muted)}
+.br-book summary b{grid-column:1;font-family:var(--display);font-size:22px}
+.br-more{grid-column:2;grid-row:1/3;font-size:14px;font-weight:500;color:var(--accent)}
+.br-more::after{content:" ▾"}
+.br-book[open] .br-more::after{content:" ▴"}
+.br-bookbody{padding:0 18px 18px}
+.br-range{font-size:14px;color:var(--muted);margin:0 0 12px}
+.br-files{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.br-files .btn{font:inherit;font-size:15px;cursor:pointer}
+button.btn.line{cursor:pointer}
+.br-all{margin-top:22px;max-width:760px}
+.br-all summary{cursor:pointer;font-weight:500;color:var(--accent);padding:8px 0}
+.br-allbooks{padding-top:10px}
+.br-allbooks .br-bookchip{font-size:14px;padding:6px 12px;margin:0 6px 6px 0}
+.br-dl{max-width:680px}
 .br-pano{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;max-width:720px}
+.br-panocard b{display:block;font-family:var(--display);font-size:20px;margin:4px 0 6px}
 .br-join{max-width:640px}
 </style>
 </head>
@@ -1542,25 +1574,34 @@ dd li.gap{margin-top:.9em}
   <div class="pagehead"><div class="wrap">
     <span class="eyebrow">Community Bible Reading</span>
     <h1>공동체성경읽기</h1>
-    <p>날마다 같은 본문을 함께 읽고,<br>한 해 동안 성경 전체를 함께 통독합니다.</p>
-    <div class="chips" role="navigation" aria-label="공동체성경읽기 차례"><a href="#br-today">오늘의 본문</a><a href="#br-days">날짜별 본문</a><a href="#br-books">이번 주 새로 시작하는 책</a><a href="#br-panorama">성경 파노라마</a></div>
+    <p>날마다 같은 본문을 함께 읽고,<br>한 해 동안 성경 전체를 함께 통독합니다.<br>하루 15분 안팎, 본문 한 묶음과 시편 한 편을 읽습니다.</p>
+    <div class="chips" role="navigation" aria-label="공동체성경읽기 차례"><a href="#br-today">오늘의 본문</a><a href="#br-days">날짜별 본문</a><a href="#br-books">이번 주 새로 시작하는 책</a><a href="#br-download">읽기표 내려받기</a><a href="#br-panorama">성경 파노라마</a></div>
   </div></div>
 
   <section id="br-today">
     <div class="wrap">
       <div class="head"><span class="eyebrow">Today</span><h2>오늘의 본문</h2>
-        <p>본문을 누르면 개역개정, 쉬운성경 읽기 영상으로 이어집니다.<br>편한 번역으로 듣고 읽으며 하루를 여세요.</p></div>
+        <p>버튼을 누르면 읽기 영상으로 이어집니다.<br>편한 번역으로 듣고 읽으며 하루를 여세요.</p></div>
       <div class="br-card" aria-live="polite">
         <div class="br-top">
           <button type="button" class="br-step" data-step="-1" aria-label="전날">‹</button>
           <div class="br-when"><span class="br-dayno"></span><span class="br-date"></span></div>
           <button type="button" class="br-step" data-step="1" aria-label="다음 날">›</button>
         </div>
-        <p class="br-ref"></p>
+        <div class="br-refs">
+          <p class="br-ref"></p>
+          <p class="br-psalm"></p>
+          <p class="br-time"></p>
+        </div>
         <div class="br-links"></div>
-        <div class="br-newbook" hidden></div>
-        <button type="button" class="br-today-btn">오늘로 돌아가기</button>
+        <div class="br-new"></div>
+        <div class="br-vids"></div>
+        <div class="br-foot">
+          <button type="button" class="br-check" aria-pressed="false">☐ 오늘 읽었어요</button>
+          <button type="button" class="br-today-btn">오늘로 돌아가기</button>
+        </div>
       </div>
+      <p class="muted br-note">‘읽었어요’ 표시는 지금 쓰는 휴대폰(브라우저)에만 저장됩니다.</p>
     </div>
   </section>
 
@@ -1576,12 +1617,24 @@ dd li.gap{margin-top:.9em}
   <section id="br-books">
     <div class="wrap">
       <div class="head"><span class="eyebrow">New Books</span><h2>이번 주 새로 시작하는 책</h2>
-        <p>그 주에 새로 읽기 시작하는 성경이 있으면,<br>그 책의 배경과 흐름을 미리 안내합니다.</p></div>
+        <p>그 주에 새로 읽기 시작하는 성경을 날짜별로 모았습니다.<br>책 이름을 누르면,<br>그 책의 개관 영상과 교회 자료를 받을 수 있습니다.</p></div>
       <div class="br-week"></div>
+      <details class="br-all">
+        <summary>성경 전체 목록에서 고르기</summary>
+        <div class="br-allbooks"></div>
+      </details>
     </div>
   </section>
 
-  <section id="br-panorama" class="band">
+  <section id="br-download" class="band">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Download</span><h2>읽기표 내려받기</h2>
+        <p>한 해 읽기표를 내려받아,<br>출력하거나 휴대폰에 저장해 두고 체크하며 읽으세요.</p></div>
+      <div class="card br-dl"></div>
+    </div>
+  </section>
+
+  <section id="br-panorama">
     <div class="wrap">
       <div class="head"><span class="eyebrow">Bible Panorama</span><h2>성경 파노라마</h2>
         <p>한 해에 두 번, 상반기와 하반기에 성경 전체의 큰 흐름을 함께 봅니다.<br>서정은 전도사가 준비하여,<br>주일예배 설교 시간에 넉넉하게 나눕니다.</p></div>
@@ -1589,7 +1642,7 @@ dd li.gap{margin-top:.9em}
     </div>
   </section>
 
-  <section>
+  <section class="band">
     <div class="wrap">
       <div class="card br-join">
         <h3>함께 읽기</h3>
@@ -1601,90 +1654,108 @@ dd li.gap{margin-top:.9em}
 
 <script>
 /* ===== 공동체성경읽기 자료 =====
-   days: 1일차부터 순서대로. ref=본문, krv=개역개정 유튜브 주소, easy=쉬운성경 유튜브 주소,
-         newBook=그날 새로 시작하는 책 이름(books의 이름과 같게).
-   예) {ref:'창세기 1–3장', krv:'https://youtu.be/xxxx', easy:'https://youtu.be/yyyy', newBook:'창세기'}
-   books: 책 소개. 예) '창세기':{line:'한 줄 소개', points:['배경 …','핵심 …'], link:'자료 주소(선택)'}
-   panorama: 성경 파노라마 일정. date는 'YYYY-MM-DD', link는 설교 영상 주소(선택). */
+   days[회차-1] = [본문, 시편, 걸리는 시간(분:초), [[바이블프로젝트 영상 제목, 유튜브 ID], …]]
+   audio[회차] = {krv:'개역개정 영상 주소', easy:'쉬운성경 영상 주소'}
+   bookFiles['창세기'] = '교회 자료 파일 주소(PDF)'
+   planPdf = 한 해 읽기표 PDF 주소 */
 var BIBLE_READING={
   start:'2027-01-01',
-  total:365,
-  days:[],
-  books:{},
+  planPdf:'',
+  audio:{},
+  bookFiles:{},
   panorama:[
     {half:'상반기', date:'', title:'성경 파노라마 · 상반기', link:''},
     {half:'하반기', date:'', title:'성경 파노라마 · 하반기', link:''}
-  ]
+  ],
+  days:[["창세기 1-2장","시편 1편","10:51",[["Tree of Life","TJLan-pJzfQ"]]],["창세기 3-6장","시편 2편","15:57",[["Torah: The Book of Genesis – Part 1 of 2","KOUV7mWDI34"]]],["창세기 7-11장","시편 3편","17:32",[["How to Read the Bible: Biblical Story","7_CGP-12AE0"]]],["창세기 12-15장","시편 4편","13:52",[["Overview: Genesis Ch. 1-11","dLv2ndgXrbo"]]],["창세기 16-18장","시편 5편","14:34",[["Covenants","8ferLIsvlmI"]]],["창세기 19-20장","시편 6편","10:58",[["How to Read the Bible: Literary Styles","oUXJ8Owes8E"]]],["창세기 21-23장","시편 7편","14:03",[["How to Read the Bible: Ancient Jewish Meditation Literature","VhmlJBUIoLk"]]],["창세기 24-25장","시편 8편","16:27",[["Image of God","YbipxLDtY8c"]]],["창세기 26-27장","시편 9편","15:36",[]],["창세기 28-30장","시편 10편","17:42",[["Torah: The Book of Genesis – Part 2 of 2","VpbWbyx1008"]]],["창세기 31-33장","시편 11편","17:23",[]],["창세기 34-36장","시편 12편","15:09",[]],["창세기 37-39장","시편 13편","14:31",[]],["창세기 40-41장","시편 14편","12:02",[]],["창세기 42-43장","시편 15편","13:09",[]],["창세기 44-46장","시편 16편","16:52",[]],["창세기 47-48장","시편 17편","13:04",[]],["창세기 49-50장","시편 18편","19:08",[["Overview: Genesis Ch. 12-50","p4Oh-rbc9rE"]]],["출애굽기 1-3장","시편 19편","13:37",[["Torah: The Book of Exodus – Part 1 of 2","0uf-PgW7rqE"]]],["출애굽기 4-6장","시편 20편","15:07",[["How to Read the Bible: Character","0EQDGax19xk"]]],["출애굽기 7-9장","시편 21편","17:16",[]],["출애굽기 10-11장","시편 22편","11:49",[]],["출애굽기 12-13장","시편 23편","13:51",[]],["출애굽기 14-15장","시편 24편","12:00",[]],["출애굽기 16-18장","시편 25편","15:59",[["Overview: Exodus Ch. 1-18","PrTbYx6KbtY"]]],["출애굽기 19-21장","시편 26편","15:47",[["Torah: The Book of Exodus – Part 2 of 2","b0GhR-2kPKI"]]],["출애굽기 22-24장","시편 27편","15:05",[["Justice","Hv_KJt_GWVo"]]],["출애굽기 25-27장","시편 28편","13:37",[]],["출애굽기 28-29장","시편 29편","14:01",[]],["출애굽기 30-32장","시편 30편","16:23",[["Sabbath","PFTLvkB3JLM"]]],["출애굽기 33-35장","시편 31편","19:05",[["Character of God","nxwzq1PJImM"]]],["출애굽기 36-38장","시편 32편","15:07",[]],["출애굽기 39-40장","시편 33편","13:20",[["Overview: Exodus Ch. 19-40","ze0bIlO5p1w"]]],["레위기 1-4장","시편 34편","16:11",[["Torah: The Book of Leviticus","WmvyrLXoQio"]]],["레위기 5-8장","시편 35편","13:46",[["Sacrifice & Atonement","G_OlRWGLdnw"]]],["레위기 9-11장","시편 36편","15:57",[]],["레위기 12-13장","시편 37편","15:14",[["Law","3BGO9Mmd_cU"]]],["레위기 14-15장","시편 38편","15:53",[["How to Read the Bible: The Law","Sew1kBIe-W0"]]],["레위기 16-18장","시편 39편","15:08",[]],["레위기 19-20장","시편 40편","14:06",[]],["레위기 21-23장","시편 41편","18:04",[]],["레위기 24-25장","시편 42편","14:10",[]],["레위기 26-27장","시편 43편","14:12",[["Overview: Leviticus","OUPcm3QGt7Y"]]],["민수기 1-2장","시편 44편","14:19",[["Torah: The Book of Numbers","zebxH-5o-SQ"]]],["민수기 3-4장","시편 45편","15:49",[]],["민수기 5-6장","시편 46편","10:36",[]],["민수기 7-8장","시편 47편","16:58",[]],["민수기 9-11장","시편 48편","16:43",[]],["민수기 12-14장","시편 49편","17:06",[]],["민수기 15-16장","시편 50편","17:29",[]],["민수기 17-19장","시편 51편","15:21",[]],["민수기 20-21장","시편 52편","12:27",[]],["민수기 22-23장","시편 53편","14:03",[]],["민수기 24-26장","시편 54편","16:45",[]],["민수기 27-29장","시편 55편","16:37",[]],["민수기 30-31장","시편 56편","11:52",[]],["민수기 32-33장","시편 57편","13:30",[]],["민수기 34-36장","시편 58편","12:36",[["Overview: Numbers","Q0Lac54urBU"]]],["신명기 1-2장","시편 59편","18:25",[["Torah: The Book of Deuteronomy","NMhmDPWeftw"]]],["신명기 3-4장","시편 60편","18:30",[]],["신명기 5-7장","시편 61편","17:55",[["Shema – Listen","6KQLOuIKaRA"]]],["신명기 8-10장","시편 62편","17:16",[["YHWH – Lord","eLrGM26pmM0"]]],["신명기 11-12장","시편 63편","14:33",[["Love","HV_LUs2lnIQ"]]],["신명기 13-15장","시편 64편","14:09",[["Heart","aS4iM6KpPYo"]]],["신명기 16-18장","시편 65편","13:59",[["Soul","g_igCcWAMAM"]]],["신명기 19-20장","시편 66편","11:16",[["Strength","9aaVy1AmFX4"]]],["신명기 21-23장","시편 67편","14:36",[]],["신명기 24-25장","시편 68편","13:15",[]],["신명기 26-27장","시편 69편","13:42",[]],["신명기 28장","시편 70편","13:20",[]],["신명기 29-30장","시편 71편","13:36",[]],["신명기 31-32장","시편 72편","18:43",[]],["신명기 33-34장","시편 73편","11:30",[["Overview: Deuteronomy","HOA8818FdYc"]]],["여호수아 1-3장","시편 74편","15:21",[["Overview: Joshua","9MmKvOItPds"]]],["여호수아 4-6장","시편 75편","14:54",[["How to Read the Bible: Design Patterns","rkqsQpck8YU"]]],["여호수아 7-8장","시편 76편","14:37",[]],["여호수아 9-10장","시편 77편","16:07",[]],["여호수아 11-12장","시편 78편","15:35",[]],["여호수아 13-15장","시편 79편","17:24",[]],["여호수아 16-19장","시편 80편","18:39",[]],["여호수아 20-22장","시편 81편","18:42",[]],["여호수아 23-24장","시편 82편","14:08",[]],["사사기 1-2장","시편 83편","12:21",[["Overview: Judges","2rnPxn2aeN0"]]],["사사기 3-5장","시편 84편","16:54",[]],["사사기 6-7장","시편 85편","15:28",[["How to Read the Bible: Plot","dLFCE8z__hw"]]],["사사기 8-9장","시편 86편","19:10",[]],["사사기 10-12장","시편 87편","14:06",[]],["사사기 13-15장","시편 88편","16:32",[]],["사사기 16-17장","시편 89편","16:18",[]],["사사기 18-19장","시편 90편","14:38",[]],["사사기 20-21장","시편 91편","15:13",[]],["룻기 1-2장","시편 92편","11:16",[["Overview: Ruth","jB2au0FGgjo"]]],["룻기 3-4장","시편 93편","08:41",[]],["사무엘상 1-2장","시편 94편","15:19",[["Overview: 1 Samuel","gZ9Jf2FeZJQ"]]],["사무엘상 3-5장","시편 95편","12:38",[]],["사무엘상 6-8장","시편 96편","16:00",[]],["사무엘상 9-10장","시편 97편","12:28",[]],["사무엘상 11-13장","시편 98편","14:53",[]],["사무엘상 14-15장","시편 99편","18:01",[]],["사무엘상 16-17장","시편 100편","15:12",[]],["사무엘상 18-19장","시편 101편","11:05",[]],["사무엘상 20-21장","시편 102편","14:12",[]],["사무엘상 22-24장","시편 103편","17:08",[]],["사무엘상 25-26장","시편 104편","18:20",[]],["사무엘상 27-29장","시편 105편","14:53",[]],["사무엘상 30-31장","시편 106편","13:03",[]],["사무엘하 1-2장","시편 107편","15:23",[["Overview: 2 Samuel","QYuSYPIfFPA"]]],["사무엘하 3-5장","시편 108편","16:18",[]],["사무엘하 6-8장","시편 109편","16:21",[]],["사무엘하 9-11장","시편 110편","12:06",[]],["사무엘하 12-13장","시편 111편","15:19",[]],["사무엘하 14-15장","시편 112편","15:02",[]],["사무엘하 16-17장","시편 113편","11:44",[]],["사무엘하 18-19장","시편 114편","17:17",[]],["사무엘하 20-22장","시편 115편","18:42",[]],["사무엘하 23-24장","시편 116편","13:36",[]],["열왕기상 1장","시편 117편","10:37",[["Overview: 1-2 Kings","jIcsdztsKBE"]]],["열왕기상 2-3장","시편 118편","18:56",[]],["열왕기상 4-6장","시편 119:1-32","16:45",[]],["열왕기상 7장","시편 119:33-64","11:22",[]],["열왕기상 8장","시편 119:65-96","17:26",[]],["열왕기상 9-10장","시편 119:97-128","13:25",[]],["열왕기상 11-12장","시편 119:129-152","16:12",[]],["열왕기상 13-14장","시편 119:153-176","15:57",[]],["열왕기상 15-16장","시편 120편","11:25",[]],["열왕기상 17-18장","시편 121편","14:19",[]],["열왕기상 19-20장","시편 122편","15:05",[]],["열왕기상 21-22장","시편 123편","15:58",[]],["열왕기하 1-3장","시편 124편","15:47",[]],["열왕기하 4-5장","시편 125편","15:34",[]],["열왕기하 6-8장","시편 126편","17:56",[]],["열왕기하 9-10장","시편 127편","15:37",[]],["열왕기하 11-13장","시편 128편","13:43",[]],["열왕기하 14-16장","시편 129편","15:23",[]],["열왕기하 17-18장","시편 130편","16:06",[]],["열왕기하 19-21장","시편 131편","16:11",[]],["열왕기하 22-23장","시편 132편","14:11",[]],["열왕기하 24-25장","시편 133편","09:02",[]],["역대상 1-3장","시편 134편","13:47",[["Overview: 1-2 Chronicles","AgRvk1qOAgg"]]],["역대상 4-5장","시편 135편","11:40",[]],["역대상 6-7장","시편 136편","17:35",[]],["역대상 8-10장","시편 137편","12:55",[]],["역대상 11-13장","시편 138편","16:07",[]],["역대상 14-16장","시편 139편","15:32",[]],["역대상 17-20장","시편 140편","15:32",[]],["역대상 21-24장","시편 141편","19:25",[]],["역대상 25-27장","시편 142편","14:24",[]],["역대상 28-29장","시편 143편","13:49",[]],["역대하 1-4장","시편 144편","15:27",[]],["역대하 5-6장","시편 145편","15:39",[["Temple","wTnq6I3vUbU"]]],["역대하 7-9장","시편 146편","14:05",[]],["역대하 10-12장","시편 147편","12:40",[]],["역대하 13-15장","시편 148편","12:32",[]],["역대하 16-19장","시편 149편","16:04",[]],["역대하 20-22장","시편 150편","14:48",[]],["역대하 23-25장","시편 1편","16:38",[]],["역대하 26-28장","시편 2편","12:26",[]],["역대하 29-30장","시편 3편","13:02",[]],["역대하 31-32장","시편 4편","12:02",[]],["역대하 33-34장","시편 5편","13:25",[]],["역대하 35-36장","시편 6편","10:57",[["Messiah","3dEh25pduQ8"]]],["에스라 1-3장","시편 7편","12:19",[["Overview: Ezra-Nehemiah","IxHJN4cOl-c"]]],["에스라 4-6장","시편 8편","13:25",[["Exile","xSua9_WhQFE"]]],["에스라 7-8장","시편 9편","15:28",[]],["에스라 9-10장","시편 10편","14:19",[]],["느헤미야 1-4장","시편 11편","18:47",[]],["느헤미야 5-7장","시편 12편","17:08",[]],["느헤미야 8-9장","시편 13편","14:42",[]],["느헤미야 10-11장","시편 14편","11:58",[]],["느헤미야 12-13장","시편 15편","15:06",[]],["에스더 1-3장","시편 16편","12:58",[["Overview: Esther","e4rGAPgtBbc"]]],["에스더 4-7장","시편 17편","13:31",[]],["에스더 8-10장","시편 18편","15:53",[]],["욥기 1-5장","시편 19편","18:47",[["The Book of Job","GswSg2ohqmA"]]],["욥기 6-9장","시편 20편","15:40",[]],["욥기 10-13장","시편 21편","14:29",[]],["욥기 14-16장","시편 22편","15:30",[]],["욥기 17-21장","시편 23편","17:05",[]],["욥기 22-27장","시편 24편","16:27",[]],["욥기 28-30장","시편 25편","13:39",[]],["욥기 31-33장","시편 26편","15:06",[]],["욥기 34-38장","시편 27편","16:21",[]],["욥기 39-42장","시편 28편","14:39",[["Overview: Job","SoOSMWGuDxk"]]],["잠언 1-5장","시편 29편","16:15",[["How to Read the Bible: The Books of Solomon","WJgt1vRkPbI"]]],["잠언 6-10장","시편 30편","17:37",[["The Book of Proverbs","Gab04dPs_uA"]]],["잠언 11-14장","시편 31편","17:27",[["Overview: Psalms","amAZ8ewil7g"]]],["잠언 15-18장","시편 32편","14:34",[["How to Read the Bible: Psalms","dpny22k_7uk"]]],["잠언 19-22장","시편 33편","15:34",[["How to Read the Bible: Poetry","q9yp1ZXbsEg"]]],["잠언 23-27장","시편 34편","19:14",[["How to Read the Bible: Metaphor in Biblical Poetry","L9W5afjndtU"]]],["잠언 28-31장","시편 35편","18:41",[["Overview: Proverbs","WPAs3uHoPDI"]]],["전도서 1-4장","시편 36편","14:54",[["The Book of Ecclesiastes","VeUiuSK81-0"]]],["전도서 5-8장","시편 37편","17:23",[]],["전도서 9-12장","시편 38편","13:09",[["Overview: Ecclesiastes","8bnFXIKuq3U"]]],["아가 1-4장","시편 39편","12:45",[]],["아가 5-8장","시편 40편","14:27",[["Overview: Song of Songs","jLA7P-L9NgU"]]],["이사야 1-4장","시편 41편","15:29",[["How to Read the Bible: The Prophets","edcqUu_BtN0"]]],["이사야 5-7장","시편 42편","14:33",[["Holiness","l9vn5UvsHvM"]]],["이사야 8-12장","시편 43편","18:34",[["Intro to Spiritual Beings","cBxOZqtGTXE"]]],["이사야 13-17장","시편 44편","19:38",[["Elohim","U5iyUik97Lg"]]],["이사야 18-22장","시편 45편","16:51",[["The Divine Council","e1rai6WoOJU"]]],["이사야 23-27장","시편 46편","16:43",[["Angels and Cherubim","-bMRxQbLUlg"]]],["이사야 28-30장","시편 47편","17:22",[["Angel of the Lord","qgmf8bHayXw"]]],["이사야 31-35장","시편 48편","16:09",[["The Satan and Demons","CamYtVpoTNk"]]],["이사야 36-38장","시편 49편","18:25",[["The New Humanity","takEeHtRrMw"]]],["이사야 39-41장","시편 50편","15:37",[["Overview: Isaiah Ch. 1-39","b0-A9qEu5ug"]]],["이사야 42-44장","시편 51편","18:40",[]],["이사야 45-48장","시편 52편","16:59",[]],["이사야 49-51장","시편 53편","16:22",[["Compassion","nq72EVVFBRA"]]],["이사야 52-55장","시편 54편","13:34",[["Gospel of the Kingdom","xmFPS0f-kzs"]]],["이사야 56-59장","시편 55편","16:54",[]],["이사야 60-63장","시편 56편","14:55",[]],["이사야 64-66장","시편 57편","15:49",[["Overview: Isaiah Ch. 40-66","592AmPSM2P8"]]],["예레미야 1-3장","시편 58편","18:22",[["Overview: Jeremiah","ErL1bUKQIIY"]]],["예레미야 4-5장","시편 59편","14:34",[]],["예레미야 6-7장","시편 60편","13:55",[]],["예레미야 8-10장","시편 61편","16:13",[]],["예레미야 11-13장","시편 62편","15:16",[]],["예레미야 14-16장","시편 63편","15:55",[]],["예레미야 17-19장","시편 64편","14:54",[]],["예레미야 20-22장","시편 65편","16:01",[]],["예레미야 23-24장","시편 66편","16:50",[]],["예레미야 25-26장","시편 67편","15:07",[]],["예레미야 27-29장","시편 68편","16:51",[]],["예레미야 30-31장","시편 69편","18:55",[]],["예레미야 32-33장","시편 70편","16:20",[]],["예레미야 34-35장","시편 71편","13:22",[]],["예레미야 36-37장","시편 72편","12:51",[]],["예레미야 38-40장","시편 73편","16:37",[]],["예레미야 41-43장","시편 74편","14:53",[]],["예레미야 44-47장","시편 75편","17:59",[]],["예레미야 48-49장","시편 76편","19:10",[]],["예레미야 50장","시편 77편","13:13",[]],["예레미야 51장","시편 78편","21:01",[]],["예레미야 52장","시편 79편","07:32",[]],["예레미야애가 1-2장","시편 80편","12:39",[["Overview: Lamentations","twumxE5HxYU"]]],["예레미야애가 3-5장","시편 81편","16:51",[]],["에스겔 1-3장","시편 82편","13:19",[["Overview: Ezekiel Ch. 1-33","IO9XplZBcvk"]]],["에스겔 4-7장","시편 83편","16:44",[["Bad Word Studies: Sin","aNOZ7ocLD74"]]],["에스겔 8-11장","시편 84편","15:40",[["Bad Word Studies: Transgression","cq-r9FFN5ew"]]],["에스겔 12-14장","시편 85편","16:33",[["Bad Word Studies: Iniquity","w1zkwkI9oAw"]]],["에스겔 15-16장","시편 86편","15:11",[]],["에스겔 17-19장","시편 87편","13:49",[]],["에스겔 20장","시편 88편","12:55",[]],["에스겔 21-22장","시편 89편","17:53",[]],["에스겔 23-24장","시편 90편","15:29",[]],["에스겔 25-27장","시편 91편","15:47",[]],["에스겔 28-30장","시편 92편","16:05",[]],["에스겔 31-32장","시편 93편","11:34",[]],["에스겔 33-35장","시편 94편","18:40",[["Overview: Ezekiel Ch. 34-48","T_dn5VhU73E"]]],["에스겔 36-37장","시편 95편","15:03",[]],["에스겔 38-39장","시편 96편","12:48",[]],["에스겔 40-42장","시편 97편","17:02",[]],["에스겔 43-45장","시편 98편","17:48",[]],["에스겔 46-48장","시편 99편","17:25",[]],["다니엘 1-2장","시편 100편","14:38",[["Overview: Daniel","clI5OYY4lVo"]]],["다니엘 3-4장","시편 101편","17:11",[["The Way of the Exile","XzWpa0gcPyo"]]],["다니엘 5-6장","시편 102편","16:34",[]],["다니엘 7-8장","시편 103편","13:57",[]],["다니엘 9-10장","시편 104편","16:01",[]],["다니엘 11-12장","시편 105편","16:58",[]],["호세아 1-4장","시편 106편","16:37",[["Overview: Hosea","M669lzWgN5k"]]],["호세아 5-9장","시편 107편","15:37",[]],["호세아 10-14장","시편 108편","14:43",[]],["요엘 1-3장","시편 109편","18:00",[["Overview: Joel","4ucQjbVb4oE"]]],["아모스 1-5장","시편 110편","17:24",[["Overview: Amos","FOH4qvNr9O8"]]],["아모스 6-9장","시편 111편","14:23",[]],["오바댜 1장, 요나 1-4장","시편 112편","16:04",[["Overview: Obadiah","znmT4B8j4xA"],["Overview: Jonah","P6bSRsI4rY0"]]],["미가 1-4장","시편 113편","13:37",[["Overview: Micah","cES-IDPeU4E"]]],["미가 5-7장","시편 114편","11:57",[]],["나훔 1-3장","시편 115편","12:00",[["Overview: Nahum","qhJQqrm2pUw"]]],["하박국 1-3장","시편 116편","13:25",[["Overview: Habakkuk","BRbdfL0u4hQ"]]],["스바냐 1-3장, 학개 1-2장","시편 117편","19:32",[["Overview: Zephaniah","WWIQaLlsCjo"],["Overview: Haggai","j-S26FNz_XY"]]],["스가랴 1-5장","시편 118편","16:32",[["Overview: Zechariah","l8CdmoLKq3E"]]],["스가랴 6-10장","시편 119:1-32","18:54",[]],["스가랴 11-14장","시편 119:33-64","16:24",[]],["말라기 1-4장","시편 119:65-96","17:31",[["Overview: Malachi","KxJb21AxVqI"]]],["마태복음 1-4장","시편 119:97-128","16:20",[["How to Read the Bible: The Gospel","xrzq_X1NNaA"]]],["마태복음 5-7장","시편 119:129-152","14:41",[["Overview: Matthew Ch. 1-13","cbabreYd34Q"]]],["마태복음 8-10장","시편 119:153-176","18:27",[["How to Read the Bible: Setting","7FuT8WtoAK0"]]],["마태복음 11-12장","시편 120편","11:59",[["Son of Man","z6cWEcqxhlI"]]],["마태복음 13-14장","시편 121편","12:28",[["God","eAvYmE2YYIU"]]],["마태복음 15-17장","시편 122편","13:47",[["How to Read the Bible: The Parables of Jesus","XX-aAg4_U2Q"]]],["마태복음 18-20장","시편 123편","14:00",[["Overview: Matthew Ch. 14-28","Va-eFIztMxU"]]],["마태복음 21-22장","시편 124편","12:27",[]],["마태복음 23-24장","시편 125편","12:32",[]],["마태복음 25-26장","시편 126편","18:07",[]],["마태복음 27-28장","시편 127편","12:58",[["Witness","jhcmzjwbvyk"]]],["마가복음 1-4장","시편 128편","15:44",[["The Gospel According to Mark","OVRixfameGY"]]],["마가복음 5-6장","시편 129편","14:02",[["Gospel","HT41M013X3A"]]],["마가복음 7-9장","시편 130편","17:28",[]],["마가복음 10-12장","시편 131편","18:29",[]],["마가복음 13-14장","시편 132편","16:41",[]],["마가복음 15-16장","시편 133편","10:36",[["Overview: Mark","hKtkrVwvFoo"]]],["누가복음 1-2장","시편 134편","16:10",[["Overview: Luke Ch. 1-9","szex2l67GwQ"]]],["누가복음 3-4장","시편 135편","14:16",[["Gospel of Luke Ch. 1-2","-GV3YZHoN3Y"]]],["누가복음 5-6장","시편 136편","16:57",[["Gospel of Luke Ch. 3-9","DwG1uabmv7Y"]]],["누가복음 7-8장","시편 137편","16:54",[]],["누가복음 9-10장","시편 138편","16:26",[["The Prodigal Son – Gospel of Luke Ch. 9-19","RwMU7GkmJzE"]]],["누가복음 11-12장","시편 139편","18:52",[["Overview: Luke Ch. 10-24","FJ2cCWKxgfM"]]],["누가복음 13-14장","시편 140편","11:58",[]],["누가복음 15-16장","시편 141편","10:42",[]],["누가복음 17-18장","시편 142편","11:22",[]],["누가복음 19-20장","시편 143편","13:22",[["Gospel of Luke Ch. 19-23","eeF2-OSO4YI"]]],["누가복음 21-22장","시편 144편","15:47",[]],["누가복음 23-24장","시편 145편","17:21",[["Gospel of Luke Ch. 24","Q7EBk_CSm3g"]]],["요한복음 1-3장","시편 146편","16:13",[["Overview: John Ch. 1-12","FV55I_rX4Kg"]]],["요한복음 4-5장","시편 147편","15:09",[["Water of Life","PgmAkM39Zt4"]]],["요한복음 6-7장","시편 148편","16:33",[]],["요한복음 8-9장","시편 149편","14:14",[]],["요한복음 10-11장","시편 150편","13:12",[]],["요한복음 12-13장","시편 1편","13:41",[["Overview: John Ch. 13-21","bVRSuGbY5-s"]]],["요한복음 14-16장","시편 2편","15:56",[]],["요한복음 17-18장","시편 3편","11:50",[]],["요한복음 19-21장","시편 4편","17:28",[]],["사도행전 1-3장","시편 5편","16:17",[["Overview: Acts Ch. 1-12","kOCqsPst9Ag"]]],["사도행전 4-6장","시편 6편","14:08",[["Holy Spirit","oNNZO9i1Gjc"]]],["사도행전 7-8장","시편 7편","16:23",[["Acts Ch. 1-7","Ind_b4LqdaY"]]],["사도행전 9-10장","시편 8편","13:56",[["Acts Ch. 8-12","P6oPeVQ9iOg"]]],["사도행전 11-13장","시편 9편","18:29",[["Overview: Acts Ch. 13-28","_rJ89EhnwSQ"]]],["사도행전 14-16장","시편 10편","18:15",[["Acts Ch. 13-20","JBUq1MHZZFs"]]],["사도행전 17-19장","시편 11편","16:36",[]],["사도행전 20-21장","시편 12편","13:21",[["Acts Ch. 21-28","oydJKzPkzYE"]]],["사도행전 22-24장","시편 13편","15:10",[["Hope","4WYNBjJSYvE"]]],["사도행전 25-26장","시편 14편","10:54",[]],["사도행전 27-28장","시편 15편","11:51",[]],["로마서 1-3장","시편 16편","15:11",[["Overview: Romans Ch. 1-4","PT4C0ley074"]]],["로마서 4-7장","시편 17편","17:20",[["Grace","ABPVVw_aw44"]]],["로마서 8-9장","시편 18편","17:07",[["Overview: Romans Ch. 5-16","k5i6Dk-afp0"]]],["로마서 10-13장","시편 19편","16:17",[["New Testament Letters: Historical Context","GZuceW7eh5M"]]],["로마서 14-16장","시편 20편","13:19",[["New Testament Letters: Literary Context","ZPZ2uABVMKA"]]],["고린도전서 1-4장","시편 21편","12:07",[["Overview: 1 Corinthians","SoxLSx5DOjg"]]],["고린도전서 5-7장","시편 22편","19:04",[]],["고린도전서 8-11장","시편 23편","15:57",[]],["고린도전서 12-14장","시편 24편","12:30",[]],["고린도전서 15-16장","시편 25편","13:04",[]],["고린도후서 1-4장","시편 26편","14:25",[["Overview: 2 Corinthians","xZFXdP7CCcc"]]],["고린도후서 5-9장","시편 27편","17:53",[["Generosity","q_21APRnrO0"]]],["고린도후서 10-13장","시편 28편","16:15",[]],["갈라디아서 1-3장","시편 29편","12:58",[["Overview: Galatians","IRaMP5i4ROc"]]],["갈라디아서 4-6장","시편 30편","12:02",[]],["에베소서 1-3장","시편 31편","13:05",[["Overview: Ephesians","1Cvb3mjw7WQ"]]],["에베소서 4-6장","시편 32편","12:56",[["Shalom – Peace","oLYORLZOaZE"]]],["빌립보서 1-4장","시편 33편","18:02",[["Overview: Philippians","P2stOv4EuD8"],["Joy","qvOhQTuD2e0"]]],["골로새서 1-4장","시편 34편","16:48",[["Overview: Colossians","PToo8H3E-Sm"]]],["데살로니가전서 1-5장","시편 35편","17:10",[["Overview: 1 Thessalonians","78mjPkm3gNU"]]],["데살로니가후서 1-3장, 디모데전서 1-2장","시편 36편","14:39",[["Overview: 2 Thessalonians","aSvUcBhd4hQ"],["Overview: 1 Timothy","TPaaXttsgzY"]]],["디모데전서 3-6장","시편 37편","16:16",[["Public Reading of Scripture","Sp71zxZjZIk"]]],["디모데후서 1-4장","시편 38편","16:24",[["Overview: 2 Timothy","2rbLGN90JyE"]]],["디도서 1-3장, 빌레몬서 1장","시편 39편","13:43",[["Overview: Titus","tdTrkbn8plI"],["Overview: Philemon","FF52ylLRH3g"]]],["히브리서 1-4장","시편 40편","14:13",[["Overview: Hebrews","_y4X0Y1nu5E"]]],["히브리서 5-8장","시편 41편","13:54",[]],["히브리서 9-10장","시편 42편","12:06",[]],["히브리서 11-13장","시편 43편","16:18",[]],["야고보서 1-3장","시편 44편","11:42",[["Overview: James","PKic-DpY3O4"]]],["야고보서 4-5장","시편 45편","09:02",[]],["베드로전서 1-5장","시편 46편","18:55",[["Overview: 1 Peter","5te24c_61aI"]]],["베드로후서 1-3장","시편 47편","11:51",[["Overview: 2 Peter","Ii-v2hGv-zk"]]],["요한일서 1-4장","시편 48편","16:16",[["Overview: 1-3 John","cMKPbDZhToo"]]],["요한일서 5장, 요한이서 1장, 요한삼서 1장, 유다서 1장","시편 49편","15:17",[["Agape – Love","slyevQ1LW7A"],["Overview: Jude","ggYH-spyKHY"]]],["요한계시록 1-4장","시편 50편","18:04",[["Overview: Revelation Ch. 1-11","ue4ZFykrMJ8"]]],["요한계시록 5-8장","시편 51편","15:02",[["How to Read the Bible: Apocalyptic Literature","UNDX4tUdj1Y"]]],["요한계시록 9-12장","시편 52편","14:19",[["Overview: Revelation Ch. 12-22","TV36boVNZOk"]]],["요한계시록 13-16장","시편 53편","14:34",[]],["요한계시록 17-19장","시편 54편","14:06",[]],["요한계시록 20-22장","시편 55편","14:37",[["Heaven & Earth","Zy2AQlK6C5k"]]]],
+  books:{"창세기":{"f":1,"l":18,"v":[["Torah: The Book of Genesis – Part 1 of 2","KOUV7mWDI34"],["Overview: Genesis Ch. 1-11","dLv2ndgXrbo"],["Torah: The Book of Genesis – Part 2 of 2","VpbWbyx1008"],["Overview: Genesis Ch. 12-50","p4Oh-rbc9rE"]]},"출애굽기":{"f":19,"l":33,"v":[["Torah: The Book of Exodus – Part 1 of 2","0uf-PgW7rqE"],["Overview: Exodus Ch. 1-18","PrTbYx6KbtY"],["Torah: The Book of Exodus – Part 2 of 2","b0GhR-2kPKI"],["Overview: Exodus Ch. 19-40","ze0bIlO5p1w"]]},"레위기":{"f":34,"l":43,"v":[["Torah: The Book of Leviticus","WmvyrLXoQio"],["Overview: Leviticus","OUPcm3QGt7Y"]]},"민수기":{"f":44,"l":58,"v":[["Torah: The Book of Numbers","zebxH-5o-SQ"],["Overview: Numbers","Q0Lac54urBU"]]},"신명기":{"f":59,"l":73,"v":[["Torah: The Book of Deuteronomy","NMhmDPWeftw"],["Overview: Deuteronomy","HOA8818FdYc"]]},"여호수아":{"f":74,"l":82,"v":[["Overview: Joshua","9MmKvOItPds"]]},"사사기":{"f":83,"l":91,"v":[["Overview: Judges","2rnPxn2aeN0"]]},"룻기":{"f":92,"l":93,"v":[["Overview: Ruth","jB2au0FGgjo"]]},"사무엘상":{"f":94,"l":106,"v":[["Overview: 1 Samuel","gZ9Jf2FeZJQ"]]},"사무엘하":{"f":107,"l":116,"v":[["Overview: 2 Samuel","QYuSYPIfFPA"]]},"열왕기상":{"f":117,"l":128,"v":[["Overview: 1-2 Kings","jIcsdztsKBE"]]},"열왕기하":{"f":129,"l":138,"v":[["Overview: 1-2 Kings","jIcsdztsKBE"]]},"역대상":{"f":139,"l":148,"v":[["Overview: 1-2 Chronicles","AgRvk1qOAgg"]]},"역대하":{"f":149,"l":161,"v":[["Overview: 1-2 Chronicles","AgRvk1qOAgg"]]},"에스라":{"f":162,"l":165,"v":[["Overview: Ezra-Nehemiah","IxHJN4cOl-c"]]},"느헤미야":{"f":166,"l":170,"v":[["Overview: Ezra-Nehemiah","IxHJN4cOl-c"]]},"에스더":{"f":171,"l":173,"v":[["Overview: Esther","e4rGAPgtBbc"]]},"욥기":{"f":174,"l":183,"v":[["The Book of Job","GswSg2ohqmA"],["Overview: Job","SoOSMWGuDxk"]]},"잠언":{"f":184,"l":190,"v":[["The Book of Proverbs","Gab04dPs_uA"],["Overview: Proverbs","WPAs3uHoPDI"]]},"전도서":{"f":191,"l":193,"v":[["The Book of Ecclesiastes","VeUiuSK81-0"],["Overview: Ecclesiastes","8bnFXIKuq3U"]]},"아가":{"f":194,"l":195,"v":[["Overview: Song of Songs","jLA7P-L9NgU"]]},"이사야":{"f":196,"l":212,"v":[["Overview: Isaiah Ch. 1-39","b0-A9qEu5ug"],["Overview: Isaiah Ch. 40-66","592AmPSM2P8"]]},"예레미야":{"f":213,"l":234,"v":[["Overview: Jeremiah","ErL1bUKQIIY"]]},"예레미야애가":{"f":235,"l":236,"v":[["Overview: Lamentations","twumxE5HxYU"]]},"에스겔":{"f":237,"l":254,"v":[["Overview: Ezekiel Ch. 1-33","IO9XplZBcvk"],["Overview: Ezekiel Ch. 34-48","T_dn5VhU73E"]]},"다니엘":{"f":255,"l":260,"v":[["Overview: Daniel","clI5OYY4lVo"]]},"호세아":{"f":261,"l":263,"v":[["Overview: Hosea","M669lzWgN5k"]]},"요엘":{"f":264,"l":264,"v":[["Overview: Joel","4ucQjbVb4oE"]]},"아모스":{"f":265,"l":266,"v":[["Overview: Amos","FOH4qvNr9O8"]]},"오바댜":{"f":267,"l":267,"v":[["Overview: Obadiah","znmT4B8j4xA"]]},"요나":{"f":267,"l":267,"v":[["Overview: Jonah","P6bSRsI4rY0"]]},"미가":{"f":268,"l":269,"v":[["Overview: Micah","cES-IDPeU4E"]]},"나훔":{"f":270,"l":270,"v":[["Overview: Nahum","qhJQqrm2pUw"]]},"하박국":{"f":271,"l":271,"v":[["Overview: Habakkuk","BRbdfL0u4hQ"]]},"스바냐":{"f":272,"l":272,"v":[["Overview: Zephaniah","WWIQaLlsCjo"]]},"학개":{"f":272,"l":272,"v":[["Overview: Haggai","j-S26FNz_XY"]]},"스가랴":{"f":273,"l":275,"v":[["Overview: Zechariah","l8CdmoLKq3E"]]},"말라기":{"f":276,"l":276,"v":[["Overview: Malachi","KxJb21AxVqI"]]},"마태복음":{"f":277,"l":287,"v":[["Overview: Matthew Ch. 1-13","cbabreYd34Q"],["Overview: Matthew Ch. 14-28","Va-eFIztMxU"]]},"마가복음":{"f":288,"l":293,"v":[["The Gospel According to Mark","OVRixfameGY"],["Overview: Mark","hKtkrVwvFoo"]]},"누가복음":{"f":294,"l":305,"v":[["Overview: Luke Ch. 1-9","szex2l67GwQ"],["Gospel of Luke Ch. 1-2","-GV3YZHoN3Y"],["Gospel of Luke Ch. 3-9","DwG1uabmv7Y"],["The Prodigal Son – Gospel of Luke Ch. 9-19","RwMU7GkmJzE"],["Overview: Luke Ch. 10-24","FJ2cCWKxgfM"],["Gospel of Luke Ch. 19-23","eeF2-OSO4YI"],["Gospel of Luke Ch. 24","Q7EBk_CSm3g"]]},"요한복음":{"f":306,"l":314,"v":[["Overview: John Ch. 1-12","FV55I_rX4Kg"],["Overview: John Ch. 13-21","bVRSuGbY5-s"]]},"사도행전":{"f":315,"l":325,"v":[["Overview: Acts Ch. 1-12","kOCqsPst9Ag"],["Acts Ch. 1-7","Ind_b4LqdaY"],["Acts Ch. 8-12","P6oPeVQ9iOg"],["Overview: Acts Ch. 13-28","_rJ89EhnwSQ"],["Acts Ch. 13-20","JBUq1MHZZFs"],["Acts Ch. 21-28","oydJKzPkzYE"]]},"로마서":{"f":326,"l":330,"v":[["Overview: Romans Ch. 1-4","PT4C0ley074"],["Overview: Romans Ch. 5-16","k5i6Dk-afp0"]]},"고린도전서":{"f":331,"l":335,"v":[["Overview: 1 Corinthians","SoxLSx5DOjg"]]},"고린도후서":{"f":336,"l":338,"v":[["Overview: 2 Corinthians","xZFXdP7CCcc"]]},"갈라디아서":{"f":339,"l":340,"v":[["Overview: Galatians","IRaMP5i4ROc"]]},"에베소서":{"f":341,"l":342,"v":[["Overview: Ephesians","1Cvb3mjw7WQ"]]},"빌립보서":{"f":343,"l":343,"v":[["Overview: Philippians","P2stOv4EuD8"]]},"골로새서":{"f":344,"l":344,"v":[["Overview: Colossians","PToo8H3E-Sm"]]},"데살로니가전서":{"f":345,"l":345,"v":[["Overview: 1 Thessalonians","78mjPkm3gNU"]]},"데살로니가후서":{"f":346,"l":346,"v":[["Overview: 2 Thessalonians","aSvUcBhd4hQ"]]},"디모데전서":{"f":346,"l":347,"v":[["Overview: 1 Timothy","TPaaXttsgzY"]]},"디모데후서":{"f":348,"l":348,"v":[["Overview: 2 Timothy","2rbLGN90JyE"]]},"디도서":{"f":349,"l":349,"v":[["Overview: Titus","tdTrkbn8plI"]]},"빌레몬서":{"f":349,"l":349,"v":[["Overview: Philemon","FF52ylLRH3g"]]},"히브리서":{"f":350,"l":353,"v":[["Overview: Hebrews","_y4X0Y1nu5E"]]},"야고보서":{"f":354,"l":355,"v":[["Overview: James","PKic-DpY3O4"]]},"베드로전서":{"f":356,"l":356,"v":[["Overview: 1 Peter","5te24c_61aI"]]},"베드로후서":{"f":357,"l":357,"v":[["Overview: 2 Peter","Ii-v2hGv-zk"]]},"요한일서":{"f":358,"l":359,"v":[["Overview: 1-3 John","cMKPbDZhToo"]]},"요한이서":{"f":359,"l":359,"v":[["Overview: 1-3 John","cMKPbDZhToo"]]},"요한삼서":{"f":359,"l":359,"v":[["Overview: 1-3 John","cMKPbDZhToo"]]},"유다서":{"f":359,"l":359,"v":[["Overview: Jude","ggYH-spyKHY"]]},"요한계시록":{"f":360,"l":365,"v":[["Overview: Revelation Ch. 1-11","ue4ZFykrMJ8"],["Overview: Revelation Ch. 12-22","TV36boVNZOk"]]}},
+  order:["창세기","출애굽기","레위기","민수기","신명기","여호수아","사사기","룻기","사무엘상","사무엘하","열왕기상","열왕기하","역대상","역대하","에스라","느헤미야","에스더","욥기","잠언","전도서","아가","이사야","예레미야","예레미야애가","에스겔","다니엘","호세아","요엘","아모스","오바댜","요나","미가","나훔","하박국","스바냐","학개","스가랴","말라기","마태복음","마가복음","누가복음","요한복음","사도행전","로마서","고린도전서","고린도후서","갈라디아서","에베소서","빌립보서","골로새서","데살로니가전서","데살로니가후서","디모데전서","디모데후서","디도서","빌레몬서","히브리서","야고보서","베드로전서","베드로후서","요한일서","요한이서","요한삼서","유다서","요한계시록"]
 };
 (function(){
   var D=BIBLE_READING, root=document.getElementById('bible'); if(!root) return;
-  var W=['일','월','화','수','목','금','토'];
+  var N=D.days.length, W=['일','월','화','수','목','금','토'], YT='https://youtu.be/';
   function p(s){ var a=s.split('-'); return new Date(+a[0],+a[1]-1,+a[2]); }
   var start=p(D.start), DAY=864e5;
   function dateOf(i){ return new Date(start.getFullYear(),start.getMonth(),start.getDate()+i); }
   function idxOf(d){ return Math.round((new Date(d.getFullYear(),d.getMonth(),d.getDate())-start)/DAY); }
-  function fmt(d){ return d.getFullYear()+'. '+(d.getMonth()+1)+'. '+d.getDate()+'.('+W[d.getDay()]+')'; }
+  function md(d){ return (d.getMonth()+1)+'. '+d.getDate()+'.('+W[d.getDay()]+')'; }
+  function fmt(d){ return d.getFullYear()+'. '+md(d); }
   function esc(t){ return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
-  function todayIdx(){ var i=idxOf(new Date()); return Math.max(0,Math.min(D.total-1,i)); }
-  var cur=todayIdx(), month=dateOf(cur).getMonth();
+  function todayIdx(){ return Math.max(0,Math.min(N-1,idxOf(new Date()))); }
+  function booksOf(i){ return D.days[i][0].split(', ').map(function(x){ return x.split(' ')[0]; }); }
+  function newBooks(i){ return booksOf(i).filter(function(b){ return D.books[b] && D.books[b].f===i+1; }); }
+  function mins(t){ var a=t.split(':'); return Math.round((+a[0]*60+ +a[1])/60); }
+  var read={}; try{ read=JSON.parse(localStorage.getItem('udc-br-read')||'{}'); }catch(e){}
+  function saveRead(){ try{ localStorage.setItem('udc-br-read',JSON.stringify(read)); }catch(e){} }
+  var cur=todayIdx(), month=dateOf(cur).getMonth(), openBook=null;
   var card=root.querySelector('.br-card');
 
-  function link(url,label){ return url ? '<a class="btn primary" href="'+esc(url)+'" target="_blank" rel="noopener">'+label+' →</a>' : '<span class="btn line br-off">'+label+' · 준비 중</span>'; }
-  function bookBox(name){
-    var b=D.books[name]||{}, h='<span class="book-kind">새로 시작하는 책</span><b>'+esc(name)+'</b>';
-    if(b.line) h+='<p>'+esc(b.line)+'</p>';
-    if(b.points&&b.points.length) h+='<ul>'+b.points.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>';
-    if(!b.line&&!(b.points&&b.points.length)) h+='<p class="muted">책 소개 자료를 준비하고 있습니다.</p>';
-    if(b.link) h+='<a href="'+esc(b.link)+'" target="_blank" rel="noopener">자료 더 보기 →</a>';
-    return h;
-  }
+  function btn(url,label){ return url ? '<a class="btn primary" href="'+esc(url)+'" target="_blank" rel="noopener">'+label+' 읽기 영상 →</a>' : '<span class="btn line br-off">'+label+' · 준비 중</span>'; }
+  function vidList(v){ return '<ul class="br-vlist">'+v.map(function(x){ return '<li><a href="'+YT+esc(x[1])+'" target="_blank" rel="noopener"><span class="play-i" aria-hidden="true">▶</span>'+esc(x[0])+'</a></li>'; }).join('')+'</ul>'; }
   function show(i){
-    cur=Math.max(0,Math.min(D.total-1,i));
-    var d=dateOf(cur), r=D.days[cur]||{}, t=idxOf(new Date());
-    card.querySelector('.br-dayno').textContent=(cur+1)+'일차'+(cur===t?' · 오늘':'');
+    cur=Math.max(0,Math.min(N-1,i));
+    var d=dateOf(cur), r=D.days[cur], t=idxOf(new Date()), a=D.audio[cur+1]||{};
+    card.querySelector('.br-dayno').textContent=(cur+1)+'회차'+(cur===t?' · 오늘':'');
     card.querySelector('.br-date').textContent=fmt(d);
-    var ref=card.querySelector('.br-ref');
-    ref.textContent=r.ref||'본문 준비 중'; ref.classList.toggle('muted',!r.ref);
-    card.querySelector('.br-links').innerHTML=link(r.krv,'개역개정')+link(r.easy,'쉬운성경');
-    var nb=card.querySelector('.br-newbook'); nb.hidden=!r.newBook; if(r.newBook) nb.innerHTML=bookBox(r.newBook);
+    card.querySelector('.br-ref').textContent=r[0];
+    card.querySelector('.br-psalm').textContent='+ '+r[1];
+    card.querySelector('.br-time').textContent='함께 읽는 데 약 '+mins(r[2])+'분';
+    card.querySelector('.br-links').innerHTML=btn(a.krv,'개역개정')+btn(a.easy,'쉬운성경');
+    var nb=newBooks(cur);
+    card.querySelector('.br-new').innerHTML=nb.length?'<span class="br-lab">오늘 새로 시작하는 책</span>'+nb.map(function(b){ return '<button type="button" class="br-bookchip" data-book="'+esc(b)+'">'+esc(b)+' 자료 보기 →</button>'; }).join(''):'';
+    card.querySelector('.br-vids').innerHTML=r[3].length?'<span class="br-lab">함께 보면 좋은 영상 · 바이블프로젝트</span>'+vidList(r[3]):'';
+    var ck=card.querySelector('.br-check'), on=!!read[cur+1];
+    ck.setAttribute('aria-pressed',on); ck.textContent=(on?'☑ ':'☐ ')+'오늘 읽었어요';
     card.querySelector('[data-step="-1"]').disabled=cur===0;
-    card.querySelector('[data-step="1"]').disabled=cur===D.total-1;
+    card.querySelector('[data-step="1"]').disabled=cur===N-1;
     card.querySelector('.br-today-btn').hidden=(cur===todayIdx());
     if(d.getMonth()!==month){ month=d.getMonth(); months(); }
     grid(); week();
   }
   function months(){
-    var box=root.querySelector('.br-months'), h='';
-    for(var m=0;m<12;m++) h+='<button type="button" role="tab" data-m="'+m+'" aria-selected="'+(m===month)+'">'+(m+1)+'월</button>';
-    box.innerHTML=h;
+    var h=''; for(var m=0;m<12;m++) h+='<button type="button" role="tab" data-m="'+m+'" aria-selected="'+(m===month)+'">'+(m+1)+'월</button>';
+    root.querySelector('.br-months').innerHTML=h;
   }
   function grid(){
     var h='', t=idxOf(new Date());
-    for(var i=0;i<D.total;i++){ var d=dateOf(i); if(d.getMonth()!==month) continue;
-      var r=D.days[i]||{}, cls='br-day'+(i===cur?' on':'')+(i===t?' today':'')+(r.ref?' has':'');
-      h+='<button type="button" class="'+cls+'" data-i="'+i+'"><span class="n">'+d.getDate()+'<small>'+W[d.getDay()]+'</small></span><span class="k">'+(i+1)+'일차</span>'+(r.ref?'<span class="r">'+esc(r.ref)+'</span>':'')+'</button>'; }
+    for(var i=0;i<N;i++){ var d=dateOf(i); if(d.getMonth()!==month) continue;
+      h+='<button type="button" class="br-day'+(i===cur?' on':'')+(i===t?' today':'')+(read[i+1]?' done':'')+'" data-i="'+i+'"><span class="n">'+d.getDate()+'<small>'+W[d.getDay()]+'</small>'+(read[i+1]?'<em>✓</em>':'')+'</span><span class="k">'+(i+1)+'회차</span><span class="r">'+esc(D.days[i][0])+'</span></button>'; }
     root.querySelector('.br-grid').innerHTML=h;
+  }
+  function bookPanel(b){
+    var k=D.books[b], f=D.bookFiles[b];
+    return '<p class="br-range">'+k.f+(k.l>k.f?'–'+k.l:'')+'회차 · '+md(dateOf(k.f-1))+(k.l>k.f?' – '+md(dateOf(k.l-1)):'')+'</p>'
+      +(k.v.length?'<span class="br-lab">개관 영상 · 바이블프로젝트</span>'+vidList(k.v):'')
+      +'<div class="br-files">'+(f?'<a class="btn primary" href="'+esc(f)+'" target="_blank" rel="noopener" download>교회 자료 받기 (PDF)</a>':'<span class="btn line br-off">교회 자료 · 준비 중</span>')
+      +'<button type="button" class="btn line br-goto" data-i="'+(k.f-1)+'">첫날 본문 보기</button></div>';
   }
   function week(){
     var d=dateOf(cur), mon=new Date(d.getFullYear(),d.getMonth(),d.getDate()-((d.getDay()+6)%7)), h='';
-    for(var k=0;k<7;k++){ var i=idxOf(new Date(mon.getFullYear(),mon.getMonth(),mon.getDate()+k)), r=D.days[i];
-      if(r&&r.newBook) h+='<div class="card br-bookcard"><span class="br-from">'+fmt(dateOf(i))+' · '+(i+1)+'일차부터</span>'+bookBox(r.newBook)+'</div>'; }
+    for(var k=0;k<7;k++){ var i=idxOf(new Date(mon.getFullYear(),mon.getMonth(),mon.getDate()+k)); if(i<0||i>=N) continue;
+      newBooks(i).forEach(function(b){
+        h+='<details class="br-book" data-book="'+esc(b)+'"'+(b===openBook?' open':'')+'><summary><span class="br-from">'+md(dateOf(i))+' · '+(i+1)+'회차부터</span><b>'+esc(b)+'</b><span class="br-more">자료 보기</span></summary><div class="br-bookbody">'+bookPanel(b)+'</div></details>'; }); }
     var e=new Date(mon.getFullYear(),mon.getMonth(),mon.getDate()+6);
-    root.querySelector('.br-week').innerHTML='<p class="br-range">'+fmt(mon)+' – '+fmt(e)+'</p>'+(h||'<p class="muted">이번 주에는 새로 시작하는 책이 없습니다.</p>');
+    root.querySelector('.br-week').innerHTML='<p class="br-wk">'+fmt(mon)+' – '+md(e)+'</p>'+(h?'<div class="br-shelf">'+h+'</div>':'<p class="muted">이번 주에는 새로 시작하는 책이 없습니다.<br>아래 전체 목록에서 다른 책을 고를 수 있습니다.</p>');
   }
-  function pano(){
-    root.querySelector('.br-pano').innerHTML=D.panorama.map(function(x){
-      return '<div class="card br-panocard"><span class="book-kind">'+esc(x.half)+'</span><b>'+esc(x.title)+'</b><p>'+(x.date?fmt(p(x.date))+' · 주일예배':'날짜는 추후 안내합니다.')+'</p><p class="muted">준비 · 서정은 전도사</p>'+(x.link?'<a href="'+esc(x.link)+'" target="_blank" rel="noopener">영상 보기 →</a>':'')+'</div>';
-    }).join('');
-  }
+  function goBook(b){ openBook=b; show(D.books[b].f-1); var el=root.querySelector('.br-book[data-book="'+b+'"]'); if(el){ el.open=true; el.scrollIntoView({behavior:'smooth',block:'center'}); } }
+  root.querySelector('.br-allbooks').innerHTML=D.order.map(function(b){ return '<button type="button" class="br-bookchip" data-book="'+esc(b)+'">'+esc(b)+'</button>'; }).join('');
+  root.querySelector('.br-dl').innerHTML=D.planPdf
+    ? '<h3>'+start.getFullYear()+'년 365 읽기표</h3><p>회차별 본문, 시편, 함께 볼 영상이 정리된 표입니다.</p><p><a class="btn primary" href="'+esc(D.planPdf)+'" download target="_blank" rel="noopener">읽기표 PDF 내려받기</a></p>'
+    : '<h3>'+start.getFullYear()+'년 365 읽기표</h3><p>새해 읽기표를 준비하고 있습니다.<br>준비되는 대로 이곳에서 내려받으실 수 있습니다.</p><p><span class="btn line br-off">읽기표 PDF · 준비 중</span></p>';
+  root.querySelector('.br-pano').innerHTML=D.panorama.map(function(x){
+    return '<div class="card br-panocard"><span class="book-kind">'+esc(x.half)+'</span><b>'+esc(x.title)+'</b><p>'+(x.date?fmt(p(x.date))+' · 주일예배':'날짜는 추후 안내합니다.')+'</p><p class="muted">준비 · 서정은 전도사</p>'+(x.link?'<a href="'+esc(x.link)+'" target="_blank" rel="noopener">영상 보기 →</a>':'')+'</div>';
+  }).join('');
   root.addEventListener('click',function(e){
-    var b=e.target.closest('button'); if(!b) return;
+    var b=e.target.closest('button'); if(!b||!root.contains(b)) return;
     if(b.dataset.step) show(cur+(+b.dataset.step));
     else if(b.dataset.m){ month=+b.dataset.m; months(); grid(); }
+    else if(b.dataset.book) goBook(b.dataset.book);
     else if(b.dataset.i){ show(+b.dataset.i); card.scrollIntoView({behavior:'smooth',block:'start'}); }
+    else if(b.classList.contains('br-check')){ if(read[cur+1]) delete read[cur+1]; else read[cur+1]=1; saveRead(); show(cur); }
     else if(b.classList.contains('br-today-btn')) show(todayIdx());
   });
-  months(); pano(); show(cur);
+  root.addEventListener('toggle',function(e){ if(e.target.matches&&e.target.matches('.br-book')&&e.target.open) openBook=e.target.dataset.book; },true);
+  months(); show(cur);
 })();
 </script>
 </div>

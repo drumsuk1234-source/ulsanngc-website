@@ -462,6 +462,11 @@ body[data-view="prayer"] .back-btn,body[data-view="prayer"] .to-top{bottom:calc(
 .confess{font-family:var(--display);font-size:clamp(26px,4vw,38px);text-align:center;margin:28px 0}
 
 .acct{font-variant-numeric:tabular-nums;font-weight:700}
+.acct-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.acct-row .acct-no{margin:0}
+.copy-btn{border:1px solid var(--accent);background:var(--surface);color:var(--accent);border-radius:999px;padding:8px 16px;font:inherit;font-size:15px;font-weight:500;cursor:pointer;white-space:nowrap}
+.copy-btn.done{background:var(--accent);color:#fff}
+.copy-btn.sm{padding:2px 10px;font-size:13px;border-color:currentColor;background:transparent;color:inherit}
 .map{aspect-ratio:4/3;max-width:100%;border-radius:14px;background:
   linear-gradient(90deg,transparent 47%,var(--line) 47% 50%,transparent 50%),
   linear-gradient(0deg,transparent 60%,var(--line) 60% 63%,transparent 63%),var(--surface);
@@ -1902,7 +1907,7 @@ var BIBLE_READING={
         <p>모든 헌금과 후원은 아래 한 계좌로 드립니다.<br>입금자명에 이름과 용도를 함께 적어 주시면 구분해서 사용합니다.</p></div>
       <div class="acct-card">
         <span class="tag">헌금 · 후원 계좌</span>
-        <p class="acct-no">농협 301-0331-9920-11</p>
+        <div class="acct-row"><p class="acct-no">농협 301-0331-9920-11</p><button type="button" class="copy-btn" data-copy="3010331992011">계좌번호 복사</button></div>
         <p class="muted">예금주 울산다음세대교회</p>
       </div>
 
@@ -1951,7 +1956,7 @@ var BIBLE_READING={
         <p>울산광역시 남구 화합로194번길 12-1, 2층 · 주일예배 오후 4시</p>
         <p>문의 <a class="tel" href="tel:010-2605-0309">010-2605-0309</a></p>
         <p>SU스쿨 문의 <a class="tel" href="tel:010-9811-0048">010-9811-0048</a> (서정은 교감)</p>
-        <p>후원 농협 301-0331-9920-11 (예금주: 울산다음세대교회) · <a href="#giving">자세히 보기</a></p>
+        <p>후원 농협 301-0331-9920-11 (예금주: 울산다음세대교회) · <button type="button" class="copy-btn sm" data-copy="3010331992011">복사</button> · <a href="#giving">자세히 보기</a></p>
       </div>
       <div><span class="h">바로가기</span><ul><li><a href="#direction">목회 방향</a></li><li><a href="#schedule">예배 안내</a></li><li><a href="#bible">공동체성경읽기</a></li><li><a href="#homeschool">홈스쿨</a></li><li><a href="#suschool">SU스쿨</a></li><li><a href="#notices">교회 소식</a></li><li><a href="#library">신앙 서재</a></li><li><a href="#location">오시는 길</a></li></ul></div>
       <div><span class="h">채널</span><ul><li><a href="https://www.youtube.com/@울산다음세대교회" target="_blank" rel="noopener">유튜브</a></li><li><a href="https://blog.naver.com/ulsanngc" target="_blank" rel="noopener">교회 블로그</a></li><li><a href="https://www.instagram.com/ung_church/" target="_blank" rel="noopener">교회 인스타그램</a></li><li><a href="https://blog.naver.com/su_school" target="_blank" rel="noopener">SU스쿨 블로그</a></li><li><a href="https://www.instagram.com/su_school_1004/" target="_blank" rel="noopener">SU스쿨 인스타그램</a></li></ul></div>
@@ -1997,6 +2002,13 @@ var BIBLE_READING={
     window.addEventListener('hashchange',function(){ if(location.hash==='#prayer'){ box.scrollLeft=0; paint(); } });
     paint();
   })();
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.copy-btn'); if(!b) return;
+    var t=b.getAttribute('data-copy'), old=b.getAttribute('data-label')||b.textContent; b.setAttribute('data-label',old);
+    function ok(){ b.textContent='복사했어요 ✓'; b.classList.add('done'); setTimeout(function(){ b.textContent=old; b.classList.remove('done'); },2000); }
+    function fallback(){ var ta=document.createElement('textarea'); ta.value=t; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0,99); try{ document.execCommand('copy'); ok(); }catch(err){ prompt('계좌번호를 길게 눌러 복사해 주세요',t); } document.body.removeChild(ta); }
+    if(navigator.clipboard&&window.isSecureContext) navigator.clipboard.writeText(t).then(ok,fallback); else fallback();
+  });
   document.addEventListener('click',function(e){ var tr=e.target.closest('tr.go'); if(!tr||e.target.closest('a')) return; location.hash=tr.getAttribute('data-href'); });
   [].forEach.call(document.querySelectorAll('.fold-all'),function(b){ b.addEventListener('click',function(){ var on=b.getAttribute('data-open')==='1'; [].forEach.call(document.querySelectorAll('#direction details.fold'),function(d){ d.open=on; }); }); });
   (function(){
